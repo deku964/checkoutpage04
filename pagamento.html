@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento - Nooluvv</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
+      padding: 20px;
+    }
+    h1 {
+      color: #00e676;
+    }
+    .pacote {
+      background: #222;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .botao {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #00e676;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .botao:hover {
+      background-color: #00c853;
+    }
+    .pagamento-section {
+      margin-top: 30px;
+    }
+    .pagamento-section h2 {
+      color: #ffea00;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pagamento - Nooluvv</h1>
+
+  <div class="pacote">
+    <p><strong>Pacote Selecionado:</strong> 120 diamantes (80MT)</p>
+  </div>
+
+  <div class="pagamento-section">
+    <h2>Escolha o método de pagamento</h2>
+
+    <div class="form-group">
+      <label for="paypal">Via PayPal:</label><br>
+      <a class="botao" href="https://www.paypal.com/paypalme/dekulanga887/80" target="_blank">Pagar com PayPal</a>
+    </div>
+
+    <div class="form-group">
+      <label for="mpesa">Via M-Pesa:</label>
+      <p>1. Envie <strong>80MT</strong> para o número <strong>847570884 (Marta)</strong></p>
+      <p>2. Após o pagamento, envie o comprovativo para o WhatsApp <strong><a style="color: #00e5ff" href="https://wa.me/258852925026">+258 852 925 026</a></strong></p>
+      <p>3. Seus diamantes serão creditados em até 5 minutos</p>
+    </div>
+
+    <div class="form-group">
+      <label for="nome">Seu nome no jogo:</label>
+      <input type="text" id="nome" placeholder="Ex: Deku_tdc">
+    </div>
+
+    <a class="botao" href="index.html">Voltar para escolher outro pacote</a>
+  </div>
+</body>
+</html>
