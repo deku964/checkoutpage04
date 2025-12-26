@@ -215,6 +215,16 @@
             height: 180px;
             background: #f9fafb;
         }
+        
+        .telegram-instruction {
+            font-size: 0.85rem;
+            color: #4b5563;
+            margin-top: 8px;
+            padding: 8px;
+            background: #fef3c7;
+            border-radius: 6px;
+            border-left: 3px solid #f59e0b;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -239,8 +249,11 @@
         <div class="telegram-section">
             <p><i class="fab fa-telegram"></i> Contact after purchase:</p>
             <a href="#" id="telegramLink" target="_blank">
-                <i class="fab fa-telegram"></i> @YourUsername
+                <i class="fab fa-telegram"></i> Message me on Telegram
             </a>
+            <div class="telegram-instruction">
+                <strong>Note:</strong> Click the link above to start a private chat with me on Telegram
+            </div>
         </div>
     </div>
 
@@ -248,8 +261,13 @@
         // CONFIGURATION - EDIT THESE VALUES
         const CONFIG = {
             paypalEmail: "your-email@paypal.com", // Your PayPal email
-            telegramUsername: "yourusername", // Your Telegram username
+            telegramUsername: "yourusername", // Your Telegram username (WITHOUT @)
             currency: "USD",
+            
+            // IMPORTANT: Choose the correct Telegram link format for your account:
+            // Option 1: Direct chat link (works for most accounts)
+            // Option 2: If you have a public channel/bot, use the appropriate link
+            telegramLinkFormat: "direct", // "direct" or "channel" or "bot"
             
             // PRODUCTS LIST - EDIT/ADD PRODUCTS HERE
             // For images: use direct image URLs or relative paths
@@ -259,143 +277,166 @@
                     name: "Digital Marketing Guide",
                     price: 47.00,
                     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
-                    description: "Complete guide to digital marketing strategies. Covers SEO, social media, email marketing, and analytics. Perfect for beginners and professionals."
+                    description: "Complete guide to digital marketing strategies. Covers SEO, social media, email marketing, and analytics."
                 },
                 {
                     id: 2,
                     name: "WordPress Theme Pack",
                     price: 59.99,
                     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop",
-                    description: "Collection of 15 premium WordPress themes. Responsive designs, easy customization, and 1 year of updates included."
+                    description: "Collection of 15 premium WordPress themes. Responsive designs, easy customization."
                 },
                 {
                     id: 3,
                     name: "AI Content Generator",
                     price: 34.99,
                     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w-400&h=250&fit=crop",
-                    description: "Advanced AI software for content creation. Generate articles, social posts, and marketing copy instantly."
+                    description: "Advanced AI software for content creation. Generate articles, social posts, and marketing copy."
                 },
                 {
                     id: 4,
                     name: "Social Media Templates",
                     price: 29.99,
                     image: "https://images.unsplash.com/photo-1611926653458-09294b3142a7?w=400&h=250&fit=crop",
-                    description: "300+ editable templates for social media. Includes Instagram stories, Facebook posts, and Twitter headers."
+                    description: "300+ editable templates for social media. Includes Instagram, Facebook, and Twitter."
                 },
                 {
                     id: 5,
                     name: "E-commerce Blueprint",
                     price: 97.00,
                     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop",
-                    description: "Step-by-step guide to building a successful e-commerce business. Includes supplier contacts and marketing plans."
+                    description: "Step-by-step guide to building a successful e-commerce business."
                 },
                 {
                     id: 6,
                     name: "Mobile App UI Kit",
                     price: 39.99,
                     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop",
-                    description: "Complete UI design kit for mobile applications. Includes iOS and Android components in multiple formats."
+                    description: "Complete UI design kit for mobile applications. iOS and Android components."
                 },
                 {
                     id: 7,
                     name: "Video Editing Course",
                     price: 67.00,
-                    image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&h=250&fit=crop",
-                    description: "Professional video editing masterclass. Learn Premiere Pro, After Effects, and professional workflows."
+                    image: "https://images.unsplash.com/phone-1593359677879-a4bb92f829d1?w=400&h=250&fit=crop",
+                    description: "Professional video editing masterclass. Learn Premiere Pro and After Effects."
                 },
                 {
                     id: 8,
                     name: "Stock Photo Bundle",
                     price: 24.99,
                     image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400&h=250&fit=crop",
-                    description: "500+ high-resolution stock photos for commercial use. Various categories including business and lifestyle."
+                    description: "500+ high-resolution stock photos for commercial use. Various categories."
                 },
                 {
                     id: 9,
                     name: "Crypto Investment Guide",
                     price: 54.99,
                     image: "https://images.unsplash.com/photo-1620336655055-bd87c8e4e8e8?w=400&h=250&fit=crop",
-                    description: "Advanced cryptocurrency investment strategies. Includes market analysis tools and risk management techniques."
+                    description: "Advanced cryptocurrency investment strategies. Market analysis and risk management."
                 },
                 {
                     id: 10,
                     name: "Fitness App Template",
                     price: 79.99,
                     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop",
-                    description: "Complete React Native template for fitness applications. Includes workout tracking and progress analytics."
+                    description: "Complete React Native template for fitness applications with tracking features."
                 },
                 {
                     id: 11,
                     name: "Python Scripts Collection",
                     price: 32.99,
                     image: "https://images.unsplash.com/photo-1526379879527-8559ecfcaec1?w=400&h=250&fit=crop",
-                    description: "50+ ready-to-use Python automation scripts. Includes web scraping, data processing, and file management."
+                    description: "50+ ready-to-use Python automation scripts for various tasks."
                 },
                 {
                     id: 12,
                     name: "Podcast Toolkit",
                     price: 44.99,
                     image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=400&h=250&fit=crop",
-                    description: "Complete toolkit for podcast production. Audio templates, editing presets, and promotion strategies included."
+                    description: "Complete toolkit for podcast production with audio templates and presets."
                 },
                 {
                     id: 13,
                     name: "Real Estate Calculator",
                     price: 19.99,
                     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop",
-                    description: "Advanced Excel spreadsheet for real estate investment analysis. ROI calculations and property valuation tools."
+                    description: "Advanced Excel spreadsheet for real estate investment analysis."
                 },
                 {
                     id: 14,
                     name: "Instagram Growth System",
                     price: 74.99,
                     image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&h=250&fit=crop",
-                    description: "Complete system for Instagram growth. Content planning, scheduling, and engagement automation."
+                    description: "Complete system for Instagram growth with content planning and scheduling."
                 },
                 {
                     id: 15,
                     name: "Finance Dashboard",
                     price: 27.99,
                     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
-                    description: "Interactive personal finance dashboard. Connects to banks and provides detailed spending analysis."
+                    description: "Interactive personal finance dashboard for tracking and analysis."
                 },
                 {
                     id: 16,
                     name: "Logo Design Collection",
                     price: 49.99,
                     image: "https://images.unsplash.com/photo-1634942537034-2531766767d1?w=400&h=250&fit=crop",
-                    description: "1000+ logo templates in vector format. AI, EPS, and PSD files for all industries."
+                    description: "1000+ logo templates in vector format for all industries."
                 },
                 {
                     id: 17,
                     name: "SEO Masterclass",
                     price: 89.99,
                     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
-                    description: "Complete SEO training course. Learn on-page optimization, link building, and technical SEO strategies."
+                    description: "Complete SEO training course with optimization and link building strategies."
                 },
                 {
                     id: 18,
                     name: "Web Design Templates",
                     price: 36.99,
                     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop",
-                    description: "Collection of 50+ modern web design templates. Fully responsive HTML/CSS templates for all industries."
+                    description: "Collection of 50+ modern web design templates for all industries."
                 },
                 {
                     id: 19,
                     name: "Email Marketing System",
                     price: 42.99,
                     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop",
-                    description: "Complete email marketing automation system. Includes templates, sequences, and analytics dashboard."
+                    description: "Complete email marketing automation system with templates and analytics."
                 },
                 {
                     id: 20,
                     name: "Business Plan Template",
                     price: 29.99,
                     image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop",
-                    description: "Professional business plan template with financial projections. Suitable for startups and established businesses."
+                    description: "Professional business plan template with financial projections."
                 }
             ]
         };
+
+        // Function to generate Telegram link based on account type
+        function generateTelegramLink() {
+            const username = CONFIG.telegramUsername;
+            
+            // Remove @ if user included it
+            const cleanUsername = username.replace('@', '');
+            
+            // Choose the correct link format
+            switch(CONFIG.telegramLinkFormat) {
+                case 'bot':
+                    // For bots: opens chat with bot
+                    return `https://t.me/${cleanUsername}?start`;
+                case 'channel':
+                    // For public channels: opens channel
+                    return `https://t.me/${cleanUsername}`;
+                case 'direct':
+                default:
+                    // For personal accounts: tries to open direct chat
+                    // This works if user has "Allow messages from non-contacts" enabled
+                    return `https://t.me/${ellyseller}`;
+            }
+        }
 
         // Function to generate PayPal link
         function generatePayPalLink(product) {
@@ -453,9 +494,14 @@
                 container.appendChild(productCard);
             });
             
-            // Update Telegram link
-            document.getElementById('telegramLink').href = `https://t.me/ellyseller`;
-            document.getElementById('telegramLink').innerHTML = `<i class="fab fa-telegram"></i> @ellyseller`;
+            // Update Telegram link with the correct format
+            const telegramLink = generateTelegramLink();
+            document.getElementById('telegramLink').href = telegramLink;
+            document.getElementById('telegramLink').innerHTML = `<i class="fab fa-telegram"></i> Message me on Telegram`;
+            
+            // Log the link for debugging
+            console.log('Telegram Link:', telegramLink);
+            console.log('Note: Make sure your Telegram privacy settings allow messages from everyone');
         }
 
         // Function to handle purchase
@@ -483,7 +529,7 @@
                 window.history.replaceState({}, document.title, window.location.pathname);
                 showNotification(
                     "Purchase Successful",
-                    "✅ Product will be delivered to your email. Contact @YourUsername on Telegram for support.",
+                    `✅ Product will be delivered to your email. For support, message me on Telegram: <a href="${generateTelegramLink()}" target="_blank">Click here to open Telegram</a>`,
                     "success"
                 );
             }
@@ -511,7 +557,7 @@
                 border-radius: 8px;
                 box-shadow: 0 4px 12px rgba(0,0,0,0.1);
                 z-index: 1000;
-                max-width: 350px;
+                max-width: 400px;
                 animation: slideIn 0.3s ease;
             `;
             
@@ -525,12 +571,12 @@
             
             document.body.appendChild(notification);
             
-            // Auto remove after 8 seconds
+            // Auto remove after 10 seconds
             setTimeout(() => {
                 if (notification.parentElement) {
                     notification.remove();
                 }
-            }, 8000);
+            }, 10000);
         }
 
         // Initialize
@@ -547,6 +593,12 @@
                 }
             `;
             document.head.appendChild(style);
+            
+            // Check Telegram link format
+            console.log('Telegram Configuration:');
+            console.log('- Username:', CONFIG.telegramUsername);
+            console.log('- Link Format:', CONFIG.telegramLinkFormat);
+            console.log('- Generated Link:', generateTelegramLink());
         });
     </script>
 </body>
