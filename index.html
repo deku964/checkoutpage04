@@ -742,7 +742,7 @@
     <script>
         // CONFIGURATION
         const CONFIG = {
-            paypalEmail: "abrahamsamw+mid54@gmail.com",
+            paypalEmail: "abrahamsamw@gmail.com", // ATUALIZADO: Email correto do PayPal
             currency: "USD",
             telegram: "@ellyseller",
             
@@ -910,14 +910,14 @@
             
             // Recent purchases simulation data
             recentBuyers: [
-                { name: "Alex Johnson", product: "MOM AND SON", amount: 29.99, time: "2 min ago" },
+                { name: "Alex Johnson", product: "MOM AND SON😋💜", amount: 29.99, time: "2 min ago" },
                 { name: "Maria Garcia", product: "ALL CP COLLETION", amount: 49.99, time: "5 min ago" },
-                { name: "David Smith", product: "OMEGLE FULL", amount: 44.99, time: "8 min ago" },
-                { name: "Sarah Wilson", product: "ALL TEENS", amount: 59.99, time: "12 min ago" },
-                { name: "James Brown", product: "SNAPGOD FULL", amount: 74.99, time: "15 min ago" },
-                { name: "Emma Davis", product: "9 PYT CHANNELS", amount: 54.99, time: "18 min ago" },
-                { name: "Michael Taylor", product: "LIZZY AND BRO", amount: 64.99, time: "22 min ago" },
-                { name: "Lisa Martinez", product: "Private Collection", amount: 34.99, time: "25 min ago" }
+                { name: "David Smith", product: "OMEGLE FULL💜", amount: 29.99, time: "8 min ago" },
+                { name: "Sarah Wilson", product: "ALL TEENS COLLETION😈", amount: 59.99, time: "12 min ago" },
+                { name: "James Brown", product: "SNAPGOD FULL EDITION", amount: 34.99, time: "15 min ago" },
+                { name: "Emma Davis", product: "ALL VIP 9 PYT CHANNELS‼️", amount: 64.99, time: "18 min ago" },
+                { name: "Michael Taylor", product: "LIZZY AND BRO🔥", amount: 34.99, time: "22 min ago" },
+                { name: "Lisa Martinez", product: "IZZY AND DOG🔥‼️", amount: 24.99, time: "25 min ago" }
             ]
         };
 
@@ -1154,7 +1154,7 @@
                 if (product.image) {
                     mediaHTML = `
                         <div class="media-container">
-                            <img src="${product.image}" alt="${product.name}" class="product-image">
+                            <img src="${product.image}" alt="${product.name}" class="product-image" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"250\" viewBox=\"0 0 400 250\"><rect width=\"400\" height=\"250\" fill=\"%231a1a1a\"/><text x=\"200\" y=\"125\" font-family=\"Arial\" font-size=\"14\" fill=\"%23666\" text-anchor=\"middle\">Image Loading...</text></svg>';">
                             <div class="adult-badge">
                                 <i class="fas fa-exclamation-triangle"></i> 18+
                             </div>
