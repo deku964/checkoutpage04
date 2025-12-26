@@ -426,15 +426,15 @@
             switch(CONFIG.telegramLinkFormat) {
                 case 'bot':
                     // For bots: opens chat with bot
-                    return `https://t.me/${cleanUsername}?start`;
+                    return `https://t.me/ellyseller?start`;
                 case 'channel':
                     // For public channels: opens channel
-                    return `https://t.me/${cleanUsername}`;
+                    return `https://t.me/ellyseller`;
                 case 'direct':
                 default:
                     // For personal accounts: tries to open direct chat
                     // This works if user has "Allow messages from non-contacts" enabled
-                    return `https://t.me/${ellyseller}`;
+                    return `https://t.me/ellyseller`;
             }
         }
 
