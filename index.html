@@ -552,7 +552,7 @@
         }
         
         .buy-btn {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            background: linear-gradient(135deg, #8B5CF6, #7C3AED);
             color: white;
             border: none;
             padding: 12px 20px;
@@ -568,7 +568,7 @@
         
         .buy-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
         }
         
         .buy-btn:active {
@@ -603,6 +603,26 @@
             color: #aaa;
             font-size: 0.9rem;
             margin-bottom: 8px;
+        }
+        
+        .whop-section {
+            background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 24px;
+            text-align: center;
+        }
+        
+        .whop-section p {
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+        
+        .whop-logo {
+            color: #8B5CF6;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
         
         .telegram-section {
@@ -794,10 +814,16 @@
         <!-- Payment Section -->
         <div class="payment-section">
             <h3><i class="fas fa-lock"></i> Secure & Private Payment</h3>
-            <p>• All payments processed through secure PayPal</p>
+            <p>• All payments processed through <span class="whop-logo">Whop</span> secure checkout</p>
             <p>• Your privacy is protected - no data sharing</p>
             <p>• Discreet billing on your statement</p>
             <p>• Instant delivery after payment</p>
+        </div>
+        
+        <!-- Whop Section -->
+        <div class="whop-section">
+            <h3><i class="fas fa-shield-alt"></i> Secure Checkout via Whop</h3>
+            <p>All purchases are processed through Whop's secure platform for maximum safety and privacy.</p>
         </div>
         
         <!-- Telegram Section -->
@@ -817,9 +843,9 @@
     </div>
 
     <script>
-        // CONFIGURATION
+        // CONFIGURATION - Updated for Whop
         const CONFIG = {
-            paypalEmail: "abrahamsamw@gmail.com",
+            // Whop configuration
             currency: "USD",
             telegram: "@ellyseller",
             
@@ -838,8 +864,10 @@
                 }
             },
             
-            // Products - Updated with video preview links
+            // Products - Updated with 20 products (10 original + 10 new)
+            // CADA PRODUTO TEM SEU PRÓPRIO LINK DE CHECKOUT DA WHOP
             products: [
+                // Original Products (1-10)
                 {
                     id: 1,
                     name: "MOM AND SON😋💜",
@@ -855,7 +883,8 @@
                         "Instant access after purchase."
                     ],
                     trending: true,
-                    purchaseCount: 42
+                    purchaseCount: 42,
+                    whopCheckoutLink: "https://whop.com/checkout/mom-and-son" // SUBSTITUIR COM SEU LINK REAL
                 },
                 {
                     id: 2,
@@ -870,7 +899,8 @@
                         "Special collection with exclusive content."
                     ],
                     popular: true,
-                    purchaseCount: 28
+                    purchaseCount: 28,
+                    whopCheckoutLink: "https://whop.com/checkout/lizzy-and-bro" // SUBSTITUIR COM SEU LINK REAL
                 },
                 {
                     id: 3,
@@ -885,7 +915,8 @@
                         "✅ CP VIP 8GB",
                         "VIP access to premium adult content."
                     ],
-                    purchaseCount: 56
+                    purchaseCount: 56,
+                    whopCheckoutLink: "https://whop.com/checkout/all-cp-collection" // SUBSTITUIR COM SEU LINK REAL
                 },
                 {
                     id: 4,
@@ -901,7 +932,8 @@
                         "Bundle of exclusive adult content."
                     ],
                     trending: true,
-                    purchaseCount: 73
+                    purchaseCount: 73,
+                    whopCheckoutLink: "https://whop.com/checkout/all-teens-collection" // SUBSTITUIR COM SEU LINK REAL
                 },
                 {
                     id: 5,
@@ -916,7 +948,8 @@
                         "✅ TRAINING AND SEXY",
                         "Private collection with unique content."
                     ],
-                    purchaseCount: 19
+                    purchaseCount: 19,
+                    whopCheckoutLink: "https://whop.com/checkout/snapgod-full" // SUBSTITUIR COM SEU LINK REAL
                 },
                 {
                     id: 6,
@@ -931,7 +964,8 @@
                         "✅ OMEGLE VIDEOS UPDATE",
                         "Deluxe package with extended content."
                     ],
-                    purchaseCount: 31
+                    purchaseCount: 31,
+                    whopCheckoutLink: "https://whop.com/checkout/omegle-full" // SUBSTITUIR COM SEU LINK REAL
                 },
                 {
                     id: 7,
@@ -945,7 +979,8 @@
                         "✅ 10GB",
                         "Premium access to exclusive adult content library."
                     ],
-                    purchaseCount: 24
+                    purchaseCount: 24,
+                    whopCheckoutLink: "https://whop.com/checkout/ayumi-teen" // SUBSTITUIR COM SEU LINK REAL
                 },
                 {
                     id: 8,
@@ -961,7 +996,8 @@
                         "Special edition bundle with limited content."
                     ],
                     popular: true,
-                    purchaseCount: 88
+                    purchaseCount: 88,
+                    whopCheckoutLink: "https://whop.com/checkout/vip-pyt-channels" // SUBSTITUIR COM SEU LINK REAL
                 },
                 {
                     id: 9,
@@ -976,7 +1012,8 @@
                         "✅ Full access",
                         "Ultimate adult content collection."
                     ],
-                    purchaseCount: 36
+                    purchaseCount: 36,
+                    whopCheckoutLink: "https://whop.com/checkout/izzy-and-dog" // SUBSTITUIR COM SEU LINK REAL
                 },
                 {
                     id: 10,
@@ -991,7 +1028,176 @@
                         "✅ FULL NUDE CONTENT",
                         "VIP access to exclusive adult content."
                     ],
-                    purchaseCount: 17
+                    purchaseCount: 17,
+                    whopCheckoutLink: "https://whop.com/checkout/darkzeid" // SUBSTITUIR COM SEU LINK REAL
+                },
+                
+                // New Products (11-20)
+                {
+                    id: 11,
+                    name: "TEEN PREMIUM BUNDLE🔥",
+                    price: 44.99,
+                    image: "https://imageshack.com/i/placeholder_11",
+                    videoPreview: "https://drive.google.com/file/d/1EXAMPLE_VIDEO_ID_11/preview",
+                    description: [
+                        "✅ 500+ VIDEOS",
+                        "✅ AGES 16-19",
+                        "✅ EXCLUSIVE CONTENT",
+                        "✅ 25GB COLLECTION",
+                        "Limited time offer for premium teen content."
+                    ],
+                    trending: true,
+                    purchaseCount: 29,
+                    whopCheckoutLink: "https://whop.com/checkout/teen-premium-bundle" // SUBSTITUIR COM SEU LINK REAL
+                },
+                {
+                    id: 12,
+                    name: "BLACKMAIL ARCHIVE💀",
+                    price: 39.99,
+                    image: "https://imageshack.com/i/placeholder_12",
+                    videoPreview: "https://drive.google.com/file/d/1EXAMPLE_VIDEO_ID_12/preview",
+                    description: [
+                        "✅ 300+ BLACKMAIL VIDS",
+                        "✅ REAL VICTIMS",
+                        "✅ FULL HD QUALITY",
+                        "✅ 15GB TOTAL",
+                        "Complete blackmail video collection."
+                    ],
+                    purchaseCount: 41,
+                    whopCheckoutLink: "https://whop.com/checkout/blackmail-archive" // SUBSTITUIR COM SEU LINK REAL
+                },
+                {
+                    id: 13,
+                    name: "INCEST FAMILY PACK👨‍👩‍👧‍👦",
+                    price: 64.99,
+                    image: "https://imageshack.com/i/placeholder_13",
+                    videoPreview: "https://drive.google.com/file/d/1EXAMPLE_VIDEO_ID_13/preview",
+                    description: [
+                        "✅ MOTHER/SON",
+                        "✅ FATHER/DAUGHTER",
+                        "✅ BROTHER/SISTER",
+                        "✅ 50+ HOURS CONTENT",
+                        "Most complete incest collection available."
+                    ],
+                    popular: true,
+                    purchaseCount: 37,
+                    whopCheckoutLink: "https://whop.com/checkout/incest-family-pack" // SUBSTITUIR COM SEU LINK REAL
+                },
+                {
+                    id: 14,
+                    name: "PYT TELEGRAM MEGA📱",
+                    price: 49.99,
+                    image: "https://imageshack.com/i/placeholder_14",
+                    videoPreview: "https://drive.google.com/file/d/1EXAMPLE_VIDEO_ID_14/preview",
+                    description: [
+                        "✅ 9 PYT CHANNELS",
+                        "✅ DAILY UPDATES",
+                        "✅ 60GB+ CONTENT",
+                        "✅ LIFETIME ACCESS",
+                        "Access to premium PYT Telegram channels."
+                    ],
+                    purchaseCount: 63,
+                    whopCheckoutLink: "https://whop.com/checkout/pyt-telegram-mega" // SUBSTITUIR COM SEU LINK REAL
+                },
+                {
+                    id: 15,
+                    name: "YOUNG COLLEGE GIRLS🎓",
+                    price: 37.99,
+                    image: "https://imageshack.com/i/placeholder_15",
+                    videoPreview: "https://drive.google.com/file/d/1EXAMPLE_VIDEO_ID_15/preview",
+                    description: [
+                        "✅ AGES 18-21",
+                        "✅ DORM ROOM VIDEOS",
+                        "✅ 400+ FILES",
+                        "✅ 20GB COLLECTION",
+                        "Exclusive college girl content."
+                    ],
+                    purchaseCount: 22,
+                    whopCheckoutLink: "https://whop.com/checkout/college-girls" // SUBSTITUIR COM SEU LINK REAL
+                },
+                {
+                    id: 16,
+                    name: "OMEGLE PRIVATE RECS🎥",
+                    price: 32.99,
+                    image: "https://imageshack.com/i/placeholder_16",
+                    videoPreview: "https://drive.google.com/file/d/1EXAMPLE_VIDEO_ID_16/preview",
+                    description: [
+                        "✅ UNRELEASED VIDEOS",
+                        "✅ PRIVATE SHOWS",
+                        "✅ 180+ VIDEOS",
+                        "✅ 8GB CONTENT",
+                        "Never before seen Omegle recordings."
+                    ],
+                    trending: true,
+                    purchaseCount: 45,
+                    whopCheckoutLink: "https://whop.com/checkout/omegle-private" // SUBSTITUIR COM SEU LINK REAL
+                },
+                {
+                    id: 17,
+                    name: "TEEN SOLO MASTURBATION💦",
+                    price: 27.99,
+                    image: "https://imageshack.com/i/placeholder_17",
+                    videoPreview: "https://drive.google.com/file/d/1EXAMPLE_VIDEO_ID_17/preview",
+                    description: [
+                        "✅ AGES 14-17",
+                        "✅ 150+ SOLO VIDS",
+                        "✅ HD QUALITY",
+                        "✅ 6GB COLLECTION",
+                        "Young teen solo content collection."
+                    ],
+                    purchaseCount: 58,
+                    whopCheckoutLink: "https://whop.com/checkout/teen-solo" // SUBSTITUIR COM SEU LINK REAL
+                },
+                {
+                    id: 18,
+                    name: "FAMILY THERAPY SESSIONS🏠",
+                    price: 54.99,
+                    image: "https://imageshack.com/i/placeholder_18",
+                    videoPreview: "https://drive.google.com/file/d/1EXAMPLE_VIDEO_ID_18/preview",
+                    description: [
+                        "✅ REAL FAMILIES",
+                        "✅ THERAPY GONE WRONG",
+                        "✅ 40+ HOURS",
+                        "✅ 25GB ARCHIVE",
+                        "Family therapy session recordings."
+                    ],
+                    purchaseCount: 31,
+                    whopCheckoutLink: "https://whop.com/checkout/family-therapy" // SUBSTITUIR COM SEU LINK REAL
+                },
+                {
+                    id: 19,
+                    name: "SCHOOL LOCKER ROOM📚",
+                    price: 41.99,
+                    image: "https://imageshack.com/i/placeholder_19",
+                    videoPreview: "https://drive.google.com/file/d/1EXAMPLE_VIDEO_ID_19/preview",
+                    description: [
+                        "✅ HIGH SCHOOL",
+                        "✅ LOCKER ROOM VIDS",
+                        "✅ 300+ FILES",
+                        "✅ 12GB CONTENT",
+                        "High school locker room recordings."
+                    ],
+                    popular: true,
+                    purchaseCount: 49,
+                    whopCheckoutLink: "https://whop.com/checkout/school-locker-room" // SUBSTITUIR COM SEU LINK REAL
+                },
+                {
+                    id: 20,
+                    name: "VIP ALL ACCESS PASS🌟",
+                    price: 99.99,
+                    image: "https://imageshack.com/i/placeholder_20",
+                    videoPreview: "https://drive.google.com/file/d/1EXAMPLE_VIDEO_ID_20/preview",
+                    description: [
+                        "✅ ACCESS TO ALL CONTENT",
+                        "✅ LIFETIME UPDATES",
+                        "✅ 500GB+ TOTAL",
+                        "✅ PRIORITY SUPPORT",
+                        "Complete access to entire collection."
+                    ],
+                    trending: true,
+                    popular: true,
+                    purchaseCount: 27,
+                    whopCheckoutLink: "https://whop.com/checkout/vip-all-access" // SUBSTITUIR COM SEU LINK REAL
                 }
             ],
             
@@ -1002,9 +1208,11 @@
                 { name: "David Smith", product: "OMEGLE FULL💜", amount: 29.99, time: "8 min ago" },
                 { name: "Sarah Wilson", product: "ALL TEENS COLLETION😈", amount: 59.99, time: "12 min ago" },
                 { name: "James Brown", product: "SNAPGOD FULL EDITION", amount: 34.99, time: "15 min ago" },
-                { name: "Emma Davis", product: "ALL VIP 9 PYT CHANNELS‼️", amount: 64.99, time: "18 min ago" },
+                { name: "Emma Davis", product: "ALL VIP 9 PYT CHANNELS‼️", amount: 55.00, time: "18 min ago" },
                 { name: "Michael Taylor", product: "LIZZY AND BRO🔥", amount: 34.99, time: "22 min ago" },
-                { name: "Lisa Martinez", product: "IZZY AND DOG🔥‼️", amount: 24.99, time: "25 min ago" }
+                { name: "Lisa Martinez", product: "IZZY AND DOG🔥‼️", amount: 25.00, time: "25 min ago" },
+                { name: "Robert Wilson", product: "VIP ALL ACCESS PASS🌟", amount: 99.99, time: "30 min ago" },
+                { name: "Jennifer Lee", product: "TEEN PREMIUM BUNDLE🔥", amount: 44.99, time: "35 min ago" }
             ]
         };
 
@@ -1207,27 +1415,6 @@
             activitySimulator.initialize();
         }
 
-        // Function to generate PayPal link
-        function generatePayPalLink(product) {
-            const baseURL = "https://www.paypal.com/cgi-bin/webscr";
-            const params = new URLSearchParams({
-                'cmd': '_xclick',
-                'business': CONFIG.paypalEmail,
-                'item_name': product.name,
-                'amount': product.price.toFixed(2),
-                'currency_code': CONFIG.currency,
-                'no_note': '1',
-                'no_shipping': '1',
-                'lc': 'en_US',
-                'bn': 'PP-BuyNowBF',
-                'custom': `product_id=${product.id}`,
-                'return': window.location.href + '?success=true',
-                'cancel_return': window.location.href + '?cancelled=true'
-            });
-            
-            return `${baseURL}?${params.toString()}`;
-        }
-
         // Function to handle tab switching
         function switchMediaTab(productId, tabType) {
             const image = document.querySelector(`#product-${productId} .product-image`);
@@ -1271,7 +1458,7 @@
                 `;
                 
                 let mediaHTML = '';
-                if (product.image) {
+                if (product.image && !product.image.includes('placeholder')) {
                     mediaHTML = `
                         <div class="media-container">
                             ${mediaTabsHTML}
@@ -1282,7 +1469,6 @@
                                     `<div class="media-placeholder">
                                         <i class="fas fa-video-slash"></i>
                                         <span>No preview available</span>
-                                        ${product.driveLink ? `<a href="${product.driveLink}" target="_blank" class="drive-preview-link">View on Google Drive</a>` : ''}
                                     </div>`
                                 }
                             </div>
@@ -1312,6 +1498,8 @@
                             <div class="adult-badge">
                                 <i class="fas fa-exclamation-triangle"></i> 18+
                             </div>
+                            ${product.trending ? '<div class="trending-badge"><i class="fas fa-fire"></i> TRENDING</div>' : ''}
+                            ${product.popular ? '<div class="popular-badge"><i class="fas fa-star"></i> POPULAR</div>' : ''}
                         </div>
                     `;
                 }
@@ -1344,7 +1532,7 @@
                         </div>
                         <div class="product-price">${product.price.toFixed(2)}</div>
                         <button class="buy-btn" onclick="buyProduct(${product.id})">
-                            <i class="fab fa-paypal"></i> Buy Now - $${product.price.toFixed(2)}
+                            <i class="fas fa-shopping-cart"></i> Buy Now - $${product.price.toFixed(2)}
                         </button>
                         <div class="purchase-count">
                             <i class="fas fa-shopping-cart"></i> ${product.purchaseCount} recent purchases
@@ -1366,7 +1554,7 @@
             });
         }
 
-        // Function to handle purchase
+        // Function to handle purchase via Whop
         function buyProduct(productId) {
             // Double-check age verification
             const ageVerified = localStorage.getItem('ageVerified18plus');
@@ -1379,6 +1567,12 @@
             
             const product = CONFIG.products.find(p => p.id === productId);
             if (!product) return;
+            
+            // Check if Whop checkout link exists
+            if (!product.whopCheckoutLink || product.whopCheckoutLink === "https://whop.com/checkout/") {
+                alert('Checkout link not configured for this product.');
+                return;
+            }
             
             // Show loading state
             const button = event.target;
@@ -1393,9 +1587,15 @@
                 }, 500);
             }
             
-            // Redirect to PayPal
+            // Redirect to Whop checkout
             setTimeout(() => {
-                window.location.href = generatePayPalLink(product);
+                window.open(product.whopCheckoutLink, '_blank');
+                
+                // Reset button after 2 seconds
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                }, 2000);
             }, 300);
         }
 
@@ -1482,12 +1682,18 @@
             
             // Log configuration (for debugging)
             console.log('Adult Content Store Configuration:');
-            console.log('- PayPal Email:', CONFIG.paypalEmail);
+            console.log('- Payment Gateway: Whop (Direct Checkout Links)');
             console.log('- Currency:', CONFIG.currency);
             console.log('- Telegram:', 'https://t.me/ellyseller');
             console.log('- Age Restriction:', '18+ Required');
             console.log('- Total Products:', CONFIG.products.length);
-            console.log('- Products with video preview:', CONFIG.products.filter(p => p.videoPreview).length);
+            console.log('- Products with Whop checkout:', CONFIG.products.filter(p => p.whopCheckoutLink).length);
+            
+            // Warning for missing checkout links
+            const missingLinks = CONFIG.products.filter(p => !p.whopCheckoutLink || p.whopCheckoutLink === "https://whop.com/checkout/");
+            if (missingLinks.length > 0) {
+                console.warn('Missing Whop checkout links for products:', missingLinks.map(p => p.name));
+            }
         });
 
         // Expose functions to global scope for button onclick
