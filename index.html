@@ -1435,7 +1435,7 @@
             }
         }
 
-        // Function to render products with video preview support
+        // Function to render products with video preview support - ÚNICA ALTERAÇÃO FEITA
         function renderProducts() {
             const container = document.getElementById('productsContainer');
             container.innerHTML = '';
@@ -1458,7 +1458,8 @@
                 `;
                 
                 let mediaHTML = '';
-                if (product.image && !product.image.includes('placeholder')) {
+                // CORREÇÃO: Removi a verificação de 'placeholder' que estava bloqueando as prévias de vídeo
+                if (product.image) {
                     mediaHTML = `
                         <div class="media-container">
                             ${mediaTabsHTML}
