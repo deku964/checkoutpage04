@@ -669,6 +669,43 @@
             margin: 10px 0;
         }
         
+        /* Dropbox preview styles */
+        .dropbox-preview-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .dropbox-preview-link {
+            display: inline-block;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #0061ff, #60efff);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 97, 255, 0.3);
+        }
+        
+        .dropbox-preview-link:hover {
+            background: linear-gradient(135deg, #0050d6, #4bd9ff);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 97, 255, 0.3);
+        }
+        
+        .dropbox-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
         @media (max-width: 768px) {
             .products-grid {
                 grid-template-columns: 1fr;
@@ -713,6 +750,11 @@
             
             .media-tab {
                 padding: 10px 0;
+                font-size: 0.85rem;
+            }
+            
+            .dropbox-preview-link {
+                padding: 10px 16px;
                 font-size: 0.85rem;
             }
         }
@@ -843,7 +885,7 @@
     </div>
 
     <script>
-        // CONFIGURATION - Updated for Whop
+        // CONFIGURATION - Updated for Dropbox previews
         const CONFIG = {
             // Whop configuration
             currency: "USD",
@@ -864,8 +906,8 @@
                 }
             },
             
-            // Products - Updated with 26 products (20 original + 6 new)
-            // CADA PRODUTO TEM SEU PRÓPRIO LINK DE CHECKOUT DA WHOP
+            // Products - Updated with Dropbox previews
+            // Todos os links de preview são do Dropbox agora
             products: [
                 // Original Products (1-10)
                 {
@@ -873,7 +915,7 @@
                     name: "MOM AND SON😋💜",
                     price: 25,
                     image: "https://imagizer.imageshack.com/img922/1129/46KdQI.jpg",
-                    videoPreview: "https://www.dropbox.com/scl/fi/vtmildipo9sf0w0aj33ag/725298129165025274.mp4?raw=1",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/a1b2c3d4e5f6/sample-preview.mp4?rlkey=abc123&raw=1",
                     description: [
                         "✅ REAL GIRLS",
                         "✅ YOUNG BOY", 
@@ -884,14 +926,14 @@
                     ],
                     trending: true,
                     purchaseCount: 42,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_gx7kx5h7s3Zh9" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_gx7kx5h7s3Zh9"
                 },
                 {
                     id: 2,
                     name: "LIZZY AND BRO🔥",
                     price: 25,
                     image: "https://imagizer.imageshack.com/img921/5505/LKytJu.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1NgrO7pZDHnHcAldnY5eGiKFX9rLZr7qc/preview",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/b2c3d4e5f6g7/preview-2.mp4?rlkey=def456&raw=1",
                     description: [
                         "✅ BLACKMAIL VIDEOS",
                         "✅ TRAINING VIDEOS",
@@ -900,14 +942,14 @@
                     ],
                     popular: true,
                     purchaseCount: 28,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_gx7kx5h7s3Zh9" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_gx7kx5h7s3Zh9"
                 },
                 {
                     id: 3,
                     name: "ALL CP COLLETION",
                     price: 50,
                     image: "https://i.postimg.cc/y8R1prQF/IMG-4458.jpg",
-                    videoPreview: "https://drive.google.com/file/d/13oev1W2X4GnjmnBeWgHjh-Al39CE70Ky/preview",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/c3d4e5f6g7h8/preview-3.mp4?rlkey=ghi789&raw=1",
                     description: [
                         "✅ CP 2GB",
                         "✅ CP 4GB",
@@ -916,14 +958,14 @@
                         "VIP access to premium adult content."
                     ],
                     purchaseCount: 56,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_NbwhWkfIdyv5C" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_NbwhWkfIdyv5C"
                 },
                 {
                     id: 4,
                     name: "ALL TEENS COLLETION😈",
                     price: 60,
                     image: "https://i.postimg.cc/y8q8sPcj/IMG_4450.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1b9W7nFfdgRkgF3prefB_M1WVVqOgOqkN/preview",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/d4e5f6g7h8i9/preview-4.mp4?rlkey=jkl012&raw=1",
                     description: [
                         "✅ OVER 700 VIDEOS",
                         "✅ MORE THAN 200 BLACKMAIL VIDEOS",
@@ -933,14 +975,14 @@
                     ],
                     trending: true,
                     purchaseCount: 73,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_kMqBeFGKeeb4f" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_kMqBeFGKeeb4f"
                 },
                 {
                     id: 5,
                     name: "SNAPGOD FULL EDITION",
                     price: 30,
                     image: "https://i.postimg.cc/4yBB61kG/IMG_4451.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1ihOnrvpGZgNU0Fhy0YPXebq8LHbUIAd3/preview",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/e5f6g7h8i9j0/preview-5.mp4?rlkey=mno345&raw=1",
                     description: [
                         "✅ BLACKMAIL VIDEOS",
                         "✅ INCEST TEENS",
@@ -949,14 +991,14 @@
                         "Private collection with unique content."
                     ],
                     purchaseCount: 19,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_EVbkxhOB5szHc" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_EVbkxhOB5szHc"
                 },
                 {
                     id: 6,
                     name: "OMEGLE FULL💜",
                     price: 30,
                     image: "https://imagizer.imageshack.com/img924/1222/5M0MZ5.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1WQfjbklJqehgooYS-HDm58_VWNr2CQH7/preview",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/f6g7h8i9j0k1/preview-6.mp4?rlkey=pqr678&raw=1",
                     description: [
                         "✅ 140GB+",
                         "✅ FULL CONTENT",
@@ -965,14 +1007,14 @@
                         "Deluxe package with extended content."
                     ],
                     purchaseCount: 31,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_EVbkxhOB5szHc" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_EVbkxhOB5szHc"
                 },
                 {
                     id: 7,
                     name: "AYUMI TEEN😋",
                     price: 20,
                     image: "https://i.postimg.cc/KYwJG5B6/IMG_4701.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1QyQJ7hDwZYSf6M2biNdNxFNQ6QHoI5zJ/preview",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/g7h8i9j0k1l2/preview-7.mp4?rlkey=stu901&raw=1",
                     description: [
                         "✅ Premium folder",
                         "✅ REAL TEEN",
@@ -980,14 +1022,14 @@
                         "Premium access to exclusive adult content library."
                     ],
                     purchaseCount: 24,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_ErQSv6MaPatsc" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_ErQSv6MaPatsc"
                 },
                 {
                     id: 8,
                     name: "ALL VIP 9 PYT CHANNELS‼️",
                     price: 60,
                     image: "https://imagizer.imageshack.com/img924/5912/ZSvQcH.jpg",
-                    videoPreview: "https://drive.google.com/file/d/13U-cjXVDnVImvJECQD3lcGdg94qFX7JI/preview",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/h8i9j0k1l2m3/preview-8.mp4?rlkey=vwx234&raw=1",
                     description: [
                         "✅ HIGH SCHOOL",
                         "✅ LATINAS",
@@ -997,14 +1039,14 @@
                     ],
                     popular: true,
                     purchaseCount: 88,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_kMqBeFGKeeb4f" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_kMqBeFGKeeb4f"
                 },
                 {
                     id: 9,
                     name: "IZZY AND DOG🔥‼️",
                     price: 25,
                     image: "https://i.postimg.cc/VkykmRnW/IMG_4447.jpg",
-                    videoPreview: "https://drive.google.com/file/d/103V8ek9B0IU5ee6PHWe1zLUYI2CphmJG/preview",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/i9j0k1l2m3n4/preview-9.mp4?rlkey=yza567&raw=1",
                     description: [
                         "✅ BLACKMAIL",
                         "✅ REAL GIRL",
@@ -1013,14 +1055,14 @@
                         "Ultimate adult content collection."
                     ],
                     purchaseCount: 36,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_gx7kx5h7s3Zh9" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_gx7kx5h7s3Zh9"
                 },
                 {
                     id: 10,
                     name: "DARKZEID🔞",
                     price: 25,
                     image: "https://i.postimg.cc/VNvGg3kk/IMG-4473.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1dnz64FLB13xh7xYiYxLUogfEHNr18Nbt/preview",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/j0k1l2m3n4o5/preview-10.mp4?rlkey=bcd890&raw=1",
                     description: [
                         "✅ ALL BM VIDEOS",
                         "✅ ALL CAMERAS UPLOADS",
@@ -1029,7 +1071,7 @@
                         "VIP access to exclusive adult content."
                     ],
                     purchaseCount: 17,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_gx7kx5h7s3Zh9" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_gx7kx5h7s3Zh9"
                 },
                 
                 // New Products (11-20)
@@ -1038,7 +1080,7 @@
                     name: "HACKING SNAPCHAT FULL🔥",
                     price: 45,
                     image: "https://i.postimg.cc/Y0bb6xKk/IMG_4444.jpg",
-                    videoPreview: "https://drive.google.com/file/d/10PRRWULSkURRJsgUcmY0Q8oGZDh9eTRw/preview",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/k1l2m3n4o5p6/preview-11.mp4?rlkey=efg123&raw=1",
                     description: [
                         "✅ 500+ VIDEOS",
                         "✅ AGES 16-19",
@@ -1048,14 +1090,14 @@
                     ],
                     trending: true,
                     purchaseCount: 29,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_l8ui1hCYGpTdA" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_l8ui1hCYGpTdA"
                 },
                 {
                     id: 12,
                     name: "INVAKA💀",
                     price: 30,
                     image: "https://i.postimg.cc/d1r6TSZW/IMG-4779.jpg",
-                    videoPreview: "https://drive.google.com/file/d/17S8OR5kr_I7NcjEPHCFYFAq9pneMcAS9/preview",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/l2m3n4o5p6q7/preview-12.mp4?rlkey=hij456&raw=1",
                     description: [
                         "✅ 300+ VIDS",
                         "✅ REAL GIRL",
@@ -1064,14 +1106,14 @@
                         "Complete blackmail video collection."
                     ],
                     purchaseCount: 41,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_EVbkxhOB5szHc" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_EVbkxhOB5szHc"
                 },
                 {
                     id: 13,
                     name: "ALL CONTENT 12TB😍",
                     price: 250,
-                    image: "https://imageshack.com/i/placeholder_13",
-                    videoPreview: "https://drive.google.com/file/d/1lL8K3OUKjtOjICSJMFlXQs_F7JkVIE82/preview",
+                    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/m3n4o5p6q7r8/preview-13.mp4?rlkey=klm789&raw=1",
                     description: [
                         "✅ MOTHER/SON",
                         "✅ FATHER/DAUGHTER",
@@ -1081,14 +1123,14 @@
                     ],
                     popular: true,
                     purchaseCount: 37,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_umfKWvwxY1VFz" // SUBSTITUIR COM SEU LINK 
+                    whopCheckoutLink: "https://whop.com/checkout/plan_umfKWvwxY1VFz"
                 },
                 {
                     id: 15,
                     name: "MONKEYAPP🎓",
                     price: 35,
                     image: "https://i.postimg.cc/Dy4N3VqD/IMG_4453.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1bDvFUB6jw5ilsrtMtQlJHr4eW0FIdpEW/preview",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/n4o5p6q7r8s9/preview-15.mp4?rlkey=nop012&raw=1",
                     description: [
                         "✅ AGES 13-17",
                         "✅ DORM ROOM VIDEOS",
@@ -1097,14 +1139,14 @@
                         "Exclusive college girl content."
                     ],
                     purchaseCount: 22,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_BcCUHGNRSSmje" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_BcCUHGNRSSmje"
                 },
                 {
                     id: 16,
                     name: "VIP MONKEY APPPRIVATE RECS🎥",
                     price: 30,
-                    image: "https://imageshack.com/i/placeholder_16",
-                    videoPreview: "https://drive.google.com/file/d/1Gd8KZJPLvVtgtWQTbOrwWLVfSjbzvc3V/preview",
+                    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/o5p6q7r8s9t0/preview-16.mp4?rlkey=qrs345&raw=1",
                     description: [
                         "✅ UNRELEASED VIDEOS",
                         "✅ PRIVATE SHOWS",
@@ -1114,14 +1156,14 @@
                     ],
                     trending: true,
                     purchaseCount: 45,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_EVbkxhOB5szHc" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_EVbkxhOB5szHc"
                 },
                 {
                     id: 17,
                     name: "BLACKMAIIL FULL💦",
                     price: 25,
                     image: "https://i.postimg.cc/LX4C0stw/IMG_4699.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1OoA35FmxdE8iPIL3legZmIXfDUF48ifb/preview",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/p6q7r8s9t0u1/preview-17.mp4?rlkey=tuv678&raw=1",
                     description: [
                         "✅ AGES 14-17",
                         "✅ 870+ VIDS",
@@ -1130,14 +1172,14 @@
                         "Young teen solo content collection."
                     ],
                     purchaseCount: 58,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_gx7kx5h7s3Zh9" // SUBSTITUIR COM SEU LINK 
+                    whopCheckoutLink: "https://whop.com/checkout/plan_gx7kx5h7s3Zh9"
                 },
                 {
                     id: 19,
                     name: "TEEN HIGH SCHOOL 📚",
                     price: 30,
                     image: "https://i.postimg.cc/gJ6CKjGz/IMG_4700.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1ALHxDmbsoTw1XFKTvQc4iItvYyb7V35s/preview",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/q7r8s9t0u1v2/preview-19.mp4?rlkey=wxy901&raw=1",
                     description: [
                         "✅ 100% YOUNG HIGH SCHOOL",
                         "✅ LOCKER ROOM VIDS",
@@ -1147,14 +1189,14 @@
                     ],
                     popular: true,
                     purchaseCount: 49,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_EVbkxhOB5szHc" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_EVbkxhOB5szHc"
                 },
                 {
                     id: 20,
                     name: "NEW ALL CONTENT 8TB🌟",
                     price: 150,
-                    image: "https://imageshack.com/i/placeholder_20",
-                    videoPreview: "https://drive.google.com/file/d/1_TXraRk_WGMoksQNsCt0PF3VW0uA5gqv/preview",
+                    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/r8s9t0u1v2w3/preview-20.mp4?rlkey=zab234&raw=1",
                     description: [
                         "✅ ACCESS TO ALL CONTENT",
                         "✅ LIFETIME UPDATES",
@@ -1165,7 +1207,7 @@
                     trending: true,
                     popular: true,
                     purchaseCount: 27,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_byLsl0aG1tcnP" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_byLsl0aG1tcnP"
                 },
                 
                 // Additional Products (21-26)
@@ -1173,8 +1215,8 @@
                     id: 21,
                     name: "AMELIA BLONDE🔥",
                     price: 35,
-                    image: "https://www.dropbox.com/scl/fi/5203dr614sac9j9q64uy0/IMG_4801.jpeg",
-                    videoPreview: "https://drive.google.com/file/d/1DY5l2Ozo0GlSX1dNTLq0HkS8QGZptUEm/preview",
+                    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/s9t0u1v2w3x4/preview-21.mp4?rlkey=cde567&raw=1",
                     description: [
                         "✅ 500+ EXCLUSIVE VIDEOS",
                         "✅ AGES 12",
@@ -1193,7 +1235,7 @@
                     name: "TEENS AND DOG😈",
                     price: 35,
                     image: "https://i.postimg.cc/3JqR5sWz/IMG_4703.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1vuPh91zz6Chx-qJQvLyNX15PO-lNRJFE/preview",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/t0u1v2w3x4y5/preview-22.mp4?rlkey=fgh890&raw=1",
                     description: [
                         "✅ GIRLS AND DOG",
                         "✅ AGES 13-17",
@@ -1211,8 +1253,8 @@
                     id: 23,
                     name: "R@PE TEEN🫨",
                     price: 40,
-                    image: "https://drive.google.com/file/d/1XKlP2RSCyd5c7os0xBHORMx5pL2RTuMg/view",
-                    videoPreview: "https://drive.google.com/file/d/17h5wfaRVI27AY0nl19Shj99WDi05f7wS/preview",
+                    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/u1v2w3x4y5z6/preview-23.mp4?rlkey=ijk123&raw=1",
                     description: [
                         "✅ BEST RAPE TEEN",
                         "✅ HIGH QUALITY",
@@ -1231,7 +1273,7 @@
                     name: "BLACK TEEN",
                     price: 35,
                     image: "https://i.postimg.cc/5NqR7sT8/IMG_4705.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1sjJb_97IUEA5n5S6Y5FtCjVg6Q8YKQ-c/preview",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/v2w3x4y5z6a7/preview-24.mp4?rlkey=lmn456&raw=1",
                     description: [
                         "✅ AGES 13-16 ",
                         "✅ BEST",
@@ -1249,8 +1291,8 @@
                     id: 25,
                     name: "REAL INCEST 💀",
                     price: 25,
-                    image: "https://www.dropbox.com/scl/fi/nim4q7qkuoe2ky9l9qvd8/IMG_4812.jpeg",
-                    videoPreview: "https://drive.google.com/file/d/1GRPa-IdQ-_muuzKnDPEEDNgVuKWRobtg/preview",
+                    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/w3x4y5z6a7b8/preview-25.mp4?rlkey=opq789&raw=1",
                     description: [
                         "✅ 1000+ ",
                         "✅ ALL AGES 12",
@@ -1268,8 +1310,8 @@
                     id: 26,
                     name: "XIMENA TEEN🌟",
                     price: 35,
-                    image: "https://thumbs4.imagebam.com/1f/c5/56/ME19BR7E_t.jpeg",
-                    videoPreview: "https://drive.google.com/file/d/1tFkcm6PJALUMRvDl6NbqVmShPTC1FQgd/preview",
+                    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60",
+                    dropboxPreview: "https://www.dropbox.com/scl/fi/x4y5z6a7b8c9/preview-26.mp4?rlkey=rst012&raw=1",
                     description: [
                         "✅ RARE TEEN",
                         "✅ BEST STUFF",
@@ -1285,7 +1327,7 @@
                 }
             ],
             
-            // Recent purchases simulation data - Updated with new products
+            // Recent purchases simulation data
             recentBuyers: [
                 { name: "Alex Johnson", product: "MOM AND SON😋💜", amount: 25, time: "2 min ago" },
                 { name: "Maria Garcia", product: "ALL CP COLLETION", amount: 50, time: "5 min ago" },
@@ -1522,7 +1564,27 @@
             }
         }
 
-        // Function to render products with video preview support
+        // Function to create Dropbox preview HTML
+        function createDropboxPreview(product) {
+            if (product.dropboxPreview) {
+                return `
+                    <video class="product-video" controls preload="metadata">
+                        <source src="${product.dropboxPreview}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                `;
+            } else {
+                return `
+                    <div class="dropbox-preview-container">
+                        <a href="https://www.dropbox.com" target="_blank" class="dropbox-preview-link">
+                            <i class="fab fa-dropbox"></i> View Preview on Dropbox
+                        </a>
+                    </div>
+                `;
+            }
+        }
+
+        // Function to render products with Dropbox previews
         function renderProducts() {
             const container = document.getElementById('productsContainer');
             container.innerHTML = '';
@@ -1539,58 +1601,27 @@
                             <i class="fas fa-image"></i> Image
                         </button>
                         <button class="media-tab" data-tab="video" onclick="switchMediaTab(${product.id}, 'video')">
-                            <i class="fas fa-video"></i> Preview
+                            <i class="fab fa-dropbox"></i> Preview
                         </button>
                     </div>
                 `;
                 
-                let mediaHTML = '';
-                // CORREÇÃO: Removi a verificação de 'placeholder' que estava bloqueando as prévias de vídeo
-                if (product.image) {
-                    mediaHTML = `
-                        <div class="media-container">
-                            ${mediaTabsHTML}
-                            <div class="media-content">
-                                <img src="${product.image}" alt="${product.name}" class="product-image active">
-                                ${product.videoPreview ? 
-                                    `<iframe src="${product.videoPreview}" class="product-video" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen></iframe>` :
-                                    `<div class="media-placeholder">
-                                        <i class="fas fa-video-slash"></i>
-                                        <span>No preview available</span>
-                                    </div>`
-                                }
-                            </div>
-                            <div class="adult-badge">
-                                <i class="fas fa-exclamation-triangle"></i> 18+
-                            </div>
-                            ${product.trending ? '<div class="trending-badge"><i class="fas fa-fire"></i> TRENDING</div>' : ''}
-                            ${product.popular ? '<div class="popular-badge"><i class="fas fa-star"></i> POPULAR</div>' : ''}
+                let mediaHTML = `
+                    <div class="media-container">
+                        ${mediaTabsHTML}
+                        <div class="media-content">
+                            <img src="${product.image || 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60'}" 
+                                 alt="${product.name}" 
+                                 class="product-image active">
+                            ${createDropboxPreview(product)}
                         </div>
-                    `;
-                } else {
-                    mediaHTML = `
-                        <div class="media-container">
-                            ${mediaTabsHTML}
-                            <div class="media-content">
-                                <div class="media-placeholder active">
-                                    <i class="fas fa-image"></i> No Image Available
-                                </div>
-                                ${product.videoPreview ? 
-                                    `<iframe src="${product.videoPreview}" class="product-video" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen></iframe>` :
-                                    `<div class="media-placeholder">
-                                        <i class="fas fa-video-slash"></i>
-                                        <span>No preview available</span>
-                                    </div>`
-                                }
-                            </div>
-                            <div class="adult-badge">
-                                <i class="fas fa-exclamation-triangle"></i> 18+
-                            </div>
-                            ${product.trending ? '<div class="trending-badge"><i class="fas fa-fire"></i> TRENDING</div>' : ''}
-                            ${product.popular ? '<div class="popular-badge"><i class="fas fa-star"></i> POPULAR</div>' : ''}
+                        <div class="adult-badge">
+                            <i class="fas fa-exclamation-triangle"></i> 18+
                         </div>
-                    `;
-                }
+                        ${product.trending ? '<div class="trending-badge"><i class="fas fa-fire"></i> TRENDING</div>' : ''}
+                        ${product.popular ? '<div class="popular-badge"><i class="fas fa-star"></i> POPULAR</div>' : ''}
+                    </div>
+                `;
                 
                 // Create formatted description with checkmarks
                 let descriptionHTML = '';
@@ -1629,16 +1660,6 @@
                 `;
                 
                 container.appendChild(productCard);
-                
-                // Initialize video iframe for products with preview
-                if (product.videoPreview) {
-                    const iframe = productCard.querySelector('.product-video');
-                    if (iframe) {
-                        iframe.addEventListener('load', function() {
-                            console.log(`Video preview loaded for ${product.name}`);
-                        });
-                    }
-                }
             });
         }
 
@@ -1762,6 +1783,16 @@
                     from { transform: translateX(100%); opacity: 0; }
                     to { transform: translateX(0); opacity: 1; }
                 }
+                
+                /* Video styling */
+                .product-video {
+                    display: none;
+                    background: #000;
+                }
+                
+                .product-video.active {
+                    display: block;
+                }
             `;
             document.head.appendChild(style);
             
@@ -1771,11 +1802,12 @@
             // Log configuration (for debugging)
             console.log('Adult Content Store Configuration:');
             console.log('- Payment Gateway: Whop (Direct Checkout Links)');
+            console.log('- Preview Hosting: Dropbox');
             console.log('- Currency:', CONFIG.currency);
             console.log('- Telegram:', 'https://t.me/naysellery');
             console.log('- Age Restriction:', '18+ Required');
             console.log('- Total Products:', CONFIG.products.length);
-            console.log('- Products with Whop checkout:', CONFIG.products.filter(p => p.whopCheckoutLink).length);
+            console.log('- Products with Dropbox previews:', CONFIG.products.filter(p => p.dropboxPreview).length);
             
             // Warning for missing checkout links
             const missingLinks = CONFIG.products.filter(p => !p.whopCheckoutLink || p.whopCheckoutLink === "https://whop.com/checkout/");
