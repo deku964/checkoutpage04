@@ -428,8 +428,15 @@
             display: block;
         }
         
-        .product-video {
-            background: #000;
+        .vimeo-video {
+            width: 100%;
+            height: 100%;
+            display: none;
+            border: none;
+        }
+        
+        .vimeo-video.active {
+            display: block;
         }
         
         .media-placeholder {
@@ -441,21 +448,6 @@
             font-size: 0.9rem;
             flex-direction: column;
             gap: 10px;
-        }
-        
-        .drive-preview-link {
-            color: #1a73e8;
-            text-decoration: none;
-            background: rgba(26, 115, 232, 0.1);
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            border: 1px solid rgba(26, 115, 232, 0.3);
-            transition: all 0.2s ease;
-        }
-        
-        .drive-preview-link:hover {
-            background: rgba(26, 115, 232, 0.2);
         }
         
         .trending-badge {
@@ -873,7 +865,7 @@
                     name: "MOM AND SON😋💜",
                     price: 25,
                     image: "https://imagizer.imageshack.com/img922/1129/46KdQI.jpg",
-                    videoPreview: "https://drive.google.com/file/d/14O08pELRaU_RGdn7yKGQIrEXpSg6sH5N/preview",
+                    videoPreview: "https://player.vimeo.com/video/1153219387", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ REAL GIRLS",
                         "✅ YOUNG BOY", 
@@ -884,14 +876,14 @@
                     ],
                     trending: true,
                     purchaseCount: 42,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
                 },
                 {
                     id: 2,
                     name: "LIZZY AND BRO🔥",
                     price: 25,
                     image: "https://imagizer.imageshack.com/img921/5505/LKytJu.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1NWg-ys77m10g7y7Xy19NQkw47EvfxAiM/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_2", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ BLACKMAIL VIDEOS",
                         "✅ TRAINING VIDEOS",
@@ -900,14 +892,14 @@
                     ],
                     popular: true,
                     purchaseCount: 28,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
                 },
                 {
                     id: 3,
                     name: "ALL CP COLLETION",
                     price: 75,
                     image: "https://i.postimg.cc/P5WhHpSj/IMG_4458.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1O7zKfEFfMIlgKROuOqt9TSDikxgTXQ0J/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_3", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ CP 2GB",
                         "✅ CP 4GB",
@@ -916,14 +908,14 @@
                         "VIP access to premium adult content."
                     ],
                     purchaseCount: 56,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_HXq9mf6Jtc7Rd" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_HXq9mf6Jtc7Rd"
                 },
                 {
                     id: 4,
                     name: "ALL TEENS COLLETION😈",
                     price: 55,
                     image: "https://i.postimg.cc/rpGnDhMS/IMG_4450.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1aLfjPfwykcgmigX7NkudKKah1UPQY6kf/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_4", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ OVER 1867 VIDEOS",
                         "✅ MORE THAN 200 SUBFOLDERS",
@@ -933,14 +925,14 @@
                     ],
                     trending: true,
                     purchaseCount: 73,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_XmciDYQgdPtM6" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_XmciDYQgdPtM6"
                 },
                 {
                     id: 5,
                     name: "SNAPGOD FULL EDITION",
                     price: 35,
                     image: "https://i.postimg.cc/3xfMYXg5/IMG_4451.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1xra314JgFxhZ0qO0Pp8PlLqNG3fk0dVT/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_5", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ BLACKMAIL VIDEOS",
                         "✅ INCEST TEENS",
@@ -949,14 +941,14 @@
                         "Private collection with unique content."
                     ],
                     purchaseCount: 19,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_A5TWEcyU2Iqg4" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_A5TWEcyU2Iqg4"
                 },
                 {
                     id: 6,
                     name: "OMEGLE FULL💜",
                     price: 35,
                     image: "https://imagizer.imageshack.com/img924/1222/5M0MZ5.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1Zw3uxr5pFZ2xBX1QAkD2S8qnACjs5FsU/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_6", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ 140GB+",
                         "✅ FULL CONTENT",
@@ -965,14 +957,14 @@
                         "Deluxe package with extended content."
                     ],
                     purchaseCount: 31,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_A5TWEcyU2Iqg4" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_A5TWEcyU2Iqg4"
                 },
                 {
                     id: 7,
                     name: "AYUMI TEEN😋",
                     price: 25,
                     image: "https://i.postimg.cc/Sx6q42gb/IMG_4701.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1WnhEuvyESMNdfLEERpO69ON9KaF3WLC0/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_7", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ Premium folder",
                         "✅ REAL TEEN",
@@ -980,14 +972,14 @@
                         "Premium access to exclusive adult content library."
                     ],
                     purchaseCount: 24,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
                 },
                 {
                     id: 8,
                     name: "ALL VIP 9 PYT CHANNELS‼️",
                     price: 55,
                     image: "https://imagizer.imageshack.com/img924/5912/ZSvQcH.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1s2LYuZJyzlrziD0_F5RxZoGv8NCD2bq5/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_8", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ HIGH SCHOOL",
                         "✅ LATINAS",
@@ -997,14 +989,14 @@
                     ],
                     popular: true,
                     purchaseCount: 88,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_XmciDYQgdPtM6" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_XmciDYQgdPtM6"
                 },
                 {
                     id: 9,
                     name: "IZZY AND DOG🔥‼️",
                     price: 20,
                     image: "https://i.postimg.cc/Mp7xwM9x/IMG_4472.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1RhwlZPBbvI_cFyxxx_m7nnfGwXD2JSvp/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_9", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ BLACKMAIL",
                         "✅ REAL GIRL",
@@ -1013,14 +1005,14 @@
                         "Ultimate adult content collection."
                     ],
                     purchaseCount: 36,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_eBKqLe9FoNiUL" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_eBKqLe9FoNiUL"
                 },
                 {
                     id: 10,
                     name: "DARKZEID🔞",
                     price: 25,
                     image: "https://i.postimg.cc/PxWCswbd/IMG_4473.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1uU4M755bdeKQlj8hpTKL8U8f9LV3w9Yt/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_10", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ ALL BM VIDEOS",
                         "✅ ALL CAMERAS UPLOADS",
@@ -1029,7 +1021,7 @@
                         "VIP access to exclusive adult content."
                     ],
                     purchaseCount: 17,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
                 },
                 
                 // New Products (11-20)
@@ -1038,7 +1030,7 @@
                     name: "SNAPCHAT FULL🔥",
                     price: 30,
                     image: "https://i.postimg.cc/ydVfcF8D/IMG_4444.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1-twFXeZIbY810BNfT2vyE9n7l8TT7SjX/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_11", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ 500+ VIDEOS",
                         "✅ AGES 16-19",
@@ -1048,14 +1040,14 @@
                     ],
                     trending: true,
                     purchaseCount: 29,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_ur7GjWrGF5Nz7" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_ur7GjWrGF5Nz7"
                 },
                 {
                     id: 12,
                     name: "INVAKA💀",
                     price: 25,
                     image: "https://i.postimg.cc/d1r6TSZW/IMG-4779.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1hrslDCelRrQbjMH9D28nFSVNYLwfvvYx/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_12", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ 300+ VIDS",
                         "✅ REAL GIRL",
@@ -1064,14 +1056,14 @@
                         "Complete blackmail video collection."
                     ],
                     purchaseCount: 41,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
                 },
                 {
                     id: 13,
                     name: "ALL CONTENT 12TB😍",
                     price: 150,
                     image: "https://imageshack.com/i/placeholder_13",
-                    videoPreview: "https://drive.google.com/file/d/1Z1EhUebagrNoC3q2Yzo1ko8szJuDQkEf/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_13", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ MOTHER/SON",
                         "✅ FATHER/DAUGHTER",
@@ -1081,14 +1073,14 @@
                     ],
                     popular: true,
                     purchaseCount: 37,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_mlMVhDzmXbax0" // SUBSTITUIR COM SEU LINK 
+                    whopCheckoutLink: "https://whop.com/checkout/plan_mlMVhDzmXbax0"
                 },
                 {
                     id: 15,
                     name: "MONKEYAPP🎓",
                     price: 35,
                     image: "https://i.postimg.cc/t4v0p3hj/IMG_4453.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1QgK2zpiQtTsI9UJ83ezvvv6RMs01L7D5/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_14", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ AGES 13-17",
                         "✅ DORM ROOM VIDEOS",
@@ -1097,14 +1089,14 @@
                         "Exclusive college girl content."
                     ],
                     purchaseCount: 22,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_A5TWEcyU2Iqg4" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_A5TWEcyU2Iqg4"
                 },
                 {
                     id: 16,
                     name: "VIP CHANNELS",
                     price: 30,
                     image: "https://i.postimg.cc/LhdskTfj/IMG-5027.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1sZ_TPyEhM3L6k8CxfbatLyiO27FmcFjj/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_15", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ 10 VIP CHANNELS YOUR CHOICE",
                         "✅ PRIVATE SHOWS",
@@ -1114,14 +1106,14 @@
                     ],
                     trending: true,
                     purchaseCount: 45,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_ur7GjWrGF5Nz7" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_ur7GjWrGF5Nz7"
                 },
                 {
                     id: 17,
                     name: "BLACKMAIIL FULL💦",
                     price: 25,
                     image: "https://i.postimg.cc/jSHKTwZ3/IMG_4699.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1fo-FVBp2Xx-pWL9RuAj7_VhHhAgEE1LB/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_16", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ AGES 14-17",
                         "✅ 870+ VIDS",
@@ -1130,14 +1122,14 @@
                         "Young teen solo content collection."
                     ],
                     purchaseCount: 58,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M" // SUBSTITUIR COM SEU LINK 
+                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
                 },
                 {
                     id: 19,
                     name: "HIGH SCHOOL",
                     price: 25,
                     image: "https://i.postimg.cc/HxwrDy0Y/IMG_4471.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1TyrngbwlDOGpq3ha0yK4Mi3w387ZyYpP/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_17", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ 100% YOUNG HIGH SCHOOL",
                         "✅ LOCKER ROOM VIDS",
@@ -1147,14 +1139,14 @@
                     ],
                     popular: true,
                     purchaseCount: 49,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_5GDxm90UVWG8M"
                 },
                 {
                     id: 20,
                     name: "NEW ALL CONTENT 8TB🌟",
                     price: 100,
                     image: "https://imageshack.com/i/placeholder_20",
-                    videoPreview: "https://drive.google.com/file/d/1IMGYDF4-LnjKNSaNOPEG-1LfS_4b2CLt/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_18", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ ACCESS TO ALL CONTENT",
                         "✅ LIFETIME UPDATES",
@@ -1165,7 +1157,7 @@
                     trending: true,
                     popular: true,
                     purchaseCount: 27,
-                    whopCheckoutLink: "https://whop.com/checkout/plan_JzNFcWjVK6Mry" // SUBSTITUIR COM SEU LINK REAL
+                    whopCheckoutLink: "https://whop.com/checkout/plan_JzNFcWjVK6Mry"
                 },
                 
                 // Additional Products (21-26)
@@ -1174,7 +1166,7 @@
                     name: "AMELIA BLONDE🔥",
                     price: 30,
                     image: "https://i.postimg.cc/CKCPRvSB/IMG_4953.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1KBVFr2iFlwPEHCUzNGIienguLCwO2YoE/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_19", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ 500+ EXCLUSIVE VIDEOS",
                         "✅ AGES 12",
@@ -1193,7 +1185,7 @@
                     name: "TEENS AND DOG😈",
                     price: 30,
                     image: "https://i.postimg.cc/9fP8DxCM/IMG_4957.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1nv9Y05U0Xv6dTdB7aMkdzEo6Y0O-njYA/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_20", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ GIRLS AND DOG",
                         "✅ AGES 13-17",
@@ -1212,7 +1204,7 @@
                     name: "R@PE TEEN🫨",
                     price: 25,
                     image: "https://i.postimg.cc/jd5Sv91V/IMG-4810.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1HC8hgOec40ZJoTSnZBH4TsA92wYFYc7E/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_21", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ BEST RAPE TEEN",
                         "✅ HIGH QUALITY",
@@ -1231,7 +1223,7 @@
                     name: "BLACK TEEN",
                     price: 20,
                     image: "https://i.postimg.cc/BnkNYrQx/IMG_4952.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1j1y6t6IWend4QFAxMp4nsW25ptwqTAW8/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_22", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ AGES 13-16 ",
                         "✅ BEST",
@@ -1250,7 +1242,7 @@
                     name: "REAL INCEST 💀",
                     price: 25,
                     image: "https://i.postimg.cc/yNhQDfsS/IMG_4812.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1n4NdZ_BEbYTFe-HuSvB8LKa_o0zClYSd/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_23", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ 1000+ ",
                         "✅ ALL AGES 9y",
@@ -1269,7 +1261,7 @@
                     name: "XIMENA TEEN🌟",
                     price: 35,
                     image: "https://i.postimg.cc/0NGWztPm/IMG_4811.jpg",
-                    videoPreview: "https://drive.google.com/file/d/1joQtoWefMs39TvcQGe4bCglJSMzKHAyb/preview",
+                    videoPreview: "https://player.vimeo.com/video/VIDEO_ID_24", // EXEMPLO: Substitua com seu ID do Vimeo
                     description: [
                         "✅ RARE TEEN",
                         "✅ BEST STUFF",
@@ -1505,24 +1497,24 @@
         // Function to handle tab switching
         function switchMediaTab(productId, tabType) {
             const image = document.querySelector(`#product-${productId} .product-image`);
-            const video = document.querySelector(`#product-${productId} .product-video`);
+            const video = document.querySelector(`#product-${productId} .vimeo-video`);
             const imageTab = document.querySelector(`#product-${productId} .media-tab[data-tab="image"]`);
             const videoTab = document.querySelector(`#product-${productId} .media-tab[data-tab="video"]`);
             
             if (tabType === 'image') {
-                image.classList.add('active');
-                video.classList.remove('active');
-                imageTab.classList.add('active');
-                videoTab.classList.remove('active');
+                if (image) image.classList.add('active');
+                if (video) video.classList.remove('active');
+                if (imageTab) imageTab.classList.add('active');
+                if (videoTab) videoTab.classList.remove('active');
             } else {
-                image.classList.remove('active');
-                video.classList.add('active');
-                imageTab.classList.remove('active');
-                videoTab.classList.add('active');
+                if (image) image.classList.remove('active');
+                if (video) video.classList.add('active');
+                if (imageTab) imageTab.classList.remove('active');
+                if (videoTab) videoTab.classList.add('active');
             }
         }
 
-        // Function to render products with video preview support
+        // Function to render products with Vimeo preview support
         function renderProducts() {
             const container = document.getElementById('productsContainer');
             container.innerHTML = '';
@@ -1545,15 +1537,17 @@
                 `;
                 
                 let mediaHTML = '';
-                // CORREÇÃO: Removi a verificação de 'placeholder' que estava bloqueando as prévias de vídeo
                 if (product.image) {
+                    // Check if product has Vimeo preview
+                    const hasVimeoPreview = product.videoPreview && product.videoPreview.includes('vimeo.com');
+                    
                     mediaHTML = `
                         <div class="media-container">
                             ${mediaTabsHTML}
                             <div class="media-content">
                                 <img src="${product.image}" alt="${product.name}" class="product-image active">
-                                ${product.videoPreview ? 
-                                    `<iframe src="${product.videoPreview}" class="product-video" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen></iframe>` :
+                                ${hasVimeoPreview ? 
+                                    `<iframe src="${product.videoPreview}" class="vimeo-video" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>` :
                                     `<div class="media-placeholder">
                                         <i class="fas fa-video-slash"></i>
                                         <span>No preview available</span>
@@ -1575,8 +1569,8 @@
                                 <div class="media-placeholder active">
                                     <i class="fas fa-image"></i> No Image Available
                                 </div>
-                                ${product.videoPreview ? 
-                                    `<iframe src="${product.videoPreview}" class="product-video" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen></iframe>` :
+                                ${product.videoPreview && product.videoPreview.includes('vimeo.com') ? 
+                                    `<iframe src="${product.videoPreview}" class="vimeo-video" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>` :
                                     `<div class="media-placeholder">
                                         <i class="fas fa-video-slash"></i>
                                         <span>No preview available</span>
@@ -1629,16 +1623,6 @@
                 `;
                 
                 container.appendChild(productCard);
-                
-                // Initialize video iframe for products with preview
-                if (product.videoPreview) {
-                    const iframe = productCard.querySelector('.product-video');
-                    if (iframe) {
-                        iframe.addEventListener('load', function() {
-                            console.log(`Video preview loaded for ${product.name}`);
-                        });
-                    }
-                }
             });
         }
 
@@ -1771,11 +1755,12 @@
             // Log configuration (for debugging)
             console.log('Adult Content Store Configuration:');
             console.log('- Payment Gateway: Whop (Direct Checkout Links)');
+            console.log('- Video Platform: Vimeo');
             console.log('- Currency:', CONFIG.currency);
             console.log('- Telegram:', 'https://t.me/naysellery');
             console.log('- Age Restriction:', '18+ Required');
             console.log('- Total Products:', CONFIG.products.length);
-            console.log('- Products with Whop checkout:', CONFIG.products.filter(p => p.whopCheckoutLink).length);
+            console.log('- Products with Vimeo preview:', CONFIG.products.filter(p => p.videoPreview && p.videoPreview.includes('vimeo')).length);
             
             // Warning for missing checkout links
             const missingLinks = CONFIG.products.filter(p => !p.whopCheckoutLink || p.whopCheckoutLink === "https://whop.com/checkout/");
