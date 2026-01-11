@@ -110,203 +110,7 @@
             display: none; /* Hidden until age verification */
         }
         
-        /* Activity Panel */
-        .activity-panel {
-            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 30px;
-            border: 1px solid #333;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-        
-        .activity-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #333;
-        }
-        
-        .activity-header h3 {
-            color: #fff;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .activity-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .stat-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 20px;
-            border: 1px solid #333;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-        
-        .stat-card:hover {
-            border-color: #444;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .stat-title {
-            color: #aaa;
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        
-        .stat-value {
-            color: #10b981;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        
-        .stat-change {
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-        
-        .positive {
-            color: #10b981;
-        }
-        
-        .live-users {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 15px;
-            padding: 12px;
-            background: rgba(16, 185, 129, 0.1);
-            border-radius: 8px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-        }
-        
-        .live-dot {
-            width: 8px;
-            height: 8px;
-            background: #10b981;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-        
-        .recent-purchases {
-            margin-top: 20px;
-            max-height: 200px;
-            overflow-y: auto;
-            border: 1px solid #333;
-            border-radius: 8px;
-            background: rgba(0, 0, 0, 0.3);
-        }
-        
-        .purchase-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 15px;
-            border-bottom: 1px solid #333;
-            transition: background 0.2s ease;
-        }
-        
-        .purchase-item:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-        
-        .purchase-item:last-child {
-            border-bottom: none;
-        }
-        
-        .purchase-user {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .user-avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-        
-        .purchase-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-        
-        .user-name {
-            color: #fff;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        
-        .product-name {
-            color: #aaa;
-            font-size: 0.8rem;
-        }
-        
-        .purchase-time {
-            color: #666;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .purchase-amount {
-            color: #10b981;
-            font-weight: 600;
-            font-size: 1rem;
-        }
-        
-        .refresh-btn {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: all 0.2s ease;
-        }
-        
-        .refresh-btn:hover {
-            background: #1d4ed8;
-            transform: translateY(-1px);
-        }
-        
+        /* Header */
         .header {
             text-align: center;
             margin-bottom: 30px;
@@ -441,21 +245,6 @@
             font-size: 0.9rem;
             flex-direction: column;
             gap: 10px;
-        }
-        
-        .preview-link {
-            color: #1a73e8;
-            text-decoration: none;
-            background: rgba(26, 115, 232, 0.1);
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            border: 1px solid rgba(26, 115, 232, 0.3);
-            transition: all 0.2s ease;
-        }
-        
-        .preview-link:hover {
-            background: rgba(26, 115, 232, 0.2);
         }
         
         .trending-badge {
@@ -675,20 +464,12 @@
                 height: 180px;
             }
             
-            .activity-stats {
-                grid-template-columns: 1fr;
-            }
-            
             .verification-box {
                 padding: 30px 20px;
             }
             
             .age-buttons {
                 flex-direction: column;
-            }
-            
-            .stat-card {
-                padding: 15px;
             }
             
             .media-tab {
@@ -731,55 +512,6 @@
     
     <!-- Main Content (Hidden until age verification) -->
     <div class="container" id="mainContent">
-        <!-- Activity Panel -->
-        <div class="activity-panel">
-            <div class="activity-header">
-                <h3>
-                    <i class="fas fa-chart-line"></i>
-                    Live Store Activity
-                </h3>
-                <button class="refresh-btn" id="refreshActivity">
-                    <i class="fas fa-sync-alt"></i>
-                    Refresh
-                </button>
-            </div>
-            
-            <div class="activity-stats">
-                <div class="stat-card">
-                    <div class="stat-title">
-                        <i class="fas fa-users"></i>
-                        Online Now
-                    </div>
-                    <div class="stat-value" id="onlineCount">152</div>
-                    <div class="stat-change positive">
-                        <i class="fas fa-arrow-up"></i>
-                        <span id="onlineChange">+12</span> in last 5 min
-                    </div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="stat-title">
-                        <i class="fas fa-shopping-cart"></i>
-                        Today's Purchases
-                    </div>
-                    <div class="stat-value" id="todayPurchases">47</div>
-                    <div class="stat-change positive">
-                        <i class="fas fa-arrow-up"></i>
-                        <span id="purchaseChange">+8</span> in last hour
-                    </div>
-                </div>
-            </div>
-            
-            <div class="live-users">
-                <div class="live-dot"></div>
-                <span id="liveStatus">Live: 12 people viewing products right now</span>
-            </div>
-            
-            <div class="recent-purchases" id="recentPurchases">
-                <!-- Recent purchases will be loaded here -->
-            </div>
-        </div>
-        
         <!-- Header -->
         <div class="header">
             <h1>PREMIUM RARE CONTENTS💎 <span class="age-badge">18+</span></h1>
@@ -823,21 +555,6 @@
             // Telegram configuration
             telegram: "@naysellery",
             
-            // Activity simulation
-            activity: {
-                onlineUsers: {
-                    min: 120,
-                    max: 200,
-                    changeMin: -8,
-                    changeMax: 12
-                },
-                purchases: {
-                    dailyMin: 30,
-                    dailyMax: 80,
-                    hourlyChange: 2
-                }
-            },
-            
             // Products - Com imagens originais e vídeos com catbox
             products: [
                 // Original Products (1-10)
@@ -846,7 +563,7 @@
                     name: "MOM AND SON😋💜",
                     price: 25,
                     image: "https://imagizer.imageshack.com/img922/1129/46KdQI.jpg",
-                    videoPreview: "https://files.catbox.moe/t71u2k.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/t71u2k.mp4",
                     description: [
                         "✅ REAL GIRLS",
                         "✅ YOUNG BOY", 
@@ -863,7 +580,7 @@
                     name: "LIZZY AND BRO🔥",
                     price: 25,
                     image: "https://imagizer.imageshack.com/img921/5505/LKytJu.jpg",
-                    videoPreview: "https://files.catbox.moe/m67swh.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/m67swh.mp4",
                     description: [
                         "✅ BLACKMAIL VIDEOS",
                         "✅ TRAINING VIDEOS",
@@ -878,7 +595,7 @@
                     name: "ALL CP COLLETION",
                     price: 100,
                     image: "https://files.catbox.moe/v6gcc8.jpeg",
-                    videoPreview: "https://files.catbox.moe/kmybnf.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/kmybnf.mp4",
                     description: [
                         "✅ CP 2GB",
                         "✅ CP 4GB",
@@ -893,7 +610,7 @@
                     name: "ALL TEENS COLLETION😈",
                     price: 85,
                     image: "https://i.postimg.cc/rpGnDhMS/IMG_4450.jpg",
-                    videoPreview: "https://files.catbox.moe/fbzp37.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/fbzp37.mp4",
                     description: [
                         "✅ OVER 1867 VIDEOS",
                         "✅ MORE THAN 200 SUBFOLDERS",
@@ -909,7 +626,7 @@
                     name: "SNAPGOD FULL EDITION",
                     price: 35,
                     image: "https://imagizer.imageshack.com/img921/9696/oQEkoe.jpg",
-                    videoPreview: "https://files.catbox.moe/aighkz.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/aighkz.mp4",
                     description: [
                         "✅ BLACKMAIL VIDEOS",
                         "✅ INCEST TEENS",
@@ -924,7 +641,7 @@
                     name: "OMEGLE FULL💜",
                     price: 35,
                     image: "https://imagizer.imageshack.com/img924/1222/5M0MZ5.jpg",
-                    videoPreview: "https://files.catbox.moe/cs6il8.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/cs6il8.mp4",
                     description: [
                         "✅ 140GB+",
                         "✅ FULL CONTENT",
@@ -939,7 +656,7 @@
                     name: "NEW STUFF PYT",
                     price: 25,
                     image: "https://i.postimg.cc/fTXrP052/Imagem_20.webp",
-                    videoPreview: "https://files.catbox.moe/3005yz.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/3005yz.mp4",
                     description: [
                         "✅ Premium folder",
                         "✅ 13-17",
@@ -953,7 +670,7 @@
                     name: "HIGH SCHOOL THOTS",
                     price: 35,
                     image: "https://i.postimg.cc/SxhvbNtd/Imagem_17.webp",
-                    videoPreview: "https://files.catbox.moe/ehv39q.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/ehv39q.mp4",
                     description: [
                         "✅ HIGH SCHOOL",
                         "✅ 340GB",
@@ -969,7 +686,7 @@
                     name: "IZZY AND DOG🔥‼️",
                     price: 20,
                     image: "https://i.postimg.cc/6pf1WJkK/Imagem_2.webp",
-                    videoPreview: "https://files.catbox.moe/fjih2t.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/fjih2t.mp4",
                     description: [
                         "✅ BLACKMAIL",
                         "✅ REAL GIRL",
@@ -984,7 +701,7 @@
                     name: "DARKZEID🔞",
                     price: 25,
                     image: "https://i.postimg.cc/YCHsBqyd/Imagem_18.webp",
-                    videoPreview: "https://files.catbox.moe/r03guy.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/r03guy.mp4",
                     description: [
                         "✅ ALL BM VIDEOS",
                         "✅ ALL CAMERAS UPLOADS",
@@ -1001,7 +718,7 @@
                     name: "SNAPCHAT FULL🔥",
                     price: 30,
                     image: "https://i.postimg.cc/ydVfcF8D/IMG_4444.jpg",
-                    videoPreview: "https://files.catbox.moe/6a6glj.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/6a6glj.mp4",
                     description: [
                         "✅ 500+ VIDEOS",
                         "✅ AGES 16-19",
@@ -1017,7 +734,7 @@
                     name: "INVAKA💀",
                     price: 25,
                     image: "https://i.postimg.cc/T3JHdMzG/Imagem_1.webp",
-                    videoPreview: "https://files.catbox.moe/qjg3gu.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/qjg3gu.mp4",
                     description: [
                         "✅ 300+ VIDS",
                         "✅ REAL GIRL",
@@ -1032,7 +749,7 @@
                     name: "AVA SHIT",
                     price: 30,
                     image: "https://i.postimg.cc/L8pbF6b9/Imagem_9.webp",
-                    videoPreview: "https://files.catbox.moe/yzb7jo.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/yzb7jo.mp4",
                     description: [
                         "✅ BM VIDEOS",
                         "✅ INCEST",
@@ -1048,7 +765,7 @@
                     name: "MONKEYAPP🎓",
                     price: 35,
                     image: "https://files.catbox.moe/4cy5ej.jpeg",
-                    videoPreview: "https://files.catbox.moe/as6vwa.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/as6vwa.mp4",
                     description: [
                         "✅ AGES 13-17",
                         "✅ DORM ROOM VIDEOS",
@@ -1063,7 +780,7 @@
                     name: "DESIRE GARCIA",
                     price: 30,
                     image: "https://i.postimg.cc/VkWHfQx8/Imagem_3.webp",
-                    videoPreview: "https://files.catbox.moe/mqt4dn.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/mqt4dn.mp4",
                     description: [
                         "✅ HIGH QUALITY",
                         "✅ RARE CONTENT",
@@ -1079,7 +796,7 @@
                     name: "BLACKMAIIL FULL💦",
                     price: 25,
                     image: "https://i.postimg.cc/sgrNCD00/Imagem_12.webp",
-                    videoPreview: "https://files.catbox.moe/nuegam.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/nuegam.mp4",
                     description: [
                         "✅ AGES 14-17",
                         "✅ 870+ VIDS",
@@ -1094,7 +811,7 @@
                     name: "BABY ASHLEY",
                     price: 25,
                     image: "https://i.postimg.cc/vZsNwHNQ/Imagem_10.webp",
-                    videoPreview: "https://files.catbox.moe/qhve7i.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/qhve7i.mp4",
                     description: [
                         "✅ 100% YOUNG GIRL",
                         "✅ LOCKER ROOM VIDS",
@@ -1110,7 +827,7 @@
                     name: "NEW ALL CONTENT 12TB",
                     price: 185,
                     image: "https://imageshack.com/i/placeholder_20",
-                    videoPreview: "https://files.catbox.moe/s7c5b0.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/s7c5b0.mp4",
                     description: [
                         "✅ ACCESS TO ALL CONTENT",
                         "✅ LIFETIME UPDATES",
@@ -1129,7 +846,7 @@
                     name: "AMELIA BLONDE🔥",
                     price: 30,
                     image: "https://files.catbox.moe/45mzkb.webp",
-                    videoPreview: "https://files.catbox.moe/7tffl2.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/7tffl2.mp4",
                     description: [
                         "✅ 500+ EXCLUSIVE VIDEOS",
                         "✅ AGES 11",
@@ -1147,7 +864,7 @@
                     name: "CP-1",
                     price: 30,
                     image: "https://i.postimg.cc/rwkP2FYP/Imagem_cp1.webp",
-                    videoPreview: "https://files.catbox.moe/ado484.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/ado484.mp4",
                     description: [
                         "✅ RARE",
                         "✅ AGES 9-11",
@@ -1165,7 +882,7 @@
                     name: "CP-2",
                     price: 35,
                     image: "https://i.postimg.cc/Hkgh1sPq/Imagem_cp2.webp",
-                    videoPreview: "https://files.catbox.moe/fysysq.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/fysysq.mp4",
                     description: [
                         "✅ BEST C-P",
                         "✅ HIGH QUALITY",
@@ -1183,7 +900,7 @@
                     name: "ANXIOUS PANDA",
                     price: 25,
                     image: "https://i.postimg.cc/t4jMGCmz/Imagem_19.webp",
-                    videoPreview: "https://files.catbox.moe/nvpys0.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/nvpys0.mp4",
                     description: [
                         "✅ AGES 13-16 ",
                         "✅ BEST",
@@ -1201,7 +918,7 @@
                     name: "REAL INCEST 💀",
                     price: 25,
                     image: "https://files.catbox.moe/wronh2.jpeg",
-                    videoPreview: "https://files.catbox.moe/ef13ye.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/ef13ye.mp4",
                     description: [
                         "✅ 1000+ ",
                         "✅ ALL AGES 9y",
@@ -1219,7 +936,7 @@
                     name: "XIMENA TEEN",
                     price: 35,
                     image: "https://files.catbox.moe/6ec2bu.jpeg",
-                    videoPreview: "https://files.catbox.moe/yn5iuk.mp4", // Substitua com seu link catbox
+                    videoPreview: "https://files.catbox.moe/yn5iuk.mp4",
                     description: [
                         "✅ RARE TEEN",
                         "✅ BEST STUFF",
@@ -1232,23 +949,6 @@
                     popular: true,
                     purchaseCount: 31
                 }
-            ],
-            
-            // Recent purchases simulation data
-            recentBuyers: [
-                { name: "Alex Johnson", product: "MOM AND SON😋💜", amount: 25, time: "2 min ago" },
-                { name: "Maria Garcia", product: "ALL CP COLLETION", amount: 75, time: "5 min ago" },
-                { name: "David Smith", product: "OMEGLE FULL💜", amount: 35, time: "8 min ago" },
-                { name: "Sarah Wilson", product: "ALL TEENS COLLETION😈", amount: 55, time: "12 min ago" },
-                { name: "James Brown", product: "SNAPGOD FULL EDITION", amount: 35, time: "15 min ago" },
-                { name: "Emma Davis", product: "HIGH SCHOOL THOTS", amount: 35, time: "18 min ago" },
-                { name: "Michael Taylor", product: "LIZZY AND BRO🔥", amount: 25, time: "22 min ago" },
-                { name: "Lisa Martinez", product: "IZZY AND DOG🔥‼️", amount: 20, time: "25 min ago" },
-                { name: "Robert Wilson", product: "NEW ALL CONTENT 12TB", amount: 186, time: "30 min ago" },
-                { name: "Jennifer Lee", product: "AMELIA BLONDE🔥", amount: 30, time: "35 min ago" },
-                { name: "Kevin Anderson", product: "REAL INCEST 💀", amount: 25, time: "42 min ago" },
-                { name: "Olivia Parker", product: "XIMENA TEEN", amount: 35, time: "50 min ago" },
-                { name: "Daniel Clark", product: "BLACKMAIIL FULL💦", amount: 25, time: "55 min ago" }
             ]
         };
 
@@ -1278,7 +978,6 @@
             mainContent.style.display = 'block';
             renderProducts();
             checkURLParameters();
-            initializeActivitySimulation();
         }
 
         // Handle age confirmation
@@ -1295,161 +994,6 @@
                 window.location.href = 'https://www.google.com';
             }, 2000);
         });
-
-        // Activity Simulation System
-        class ActivitySimulator {
-            constructor() {
-                this.onlineCount = this.randomInt(150, 180);
-                this.todayPurchases = this.randomInt(40, 60);
-                this.lastUpdate = new Date();
-                this.purchaseInterval = null;
-                this.onlineInterval = null;
-            }
-            
-            randomInt(min, max) {
-                return Math.floor(Math.random() * (max - min + 1)) + min;
-            }
-            
-            initialize() {
-                this.updateDisplay();
-                this.renderRecentPurchases();
-                this.startSimulation();
-                
-                // Add refresh button event
-                document.getElementById('refreshActivity').addEventListener('click', () => {
-                    this.refreshActivity();
-                });
-            }
-            
-            updateDisplay() {
-                document.getElementById('onlineCount').textContent = this.onlineCount;
-                document.getElementById('todayPurchases').textContent = this.todayPurchases;
-                
-                // Update changes
-                const onlineChange = this.randomInt(5, 15);
-                document.getElementById('onlineChange').textContent = `+${onlineChange}`;
-                
-                const purchaseChange = this.randomInt(3, 10);
-                document.getElementById('purchaseChange').textContent = `+${purchaseChange}`;
-                
-                // Update live status
-                const viewingProducts = this.randomInt(8, 20);
-                document.getElementById('liveStatus').textContent = 
-                    `Live: ${viewingProducts} people viewing products right now`;
-            }
-            
-            startSimulation() {
-                // Update online users every 15-30 seconds
-                this.onlineInterval = setInterval(() => {
-                    const change = this.randomInt(-5, 10);
-                    this.onlineCount = Math.max(120, this.onlineCount + change);
-                    this.updateDisplay();
-                }, this.randomInt(15000, 30000));
-                
-                // Update purchases every 45-90 seconds
-                this.purchaseInterval = setInterval(() => {
-                    const newPurchases = this.randomInt(1, 3);
-                    this.todayPurchases += newPurchases;
-                    this.addNewPurchase();
-                    this.updateDisplay();
-                }, this.randomInt(45000, 90000));
-            }
-            
-            addNewPurchase() {
-                const buyers = CONFIG.recentBuyers;
-                const products = CONFIG.products;
-                
-                const randomBuyer = buyers[this.randomInt(0, buyers.length - 1)];
-                const randomProduct = products[this.randomInt(0, products.length - 1)];
-                
-                const newPurchase = {
-                    name: randomBuyer.name,
-                    product: randomProduct.name,
-                    amount: randomProduct.price,
-                    time: "just now"
-                };
-                
-                // Add to recent purchases list at the top
-                const container = document.getElementById('recentPurchases');
-                const purchaseItem = document.createElement('div');
-                purchaseItem.className = 'purchase-item';
-                purchaseItem.innerHTML = `
-                    <div class="purchase-user">
-                        <div class="user-avatar">${newPurchase.name.charAt(0)}</div>
-                        <div class="purchase-info">
-                            <div class="user-name">${newPurchase.name}</div>
-                            <div class="product-name">${newPurchase.product}</div>
-                            <div class="purchase-time">
-                                <i class="far fa-clock"></i> ${newPurchase.time}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="purchase-amount">$${newPurchase.amount.toFixed(2)}</div>
-                `;
-                
-                // Insert at the top
-                if (container.firstChild) {
-                    container.insertBefore(purchaseItem, container.firstChild);
-                } else {
-                    container.appendChild(purchaseItem);
-                }
-                
-                // Limit to 8 items
-                if (container.children.length > 8) {
-                    container.removeChild(container.lastChild);
-                }
-            }
-            
-            renderRecentPurchases() {
-                const container = document.getElementById('recentPurchases');
-                container.innerHTML = '';
-                
-                CONFIG.recentBuyers.forEach(purchase => {
-                    const purchaseItem = document.createElement('div');
-                    purchaseItem.className = 'purchase-item';
-                    purchaseItem.innerHTML = `
-                        <div class="purchase-user">
-                            <div class="user-avatar">${purchase.name.charAt(0)}</div>
-                            <div class="purchase-info">
-                                <div class="user-name">${purchase.name}</div>
-                                <div class="product-name">${purchase.product}</div>
-                                <div class="purchase-time">
-                                    <i class="far fa-clock"></i> ${purchase.time}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="purchase-amount">$${purchase.amount.toFixed(2)}</div>
-                    `;
-                    container.appendChild(purchaseItem);
-                });
-            }
-            
-            refreshActivity() {
-                // Reset with new random values
-                this.onlineCount = this.randomInt(140, 190);
-                this.todayPurchases = this.randomInt(35, 70);
-                this.updateDisplay();
-                this.renderRecentPurchases();
-                
-                // Show refresh feedback
-                const btn = document.getElementById('refreshActivity');
-                const originalHTML = btn.innerHTML;
-                btn.innerHTML = '<i class="fas fa-check"></i> Updated';
-                btn.style.background = '#10b981';
-                
-                setTimeout(() => {
-                    btn.innerHTML = originalHTML;
-                    btn.style.background = '#2563eb';
-                }, 2000);
-            }
-        }
-
-        // Initialize activity simulation
-        let activitySimulator;
-        function initializeActivitySimulation() {
-            activitySimulator = new ActivitySimulator();
-            activitySimulator.initialize();
-        }
 
         // Function to handle tab switching
         function switchMediaTab(productId, tabType) {
@@ -1603,13 +1147,6 @@
             button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redirecting...';
             button.disabled = true;
             
-            // Simulate purchase in activity panel
-            if (activitySimulator) {
-                setTimeout(() => {
-                    activitySimulator.addNewPurchase();
-                }, 500);
-            }
-            
             // Create Telegram message
             const message = `Hello! I want to buy: ${product.name} - $${product.price}. I'm ready to pay.`;
             const encodedMessage = encodeURIComponent(message);
@@ -1638,12 +1175,6 @@
                     `✅ Thank you for your purchase! You will receive your content via secure delivery. Contact @${CONFIG.telegram} on Telegram for support.`,
                     "success"
                 );
-                
-                // Update activity stats
-                if (activitySimulator) {
-                    activitySimulator.todayPurchases += 1;
-                    activitySimulator.updateDisplay();
-                }
             }
         }
 
@@ -1705,9 +1236,6 @@
             console.log('- Telegram:', CONFIG.telegram);
             console.log('- Age Restriction:', '18+ Required');
             console.log('- Total Products:', CONFIG.products.length);
-            
-            // Note for user
-            console.log('Note: Replace all catbox example video URLs with your actual catbox video links');
         });
 
         // Expose functions to global scope for button onclick
