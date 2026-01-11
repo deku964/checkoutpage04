@@ -110,7 +110,153 @@
             display: none; /* Hidden until age verification */
         }
         
-        /* Header */
+        /* Activity Panel */
+        .activity-panel {
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid #333;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .activity-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .activity-header h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .live-users {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            padding: 12px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .recent-purchases {
+            margin-top: 20px;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .purchase-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            border-bottom: 1px solid #333;
+            transition: background 0.2s ease;
+        }
+        
+        .purchase-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .purchase-item:last-child {
+            border-bottom: none;
+        }
+        
+        .purchase-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .purchase-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        
+        .user-name {
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .product-name {
+            color: #aaa;
+            font-size: 0.8rem;
+        }
+        
+        .purchase-time {
+            color: #666;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .purchase-amount {
+            color: #10b981;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .refresh-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s ease;
+        }
+        
+        .refresh-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+        
         .header {
             text-align: center;
             margin-bottom: 30px;
@@ -512,6 +658,29 @@
     
     <!-- Main Content (Hidden until age verification) -->
     <div class="container" id="mainContent">
+        <!-- Activity Panel -->
+        <div class="activity-panel">
+            <div class="activity-header">
+                <h3>
+                    <i class="fas fa-chart-line"></i>
+                    Live Store Activity
+                </h3>
+                <button class="refresh-btn" id="refreshActivity">
+                    <i class="fas fa-sync-alt"></i>
+                    Refresh
+                </button>
+            </div>
+            
+            <div class="live-users">
+                <div class="live-dot"></div>
+                <span id="liveStatus">Live: 12 people viewing products right now</span>
+            </div>
+            
+            <div class="recent-purchases" id="recentPurchases">
+                <!-- Recent purchases will be loaded here -->
+            </div>
+        </div>
+        
         <!-- Header -->
         <div class="header">
             <h1>PREMIUM RARE CONTENTS💎 <span class="age-badge">18+</span></h1>
@@ -554,6 +723,18 @@
         const CONFIG = {
             // Telegram configuration
             telegram: "@naysellery",
+            
+            // Lista de nomes para rotação a cada 10 minutos
+            buyerNames: [
+                "Alex Johnson", "Maria Garcia", "David Smith", "Sarah Wilson", "James Brown", 
+                "Emma Davis", "Michael Taylor", "Lisa Martinez", "Robert Wilson", "Jennifer Lee",
+                "Kevin Anderson", "Olivia Parker", "Daniel Clark", "Sophia Rodriguez", "Matthew White",
+                "Isabella Thompson", "William Harris", "Mia Martin", "Joseph Walker", "Charlotte Lewis",
+                "Christopher Hall", "Amelia Young", "Andrew Allen", "Harper King", "Joshua Wright",
+                "Evelyn Scott", "Ryan Green", "Abigail Adams", "Nicholas Baker", "Emily Nelson",
+                "Tyler Carter", "Elizabeth Mitchell", "James Perez", "Sofia Roberts", "Brandon Turner",
+                "Avery Phillips", "Samuel Campbell", "Ella Parker", "Benjamin Evans", "Scarlett Edwards"
+            ],
             
             // Products - Com imagens originais e vídeos com catbox
             products: [
@@ -978,6 +1159,7 @@
             mainContent.style.display = 'block';
             renderProducts();
             checkURLParameters();
+            initializeActivitySimulation();
         }
 
         // Handle age confirmation
@@ -994,6 +1176,197 @@
                 window.location.href = 'https://www.google.com';
             }, 2000);
         });
+
+        // Activity Simulation System
+        class ActivitySimulator {
+            constructor() {
+                this.lastUpdate = new Date();
+                this.purchaseInterval = null;
+                this.nameRotationInterval = null;
+                this.currentBuyers = this.generateRandomBuyers();
+                this.nameRotationCounter = 0;
+            }
+            
+            randomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            
+            // Gerar compradores aleatórios iniciais
+            generateRandomBuyers() {
+                const buyers = [];
+                const productCount = CONFIG.products.length;
+                
+                for (let i = 0; i < 8; i++) {
+                    const randomName = CONFIG.buyerNames[this.randomInt(0, CONFIG.buyerNames.length - 1)];
+                    const randomProduct = CONFIG.products[this.randomInt(0, productCount - 1)];
+                    const timeOptions = ["just now", "1 min ago", "2 min ago", "3 min ago", "4 min ago", "5 min ago"];
+                    
+                    buyers.push({
+                        name: randomName,
+                        product: randomProduct.name,
+                        amount: randomProduct.price,
+                        time: timeOptions[this.randomInt(0, timeOptions.length - 1)]
+                    });
+                }
+                
+                return buyers;
+            }
+            
+            // Rotacionar nomes a cada 10 minutos
+            rotateBuyerNames() {
+                this.nameRotationCounter++;
+                console.log(`Rotating buyer names (rotation #${this.nameRotationCounter})`);
+                
+                const productCount = CONFIG.products.length;
+                const timeOptions = ["just now", "1 min ago", "2 min ago", "3 min ago", "4 min ago", "5 min ago"];
+                
+                // Atualizar alguns compradores com novos nomes
+                for (let i = 0; i < this.currentBuyers.length; i++) {
+                    if (Math.random() > 0.5) { // 50% de chance de mudar cada nome
+                        this.currentBuyers[i].name = CONFIG.buyerNames[this.randomInt(0, CONFIG.buyerNames.length - 1)];
+                        this.currentBuyers[i].time = timeOptions[this.randomInt(0, timeOptions.length - 1)];
+                    }
+                }
+                
+                this.renderRecentPurchases();
+            }
+            
+            initialize() {
+                this.renderRecentPurchases();
+                this.startSimulation();
+                
+                // Iniciar rotação de nomes a cada 10 minutos
+                this.nameRotationInterval = setInterval(() => {
+                    this.rotateBuyerNames();
+                }, 10 * 60 * 1000); // 10 minutos
+                
+                // Add refresh button event
+                document.getElementById('refreshActivity').addEventListener('click', () => {
+                    this.refreshActivity();
+                });
+                
+                // Update live status
+                this.updateLiveStatus();
+            }
+            
+            updateLiveStatus() {
+                const viewingProducts = this.randomInt(8, 20);
+                document.getElementById('liveStatus').textContent = 
+                    `Live: ${viewingProducts} people viewing products right now`;
+            }
+            
+            startSimulation() {
+                // Update live status every 15-30 seconds
+                setInterval(() => {
+                    this.updateLiveStatus();
+                }, this.randomInt(15000, 30000));
+                
+                // Update purchases every 45-90 seconds
+                this.purchaseInterval = setInterval(() => {
+                    this.addNewPurchase();
+                }, this.randomInt(45000, 90000));
+            }
+            
+            addNewPurchase() {
+                const products = CONFIG.products;
+                const timeOptions = ["just now", "1 min ago", "2 min ago", "3 min ago"];
+                
+                const randomName = CONFIG.buyerNames[this.randomInt(0, CONFIG.buyerNames.length - 1)];
+                const randomProduct = products[this.randomInt(0, products.length - 1)];
+                
+                const newPurchase = {
+                    name: randomName,
+                    product: randomProduct.name,
+                    amount: randomProduct.price,
+                    time: timeOptions[this.randomInt(0, timeOptions.length - 1)]
+                };
+                
+                // Add to recent purchases list at the top
+                const container = document.getElementById('recentPurchases');
+                const purchaseItem = document.createElement('div');
+                purchaseItem.className = 'purchase-item';
+                purchaseItem.innerHTML = `
+                    <div class="purchase-user">
+                        <div class="user-avatar">${newPurchase.name.charAt(0)}</div>
+                        <div class="purchase-info">
+                            <div class="user-name">${newPurchase.name}</div>
+                            <div class="product-name">${newPurchase.product}</div>
+                            <div class="purchase-time">
+                                <i class="far fa-clock"></i> ${newPurchase.time}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="purchase-amount">$${newPurchase.amount.toFixed(2)}</div>
+                `;
+                
+                // Insert at the top
+                if (container.firstChild) {
+                    container.insertBefore(purchaseItem, container.firstChild);
+                } else {
+                    container.appendChild(purchaseItem);
+                }
+                
+                // Limit to 8 items
+                if (container.children.length > 8) {
+                    container.removeChild(container.lastChild);
+                }
+                
+                // Update current buyers list
+                this.currentBuyers.unshift(newPurchase);
+                if (this.currentBuyers.length > 8) {
+                    this.currentBuyers.pop();
+                }
+            }
+            
+            renderRecentPurchases() {
+                const container = document.getElementById('recentPurchases');
+                container.innerHTML = '';
+                
+                this.currentBuyers.forEach(purchase => {
+                    const purchaseItem = document.createElement('div');
+                    purchaseItem.className = 'purchase-item';
+                    purchaseItem.innerHTML = `
+                        <div class="purchase-user">
+                            <div class="user-avatar">${purchase.name.charAt(0)}</div>
+                            <div class="purchase-info">
+                                <div class="user-name">${purchase.name}</div>
+                                <div class="product-name">${purchase.product}</div>
+                                <div class="purchase-time">
+                                    <i class="far fa-clock"></i> ${purchase.time}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="purchase-amount">$${purchase.amount.toFixed(2)}</div>
+                    `;
+                    container.appendChild(purchaseItem);
+                });
+            }
+            
+            refreshActivity() {
+                // Gerar novos compradores aleatórios
+                this.currentBuyers = this.generateRandomBuyers();
+                this.renderRecentPurchases();
+                this.updateLiveStatus();
+                
+                // Show refresh feedback
+                const btn = document.getElementById('refreshActivity');
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Updated';
+                btn.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '#2563eb';
+                }, 2000);
+            }
+        }
+
+        // Initialize activity simulation
+        let activitySimulator;
+        function initializeActivitySimulation() {
+            activitySimulator = new ActivitySimulator();
+            activitySimulator.initialize();
+        }
 
         // Function to handle tab switching
         function switchMediaTab(productId, tabType) {
@@ -1147,6 +1520,13 @@
             button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redirecting...';
             button.disabled = true;
             
+            // Simulate purchase in activity panel
+            if (activitySimulator) {
+                setTimeout(() => {
+                    activitySimulator.addNewPurchase();
+                }, 500);
+            }
+            
             // Create Telegram message
             const message = `Hello! I want to buy: ${product.name} - $${product.price}. I'm ready to pay.`;
             const encodedMessage = encodeURIComponent(message);
@@ -1236,6 +1616,8 @@
             console.log('- Telegram:', CONFIG.telegram);
             console.log('- Age Restriction:', '18+ Required');
             console.log('- Total Products:', CONFIG.products.length);
+            console.log('- Buyer Names Pool:', CONFIG.buyerNames.length, 'names available');
+            console.log('- Name Rotation: Every 10 minutes');
         });
 
         // Expose functions to global scope for button onclick
