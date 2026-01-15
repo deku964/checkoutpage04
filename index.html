@@ -305,29 +305,7 @@
             transform: translateY(-1px);
         }
         
-        .header {
-            text-align: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #333;
-        }
-        
-        .header h1 {
-            font-size: 1.8rem;
-            color: #fff;
-            margin-bottom: 8px;
-            font-weight: 600;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .header p {
-            font-size: 0.9rem;
-            color: #aaa;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        /* Removed header section */
         
         .age-badge {
             display: inline-block;
@@ -1242,7 +1220,7 @@
             <div class="activity-header">
                 <h3>
                     <i class="fas fa-chart-line"></i>
-                    Store Activity & Testimonials
+                    Store Activity
                 </h3>
                 <button class="refresh-btn" id="refreshActivity">
                     <i class="fas fa-sync-alt"></i>
@@ -1250,13 +1228,10 @@
                 </button>
             </div>
             
-            <!-- Activity Tabs -->
+            <!-- Activity Tabs - Removed Testimonials tab -->
             <div class="activity-tabs">
-                <button class="activity-tab active" onclick="switchActivityTab('live')">
+                <button class="activity-tab active">
                     <i class="fas fa-bolt"></i> Live Activity
-                </button>
-                <button class="activity-tab" onclick="switchActivityTab('testimonials')">
-                    <i class="fas fa-star"></i> Testimonials
                 </button>
             </div>
             
@@ -1272,20 +1247,7 @@
                         <!-- Recent purchases will be loaded here -->
                     </div>
                 </div>
-                
-                <!-- Testimonials Section -->
-                <div class="activity-section" id="testimonialsSection">
-                    <div class="testimonials-container" id="testimonialsContainer">
-                        <!-- Testimonials will be loaded here -->
-                    </div>
-                </div>
             </div>
-        </div>
-        
-        <!-- Header -->
-        <div class="header">
-            <h1>PREMIUM RARE CONTENTS💎 <span class="age-badge">18+</span></h1>
-            <p>Secure Telegram checkout • Instant delivery • Lifetime access</p>
         </div>
         
         <!-- All Content Preview Section -->
@@ -1297,7 +1259,7 @@
             </div>
             
             <p class="preview-description">
-                Get FULL ACCESS to our entire exclusive collection! Over 12TB+ of premium content including exclusive videos, rare collections, and lifetime updates. This is a limited-time offer - get ALL folders at a special discount price!
+                🔥DONT MISS THIS PROMO🔥!
             </p>
             
             <!-- Video tabs -->
@@ -1427,58 +1389,6 @@
                 "Evelyn Scott", "Ryan Green", "Abigail Adams", "Nicholas Baker", "Emily Nelson",
                 "Tyler Carter", "Elizabeth Mitchell", "James Perez", "Sofia Roberts", "Brandon Turner",
                 "Avery Phillips", "Samuel Campbell", "Ella Parker", "Benjamin Evans", "Scarlett Edwards"
-            ],
-            
-            // Testimonials (English)
-            testimonials: [
-                {
-                    name: "Michael T.",
-                    text: "Delivery was super fast! Got all the folders within 5 minutes of payment. 100% reliable service!",
-                    highlight: "100% RELIABLE",
-                    date: "2 days ago"
-                },
-                {
-                    name: "Sarah W.",
-                    text: "The quality is amazing, exactly as described. Seller is very professional and responds quickly.",
-                    highlight: "AMAZING QUALITY",
-                    date: "1 week ago"
-                },
-                {
-                    name: "James B.",
-                    text: "I was skeptical at first, but the delivery was instant and the content is premium. Will buy again!",
-                    highlight: "INSTANT DELIVERY",
-                    date: "3 days ago"
-                },
-                {
-                    name: "Jennifer L.",
-                    text: "Best service I've found! Quick response, secure payment, and exactly what I wanted. Highly recommended!",
-                    highlight: "HIGHLY RECOMMENDED",
-                    date: "5 days ago"
-                },
-                {
-                    name: "David S.",
-                    text: "Everything worked perfectly. The Telegram checkout is so convenient. Already planning my next purchase.",
-                    highlight: "PERFECT SERVICE",
-                    date: "4 days ago"
-                },
-                {
-                    name: "Emma D.",
-                    text: "I've tried other sellers but this one is the most trustworthy. Fast delivery and excellent content.",
-                    highlight: "MOST TRUSTWORTHY",
-                    date: "6 days ago"
-                },
-                {
-                    name: "Robert W.",
-                    text: "The VIP channels are worth every penny! Daily updates and exclusive content. Very happy with my purchase.",
-                    highlight: "WORTH EVERY PENNY",
-                    date: "1 week ago"
-                },
-                {
-                    name: "Olivia P.",
-                    text: "Payment was smooth and delivery was instant. The seller is very professional and helpful.",
-                    highlight: "SMOOTH TRANSACTION",
-                    date: "2 days ago"
-                }
             ],
             
             // VIP Channels/Groups
@@ -1983,35 +1893,12 @@
         function showContent() {
             renderProducts();
             renderVIPChannels();
-            renderTestimonials();
             checkURLParameters();
             initializeActivitySimulation();
             // Start first preview video
             document.getElementById('previewVideo1').play().catch(e => console.log("Autoplay prevented"));
             // Start VIP videos
             startVIPVideos();
-        }
-
-        // Function to switch activity tabs
-        function switchActivityTab(tabName) {
-            // Update tabs
-            document.querySelectorAll('.activity-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            const tabs = document.querySelectorAll('.activity-tab');
-            if (tabName === 'live') {
-                tabs[0].classList.add('active');
-            } else {
-                tabs[1].classList.add('active');
-            }
-            
-            // Update content sections
-            document.querySelectorAll('.activity-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            document.getElementById(`${tabName}ActivitySection`).classList.add('active');
         }
 
         // Function to switch main tabs
@@ -2320,33 +2207,6 @@
             }
         }
 
-        // Function to render testimonials
-        function renderTestimonials() {
-            const container = document.getElementById('testimonialsContainer');
-            container.innerHTML = '';
-            
-            CONFIG.testimonials.forEach(testimonial => {
-                const testimonialItem = document.createElement('div');
-                testimonialItem.className = 'testimonial-item';
-                testimonialItem.innerHTML = `
-                    <div class="testimonial-user">
-                        <div class="testimonial-avatar">${testimonial.name.charAt(0)}</div>
-                        <div class="testimonial-info">
-                            <div class="testimonial-name">${testimonial.name}</div>
-                            <div class="testimonial-text">"${testimonial.text}"</div>
-                            <div class="testimonial-highlight">
-                                <i class="fas fa-check-circle"></i> ${testimonial.highlight}
-                            </div>
-                            <div class="testimonial-date">
-                                <i class="far fa-calendar"></i> ${testimonial.date}
-                            </div>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(testimonialItem);
-            });
-        }
-
         // Initialize activity simulation
         let activitySimulator;
         function initializeActivitySimulation() {
@@ -2610,7 +2470,6 @@
             console.log('- Age Restriction:', '18+ Required');
             console.log('- Total Products:', CONFIG.products.length);
             console.log('- VIP Channels:', CONFIG.vipChannels.length);
-            console.log('- Testimonials:', CONFIG.testimonials.length);
             console.log('- Buyer Names Pool:', CONFIG.buyerNames.length, 'names available');
             console.log('- Name Rotation: Every 10 minutes');
         });
@@ -2619,7 +2478,6 @@
         window.switchMediaTab = switchMediaTab;
         window.switchPreviewVideo = switchPreviewVideo;
         window.switchMainTab = switchMainTab;
-        window.switchActivityTab = switchActivityTab;
         window.redirectToTelegram = redirectToTelegram;
         window.redirectToTelegramVIP = redirectToTelegramVIP;
         window.redirectToTelegramAllContent = redirectToTelegramAllContent;
