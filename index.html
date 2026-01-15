@@ -101,7 +101,7 @@
             background: #0f0f0f;
             color: #e5e5e5;
             line-height: 1.5;
-            padding: 15px;
+            padding: 10px;
             font-size: 14px;
         }
         
@@ -507,14 +507,88 @@
             margin-top: 5px;
         }
         
+        /* Main Tabs Navigation */
+        .main-tabs {
+            display: flex;
+            background: #0f0f0f;
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+            border: 1px solid #333;
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .main-tab {
+            flex: 1;
+            padding: 15px 0;
+            background: transparent;
+            border: none;
+            color: #aaa;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .main-tab:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .main-tab.active {
+            color: #fff;
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+        }
+        
+        .main-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #8B5CF6, #EC4899);
+        }
+        
+        /* Products & VIP Container */
+        .content-container {
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            border-radius: 0 0 12px 12px;
+            border: 1px solid #333;
+            border-top: none;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            margin-bottom: 35px;
+        }
+        
+        .content-section {
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
             gap: 20px;
-            margin-bottom: 35px;
+            margin-bottom: 0;
         }
         
-        .product-card {
+        .vip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 20px;
+            margin-bottom: 0;
+        }
+        
+        .product-card, .vip-card {
             background: #1a1a1a;
             border-radius: 12px;
             overflow: hidden;
@@ -523,10 +597,19 @@
             border: 1px solid #333;
         }
         
-        .product-card:hover {
+        .product-card:hover, .vip-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.5);
             border-color: #444;
+        }
+        
+        .vip-card {
+            border-color: #8B5CF6;
+        }
+        
+        .vip-card:hover {
+            border-color: #EC4899;
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
         }
         
         /* Media tabs */
@@ -567,12 +650,16 @@
             background: #10b981;
         }
         
-        .media-container {
+        .media-container, .vip-video-container {
             width: 100%;
             height: 180px;
             position: relative;
             background: #0f0f0f;
             overflow: hidden;
+        }
+        
+        .vip-video-container {
+            border-bottom: 1px solid #333;
         }
         
         .media-content {
@@ -581,18 +668,18 @@
             position: relative;
         }
         
-        .product-image, .product-video {
+        .product-image, .product-video, .vip-video {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: none;
         }
         
-        .product-image.active, .product-video.active {
+        .product-image.active, .product-video.active, .vip-video {
             display: block;
         }
         
-        .product-video {
+        .product-video, .vip-video {
             background: #000;
         }
         
@@ -653,11 +740,27 @@
             z-index: 2;
         }
         
-        .product-content {
+        .vip-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: rgba(139, 92, 246, 0.9);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 2;
+        }
+        
+        .product-content, .vip-content {
             padding: 18px;
         }
         
-        .product-title {
+        .product-title, .vip-title {
             font-size: 1.1rem;
             color: #fff;
             margin-bottom: 10px;
@@ -665,7 +768,11 @@
             line-height: 1.3;
         }
         
-        .product-description {
+        .vip-title {
+            color: #EC4899;
+        }
+        
+        .product-description, .vip-description {
             color: #aaa;
             font-size: 0.9rem;
             margin-bottom: 15px;
@@ -686,7 +793,7 @@
             font-size: 0.8rem;
         }
         
-        .product-price {
+        .product-price, .vip-price {
             font-size: 1.5rem;
             color: #10b981;
             font-weight: 700;
@@ -696,13 +803,23 @@
             gap: 4px;
         }
         
+        .vip-price {
+            color: #EC4899;
+        }
+        
         .product-price::before {
             content: '$';
             font-size: 1.1rem;
             color: #10b981;
         }
         
-        .buy-btn {
+        .vip-price::before {
+            content: '$';
+            font-size: 1.1rem;
+            color: #EC4899;
+        }
+        
+        .buy-btn, .vip-btn {
             background: linear-gradient(135deg, #8B5CF6, #7C3AED);
             color: white;
             border: none;
@@ -720,16 +837,20 @@
             text-align: center;
         }
         
-        .buy-btn:hover {
+        .vip-btn {
+            background: linear-gradient(135deg, #EC4899, #8B5CF6);
+        }
+        
+        .buy-btn:hover, .vip-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
         }
         
-        .buy-btn:active {
+        .buy-btn:active, .vip-btn:active {
             transform: translateY(0);
         }
         
-        .purchase-count {
+        .purchase-count, .vip-stats {
             font-size: 0.8rem;
             color: #666;
             margin-top: 6px;
@@ -738,151 +859,25 @@
             gap: 5px;
         }
         
-        /* VIP Channels/Groups Section */
-        .vip-section {
-            margin: 35px 0;
-        }
-        
-        .vip-header {
-            text-align: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #8B5CF6;
-        }
-        
-        .vip-header h2 {
-            font-size: 2rem;
-            color: #fff;
-            font-weight: 700;
-            background: linear-gradient(135deg, #8B5CF6, #EC4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
-        
-        .vip-header p {
-            color: #aaa;
-            font-size: 0.95rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .vip-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 35px;
-        }
-        
-        .vip-card {
-            background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #8B5CF6;
-            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
-            transition: transform 0.3s ease;
-        }
-        
-        .vip-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
-            border-color: #EC4899;
-        }
-        
-        .vip-video-container {
-            width: 100%;
-            height: 200px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .vip-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .vip-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(139, 92, 246, 0.9);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            z-index: 2;
-        }
-        
-        .vip-content {
-            padding: 18px;
-        }
-        
-        .vip-title {
-            font-size: 1.2rem;
-            color: #fff;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        
-        .vip-description {
-            color: #aaa;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            line-height: 1.4;
-            min-height: 60px;
-        }
-        
         .vip-stats {
-            display: flex;
             justify-content: space-between;
-            margin-bottom: 15px;
-            font-size: 0.8rem;
+            margin-top: 10px;
         }
         
         .vip-stat {
             text-align: center;
+            flex: 1;
         }
         
         .vip-stat-number {
             color: #8B5CF6;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
         
         .vip-stat-label {
             color: #666;
             font-size: 0.7rem;
-        }
-        
-        .vip-price {
-            font-size: 1.5rem;
-            color: #EC4899;
-            font-weight: 700;
-            margin: 15px 0;
-            text-align: center;
-        }
-        
-        .vip-btn {
-            background: linear-gradient(135deg, #8B5CF6, #EC4899);
-            color: white;
-            border: none;
-            padding: 10px 18px;
-            font-size: 0.9rem;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            font-weight: 600;
-            text-align: center;
-            display: block;
-            text-decoration: none;
-        }
-        
-        .vip-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
         }
         
         .payment-section {
@@ -953,74 +948,38 @@
         }
         
         @media (max-width: 768px) {
-            .products-grid {
-                grid-template-columns: 1fr;
-                gap: 18px;
-            }
-            
-            .vip-grid {
-                grid-template-columns: 1fr;
-                gap: 18px;
-            }
-            
             body {
-                padding: 10px;
+                padding: 8px;
+                font-size: 13px;
             }
             
             .header h1 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
             
-            .product-title {
-                font-size: 1rem;
-            }
-            
-            .product-description {
+            .header p {
                 font-size: 0.85rem;
-            }
-            
-            .media-container {
-                height: 160px;
-            }
-            
-            .verification-box {
-                padding: 25px 15px;
-            }
-            
-            .age-buttons {
-                flex-direction: column;
-            }
-            
-            .media-tab {
-                padding: 8px 0;
-                font-size: 0.8rem;
             }
             
             .all-content-preview {
                 padding: 18px;
+                margin-bottom: 25px;
             }
             
             .preview-header h2 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
+            }
+            
+            .preview-header i {
+                font-size: 1.8rem;
+            }
+            
+            .preview-description {
+                font-size: 0.85rem;
             }
             
             .preview-video-container {
                 height: 220px;
-            }
-            
-            .preview-overlay {
-                flex-direction: column;
-                align-items: center;
-                gap: 12px;
-                padding: 12px;
-            }
-            
-            .preview-stats {
-                gap: 15px;
-            }
-            
-            .stat-number {
-                font-size: 1.4rem;
             }
             
             .preview-price {
@@ -1033,20 +992,69 @@
                 font-size: 0.95rem;
             }
             
-            .preview-description {
+            .stat-number {
+                font-size: 1.4rem;
+            }
+            
+            .main-tabs {
+                flex-direction: column;
+            }
+            
+            .main-tab {
+                padding: 12px 0;
                 font-size: 0.9rem;
             }
             
-            .vip-header h2 {
-                font-size: 1.6rem;
+            .content-container {
+                padding: 18px;
+                margin-bottom: 25px;
             }
             
-            .vip-video-container {
+            .products-grid, .vip-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .product-title, .vip-title {
+                font-size: 1rem;
+            }
+            
+            .product-description, .vip-description {
+                font-size: 0.85rem;
+                min-height: 60px;
+            }
+            
+            .media-container, .vip-video-container {
                 height: 160px;
             }
             
-            .vip-title {
-                font-size: 1.1rem;
+            .product-price, .vip-price {
+                font-size: 1.3rem;
+            }
+            
+            .buy-btn, .vip-btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+            
+            .purchase-count, .vip-stats {
+                font-size: 0.75rem;
+            }
+            
+            .vip-stat-number {
+                font-size: 0.85rem;
+            }
+            
+            .verification-box {
+                padding: 25px 15px;
+            }
+            
+            .verification-box h2 {
+                font-size: 1.5rem;
+            }
+            
+            .age-buttons {
+                flex-direction: column;
             }
         }
         
@@ -1065,7 +1073,7 @@
             }
             
             .preview-header i {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             
             .stat-number {
@@ -1076,12 +1084,58 @@
                 font-size: 0.75rem;
             }
             
-            .vip-video-container {
+            .main-tab {
+                padding: 10px 0;
+                font-size: 0.85rem;
+            }
+            
+            .media-container, .vip-video-container {
                 height: 140px;
             }
             
-            .vip-title {
-                font-size: 1rem;
+            .product-content, .vip-content {
+                padding: 15px;
+            }
+            
+            .product-title, .vip-title {
+                font-size: 0.95rem;
+            }
+            
+            .product-description, .vip-description {
+                font-size: 0.8rem;
+                min-height: 50px;
+            }
+            
+            .product-price, .vip-price {
+                font-size: 1.2rem;
+                margin: 12px 0;
+            }
+            
+            .description-item {
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .preview-video-container {
+                height: 150px;
+            }
+            
+            .media-container, .vip-video-container {
+                height: 120px;
+            }
+            
+            .product-title, .vip-title {
+                font-size: 0.9rem;
+            }
+            
+            .product-description, .vip-description {
+                font-size: 0.75rem;
+            }
+            
+            .buy-btn, .vip-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -1217,20 +1271,30 @@
             </div>
         </div>
         
-        <!-- Products Grid -->
-        <div class="products-grid" id="productsContainer">
-            <!-- Products will be loaded here -->
+        <!-- Main Tabs Navigation -->
+        <div class="main-tabs">
+            <button class="main-tab active" onclick="switchMainTab('products')">
+                <i class="fas fa-folder"></i> PREMIUM FOLDERS
+            </button>
+            <button class="main-tab" onclick="switchMainTab('vip')">
+                <i class="fas fa-gem"></i> VIP CHANNELS/GROUPS
+            </button>
         </div>
         
-        <!-- VIP Channels/Groups Section -->
-        <div class="vip-section">
-            <div class="vip-header">
-                <h2><i class="fas fa-gem"></i> VIP CHANNELS/GROUPS <i class="fas fa-gem"></i></h2>
-                <p>Exclusive access to private Telegram channels & groups with daily updates</p>
+        <!-- Products & VIP Container -->
+        <div class="content-container">
+            <!-- Products Section -->
+            <div class="content-section active" id="productsSection">
+                <div class="products-grid" id="productsContainer">
+                    <!-- Products will be loaded here -->
+                </div>
             </div>
             
-            <div class="vip-grid" id="vipContainer">
-                <!-- VIP channels will be loaded here -->
+            <!-- VIP Section -->
+            <div class="content-section" id="vipSection">
+                <div class="vip-grid" id="vipContainer">
+                    <!-- VIP channels will be loaded here -->
+                </div>
             </div>
         </div>
         
@@ -1851,6 +1915,30 @@
             }, 2000);
         });
 
+        // Function to switch main tabs
+        function switchMainTab(tabName) {
+            // Update tabs
+            document.querySelectorAll('.main-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            document.querySelector(`.main-tab:${tabName === 'products' ? 'first-child' : 'last-child'}`).classList.add('active');
+            
+            // Update content sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            document.getElementById(`${tabName}Section`).classList.add('active');
+            
+            // Play videos in VIP section when active
+            if (tabName === 'vip') {
+                setTimeout(() => {
+                    startVIPVideos();
+                }, 100);
+            }
+        }
+
         // Function to switch preview videos
         function switchPreviewVideo(videoNumber) {
             // Update tabs
@@ -2398,6 +2486,7 @@
         // Expose functions to global scope for button onclick
         window.switchMediaTab = switchMediaTab;
         window.switchPreviewVideo = switchPreviewVideo;
+        window.switchMainTab = switchMainTab;
         window.redirectToTelegram = redirectToTelegram;
         window.redirectToTelegramVIP = redirectToTelegramVIP;
         window.redirectToTelegramAllContent = redirectToTelegramAllContent;
