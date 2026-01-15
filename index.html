@@ -12,90 +12,6 @@
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
         
-        /* Age Verification Overlay */
-        .age-verification {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 15, 15, 0.98);
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(10px);
-        }
-        
-        .verification-box {
-            background: #1a1a1a;
-            border: 2px solid #333;
-            border-radius: 12px;
-            padding: 40px;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        }
-        
-        .verification-box h2 {
-            color: #fff;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-        
-        .verification-box p {
-            color: #aaa;
-            margin-bottom: 30px;
-            line-height: 1.6;
-            font-size: 14px;
-        }
-        
-        .age-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
-        
-        .age-btn {
-            padding: 12px 30px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .age-confirm {
-            background: #dc2626;
-            color: white;
-        }
-        
-        .age-confirm:hover {
-            background: #b91c1c;
-            transform: translateY(-2px);
-        }
-        
-        .age-deny {
-            background: #333;
-            color: #aaa;
-        }
-        
-        .age-deny:hover {
-            background: #444;
-        }
-        
-        .warning-note {
-            color: #dc2626;
-            font-size: 0.9rem;
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #dc2626;
-            border-radius: 6px;
-            background: rgba(220, 38, 38, 0.1);
-        }
-        
         /* Main content styles */
         body {
             background: #0f0f0f;
@@ -108,7 +24,6 @@
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            display: none; /* Hidden until age verification */
         }
         
         /* Activity Panel */
@@ -1095,13 +1010,6 @@
             border-top: 1px solid #333;
         }
         
-        .age-warning {
-            color: #dc2626;
-            font-weight: 600;
-            margin: 10px 0;
-            font-size: 0.85rem;
-        }
-        
         @media (max-width: 768px) {
             body {
                 padding: 8px;
@@ -1201,18 +1109,6 @@
             
             .vip-stat-number {
                 font-size: 0.82rem;
-            }
-            
-            .verification-box {
-                padding: 25px 15px;
-            }
-            
-            .verification-box h2 {
-                font-size: 1.5rem;
-            }
-            
-            .age-buttons {
-                flex-direction: column;
             }
             
             .description-item {
@@ -1339,36 +1235,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Age Verification Overlay -->
-    <div class="age-verification" id="ageVerification">
-        <div class="verification-box">
-            <h2><i class="fas fa-exclamation-triangle"></i> AGE VERIFICATION REQUIRED</h2>
-            <p>This website contains adult content intended for individuals 18 years of age or older.</p>
-            <p>By entering this site, you confirm that:</p>
-            <p>• You are at least 18 years old<br>
-               • You are not offended by adult content<br>
-               • You are accessing this site legally in your jurisdiction</p>
-            
-            <div class="age-warning">
-                <i class="fas fa-ban"></i> Under 18? Please leave immediately.
-            </div>
-            
-            <div class="age-buttons">
-                <button class="age-btn age-confirm" id="confirmAge">
-                    <i class="fas fa-check"></i> I AM 18 OR OLDER
-                </button>
-                <button class="age-btn age-deny" id="denyAge">
-                    <i class="fas fa-times"></i> I AM UNDER 18
-                </button>
-            </div>
-            
-            <div class="warning-note">
-                <i class="fas fa-shield-alt"></i> All transactions are secure and private. Your privacy is protected.
-            </div>
-        </div>
-    </div>
-    
-    <!-- Main Content (Hidden until age verification) -->
+    <!-- Main Content -->
     <div class="container" id="mainContent">
         <!-- Activity Panel -->
         <div class="activity-panel">
@@ -1430,7 +1297,7 @@
             </div>
             
             <p class="preview-description">
-                PAY AND ENJOY!
+                Get FULL ACCESS to our entire exclusive collection! Over 12TB+ of premium content including exclusive videos, rare collections, and lifetime updates. This is a limited-time offer - get ALL folders at a special discount price!
             </p>
             
             <!-- Video tabs -->
@@ -2112,30 +1979,8 @@
             ]
         };
 
-        // Age Verification System
-        const ageVerification = document.getElementById('ageVerification');
-        const mainContent = document.getElementById('mainContent');
-        const confirmBtn = document.getElementById('confirmAge');
-        const denyBtn = document.getElementById('denyAge');
-
-        // Check if age is already verified
-        function checkAgeVerification() {
-            const ageVerified = localStorage.getItem('ageVerified18plus');
-            const verificationTime = localStorage.getItem('verificationTime');
-            const now = Date.now();
-            
-            // If verified within last 24 hours, show content
-            if (ageVerified === 'true' && verificationTime && (now - parseInt(verificationTime)) < 24 * 60 * 60 * 1000) {
-                showContent();
-                return true;
-            }
-            return false;
-        }
-
-        // Show main content
+        // Show main content immediately
         function showContent() {
-            ageVerification.style.display = 'none';
-            mainContent.style.display = 'block';
             renderProducts();
             renderVIPChannels();
             renderTestimonials();
@@ -2147,21 +1992,6 @@
             startVIPVideos();
         }
 
-        // Handle age confirmation
-        confirmBtn.addEventListener('click', function() {
-            localStorage.setItem('ageVerified18plus', 'true');
-            localStorage.setItem('verificationTime', Date.now().toString());
-            showContent();
-        });
-
-        // Handle age denial
-        denyBtn.addEventListener('click', function() {
-            alert('You must be 18 or older to access this content. Redirecting...');
-            setTimeout(() => {
-                window.location.href = 'https://www.google.com';
-            }, 2000);
-        });
-
         // Function to switch activity tabs
         function switchActivityTab(tabName) {
             // Update tabs
@@ -2169,7 +1999,12 @@
                 tab.classList.remove('active');
             });
             
-            document.querySelector(`.activity-tab:${tabName === 'live' ? 'first-child' : 'last-child'}`).classList.add('active');
+            const tabs = document.querySelectorAll('.activity-tab');
+            if (tabName === 'live') {
+                tabs[0].classList.add('active');
+            } else {
+                tabs[1].classList.add('active');
+            }
             
             // Update content sections
             document.querySelectorAll('.activity-section').forEach(section => {
@@ -2186,7 +2021,12 @@
                 tab.classList.remove('active');
             });
             
-            document.querySelector(`.main-tab:${tabName === 'products' ? 'first-child' : 'last-child'}`).classList.add('active');
+            const tabs = document.querySelectorAll('.main-tab');
+            if (tabName === 'products') {
+                tabs[0].classList.add('active');
+            } else {
+                tabs[1].classList.add('active');
+            }
             
             // Update content sections
             document.querySelectorAll('.content-section').forEach(section => {
@@ -2760,8 +2600,8 @@
             `;
             document.head.appendChild(style);
             
-            // Check age verification on load
-            checkAgeVerification();
+            // Show content immediately
+            showContent();
             
             // Log configuration (for debugging)
             console.log('Adult Content Store Configuration:');
