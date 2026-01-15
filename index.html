@@ -53,68 +53,10 @@
             gap: 10px;
         }
         
-        /* Activity Tabs */
-        .activity-tabs {
-            display: flex;
-            background: #0f0f0f;
-            border-radius: 8px 8px 0 0;
-            overflow: hidden;
-            border: 1px solid #333;
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-        
-        .activity-tab {
-            flex: 1;
-            padding: 12px 0;
-            background: transparent;
-            border: none;
-            color: #aaa;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        
-        .activity-tab:hover {
-            color: #fff;
-            background: rgba(255, 255, 255, 0.05);
-        }
-        
-        .activity-tab.active {
-            color: #10b981;
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), transparent);
-        }
-        
-        .activity-tab.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: #10b981;
-        }
-        
         .activity-content {
             border: 1px solid #333;
-            border-top: none;
-            border-radius: 0 0 8px 8px;
+            border-radius: 8px;
             background: rgba(0, 0, 0, 0.3);
-        }
-        
-        .activity-section {
-            display: none;
-            padding: 15px;
-        }
-        
-        .activity-section.active {
-            display: block;
         }
         
         .live-users {
@@ -122,7 +64,7 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 15px;
-            padding: 10px;
+            padding: 15px;
             background: rgba(16, 185, 129, 0.1);
             border-radius: 8px;
             border: 1px solid rgba(16, 185, 129, 0.3);
@@ -145,14 +87,10 @@
         .recent-purchases {
             max-height: 220px;
             overflow-y: auto;
+            padding: 15px;
         }
         
-        .testimonials-container {
-            max-height: 220px;
-            overflow-y: auto;
-        }
-        
-        .purchase-item, .testimonial-item {
+        .purchase-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -161,17 +99,11 @@
             transition: background 0.2s ease;
         }
         
-        .testimonial-item {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
-        }
-        
-        .purchase-item:hover, .testimonial-item:hover {
+        .purchase-item:hover {
             background: rgba(255, 255, 255, 0.05);
         }
         
-        .purchase-item:last-child, .testimonial-item:last-child {
+        .purchase-item:last-child {
             border-bottom: none;
         }
         
@@ -179,13 +111,6 @@
             display: flex;
             align-items: center;
             gap: 8px;
-        }
-        
-        .testimonial-user {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            width: 100%;
         }
         
         .user-avatar {
@@ -201,28 +126,10 @@
             font-weight: 600;
         }
         
-        .testimonial-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #10b981, #059669);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1rem;
-            font-weight: 600;
-            flex-shrink: 0;
-        }
-        
         .purchase-info {
             display: flex;
             flex-direction: column;
             gap: 2px;
-        }
-        
-        .testimonial-info {
-            flex-grow: 1;
         }
         
         .user-name {
@@ -231,36 +138,9 @@
             font-size: 0.85rem;
         }
         
-        .testimonial-name {
-            color: #fff;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 4px;
-        }
-        
         .product-name {
             color: #aaa;
             font-size: 0.75rem;
-        }
-        
-        .testimonial-text {
-            color: #aaa;
-            font-size: 0.8rem;
-            line-height: 1.4;
-            margin-bottom: 5px;
-        }
-        
-        .testimonial-highlight {
-            color: #10b981;
-            font-weight: 600;
-            font-size: 0.75rem;
-            background: rgba(16, 185, 129, 0.1);
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
         }
         
         .purchase-time {
@@ -271,41 +151,11 @@
             gap: 5px;
         }
         
-        .testimonial-date {
-            color: #666;
-            font-size: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            margin-top: 4px;
-        }
-        
         .purchase-amount {
             color: #10b981;
             font-weight: 600;
             font-size: 0.9rem;
         }
-        
-        .refresh-btn {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 7px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: all 0.2s ease;
-        }
-        
-        .refresh-btn:hover {
-            background: #1d4ed8;
-            transform: translateY(-1px);
-        }
-        
-        /* Removed header section */
         
         .age-badge {
             display: inline-block;
@@ -1092,15 +942,6 @@
             .description-item {
                 font-size: 0.72rem;
             }
-            
-            .activity-tabs {
-                flex-direction: column;
-            }
-            
-            .activity-tab {
-                padding: 10px 0;
-                font-size: 0.85rem;
-            }
         }
         
         @media (max-width: 480px) {
@@ -1163,11 +1004,6 @@
                 font-size: 0.7rem;
             }
             
-            .activity-tab {
-                padding: 8px 0;
-                font-size: 0.82rem;
-            }
-            
             .testimonial-avatar {
                 width: 35px;
                 height: 35px;
@@ -1204,10 +1040,6 @@
                 padding: 6px 12px;
                 font-size: 0.78rem;
             }
-            
-            .activity-tab {
-                font-size: 0.8rem;
-            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -1222,30 +1054,16 @@
                     <i class="fas fa-chart-line"></i>
                     Store Activity
                 </h3>
-                <button class="refresh-btn" id="refreshActivity">
-                    <i class="fas fa-sync-alt"></i>
-                    Refresh
-                </button>
-            </div>
-            
-            <!-- Activity Tabs - Removed Testimonials tab -->
-            <div class="activity-tabs">
-                <button class="activity-tab active">
-                    <i class="fas fa-bolt"></i> Live Activity
-                </button>
             </div>
             
             <div class="activity-content">
-                <!-- Live Activity Section -->
-                <div class="activity-section active" id="liveActivitySection">
-                    <div class="live-users">
-                        <div class="live-dot"></div>
-                        <span id="liveStatus">Live: 12 people viewing products right now</span>
-                    </div>
-                    
-                    <div class="recent-purchases" id="recentPurchases">
-                        <!-- Recent purchases will be loaded here -->
-                    </div>
+                <div class="live-users">
+                    <div class="live-dot"></div>
+                    <span id="liveStatus">Live: 12 people viewing products right now</span>
+                </div>
+                
+                <div class="recent-purchases" id="recentPurchases">
+                    <!-- Recent purchases will be loaded here -->
                 </div>
             </div>
         </div>
@@ -1803,7 +1621,7 @@
                     purchaseCount: 31
                 },
                 
-                // NEW ADDED PRODUCTS (27-31)
+                // NEW ADDED PRODUCTS (27-28) - Removed 29, 30, 31
                 {
                     id: 27,
                     name: "CP - 3",
@@ -1836,55 +1654,6 @@
                     ],
                     trending: true,
                     purchaseCount: 38
-                },
-                {
-                    id: 29,
-                    name: "INCEST FAMILY ARCHIVE",
-                    price: 45,
-                    image: "https://files.catbox.moe/example3.jpg",
-                    videoPreview: "https://files.catbox.moe/ef13ye.mp4",
-                    description: [
-                        "✅ REAL FAMILIES",
-                        "✅ MOTHER-SON",
-                        "✅ SISTER-BROTHER",
-                        "✅ 400+ VIDEOS",
-                        "✅ 60GB ARCHIVE"
-                    ],
-                    popular: true,
-                    purchaseCount: 52
-                },
-                {
-                    id: 30,
-                    name: "SAVANNAH",
-                    price: 25,
-                    image: "https://files.catbox.moe/example4.jpg",
-                    videoPreview: "https://files.catbox.moe/yn5iuk.mp4",
-                    description: [
-                        "✅ AGE 17",
-                        "✅ PRIVATE VIDEOS",
-                        "✅ 250+ FILES",
-                        "✅ 25GB COLLECTION",
-                        "✅ EXCLUSIVE CONTENT"
-                    ],
-                    trending: true,
-                    purchaseCount: 41
-                },
-                {
-                    id: 31,
-                    name: "JESS",
-                    price: 20,
-                    image: "https://files.catbox.moe/example5.jpg",
-                    videoPreview: "https://files.catbox.moe/fysysq.mp4",
-                    description: [
-                        "✅ YOUNG ",
-                        "✅ 200+ VIDEOS",
-                        "✅ 10GB TOTAL",
-                        "✅ LIFETIME ACCESS",
-                        "✅ HIGH QUALITY"
-                    ],
-                    trending: true,
-                    popular: true,
-                    purchaseCount: 67
                 }
             ]
         };
@@ -2086,11 +1855,6 @@
                     this.rotateBuyerNames();
                 }, 10 * 60 * 1000); // 10 minutes
                 
-                // Add refresh button event
-                document.getElementById('refreshActivity').addEventListener('click', () => {
-                    this.refreshActivity();
-                });
-                
                 // Update live status
                 this.updateLiveStatus();
             }
@@ -2186,24 +1950,6 @@
                     `;
                     container.appendChild(purchaseItem);
                 });
-            }
-            
-            refreshActivity() {
-                // Generate new random buyers
-                this.currentBuyers = this.generateRandomBuyers();
-                this.renderRecentPurchases();
-                this.updateLiveStatus();
-                
-                // Show refresh feedback
-                const btn = document.getElementById('refreshActivity');
-                const originalHTML = btn.innerHTML;
-                btn.innerHTML = '<i class="fas fa-check"></i> Updated';
-                btn.style.background = '#10b981';
-                
-                setTimeout(() => {
-                    btn.innerHTML = originalHTML;
-                    btn.style.background = '#2563eb';
-                }, 2000);
             }
         }
 
