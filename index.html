@@ -738,6 +738,153 @@
             gap: 5px;
         }
         
+        /* VIP Channels/Groups Section */
+        .vip-section {
+            margin: 35px 0;
+        }
+        
+        .vip-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #8B5CF6;
+        }
+        
+        .vip-header h2 {
+            font-size: 2rem;
+            color: #fff;
+            font-weight: 700;
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .vip-header p {
+            color: #aaa;
+            font-size: 0.95rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .vip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+        
+        .vip-card {
+            background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #8B5CF6;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .vip-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
+            border-color: #EC4899;
+        }
+        
+        .vip-video-container {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .vip-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .vip-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(139, 92, 246, 0.9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .vip-content {
+            padding: 18px;
+        }
+        
+        .vip-title {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .vip-description {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            min-height: 60px;
+        }
+        
+        .vip-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.8rem;
+        }
+        
+        .vip-stat {
+            text-align: center;
+        }
+        
+        .vip-stat-number {
+            color: #8B5CF6;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        
+        .vip-stat-label {
+            color: #666;
+            font-size: 0.7rem;
+        }
+        
+        .vip-price {
+            font-size: 1.5rem;
+            color: #EC4899;
+            font-weight: 700;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .vip-btn {
+            background: linear-gradient(135deg, #8B5CF6, #EC4899);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-weight: 600;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .vip-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+        }
+        
         .payment-section {
             background: #1a1a1a;
             border-radius: 12px;
@@ -807,6 +954,11 @@
         
         @media (max-width: 768px) {
             .products-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            
+            .vip-grid {
                 grid-template-columns: 1fr;
                 gap: 18px;
             }
@@ -884,6 +1036,18 @@
             .preview-description {
                 font-size: 0.9rem;
             }
+            
+            .vip-header h2 {
+                font-size: 1.6rem;
+            }
+            
+            .vip-video-container {
+                height: 160px;
+            }
+            
+            .vip-title {
+                font-size: 1.1rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -910,6 +1074,14 @@
             
             .stat-label {
                 font-size: 0.75rem;
+            }
+            
+            .vip-video-container {
+                height: 140px;
+            }
+            
+            .vip-title {
+                font-size: 1rem;
             }
         }
     </style>
@@ -1050,6 +1222,18 @@
             <!-- Products will be loaded here -->
         </div>
         
+        <!-- VIP Channels/Groups Section -->
+        <div class="vip-section">
+            <div class="vip-header">
+                <h2><i class="fas fa-gem"></i> VIP CHANNELS/GROUPS <i class="fas fa-gem"></i></h2>
+                <p>Exclusive access to private Telegram channels & groups with daily updates</p>
+            </div>
+            
+            <div class="vip-grid" id="vipContainer">
+                <!-- VIP channels will be loaded here -->
+            </div>
+        </div>
+        
         <!-- Payment Section -->
         <div class="payment-section">
             <h3><i class="fas fa-lock"></i> Secure & Private Payment via Telegram</h3>
@@ -1093,6 +1277,60 @@
                 "Evelyn Scott", "Ryan Green", "Abigail Adams", "Nicholas Baker", "Emily Nelson",
                 "Tyler Carter", "Elizabeth Mitchell", "James Perez", "Sofia Roberts", "Brandon Turner",
                 "Avery Phillips", "Samuel Campbell", "Ella Parker", "Benjamin Evans", "Scarlett Edwards"
+            ],
+            
+            // VIP Channels/Groups
+            vipChannels: [
+                {
+                    id: 101,
+                    name: "PREMIUM CP TELEGRAM",
+                    price: 150,
+                    videoPreview: "https://files.catbox.moe/ado484.mp4",
+                    description: "Exclusive CP content updated daily. Private channel with 500+ members. Lifetime access.",
+                    members: "500+",
+                    updates: "Daily",
+                    content: "2TB+"
+                },
+                {
+                    id: 102,
+                    name: "VIP INCEST CHANNEL",
+                    price: 120,
+                    videoPreview: "https://files.catbox.moe/ef13ye.mp4",
+                    description: "Private incest content channel. Real families, exclusive videos. Weekly updates.",
+                    members: "300+",
+                    updates: "Weekly",
+                    content: "1.5TB+"
+                },
+                {
+                    id: 103,
+                    name: "YOUNG TEENS GROUP",
+                    price: 100,
+                    videoPreview: "https://files.catbox.moe/yn5iuk.mp4",
+                    description: "Teen exclusive content. Ages 13-17. Private Telegram group with active community.",
+                    members: "400+",
+                    updates: "Daily",
+                    content: "800GB+"
+                },
+                {
+                    id: 104,
+                    name: "BLACKMAIL VIP",
+                    price: 130,
+                    videoPreview: "https://files.catbox.moe/qjg3gu.mp4",
+                    description: "Exclusive blackmail content channel. Real videos, premium quality. Private access only.",
+                    members: "250+",
+                    updates: "Weekly",
+                    content: "1TB+"
+                },
+                {
+                    id: 105,
+                    name: "ALL CATEGORIES GROUP",
+                    price: 200,
+                    videoPreview: "https://files.catbox.moe/fysysq.mp4",
+                    description: "Complete package - all categories in one group. CP, incest, teens, blackmail. Everything.",
+                    members: "600+",
+                    updates: "Daily",
+                    content: "5TB+"
+                }
             ],
             
             // Products
@@ -1471,6 +1709,95 @@
                     trending: true,
                     popular: true,
                     purchaseCount: 31
+                },
+                
+                // NEW ADDED PRODUCTS (27-31)
+                {
+                    id: 27,
+                    name: "EXCLUSIVE CP VIP",
+                    price: 50,
+                    image: "https://files.catbox.moe/example1.jpg",
+                    videoPreview: "https://files.catbox.moe/ado484.mp4",
+                    description: [
+                        "✅ VIP CP CONTENT",
+                        "✅ AGES 8-12",
+                        "✅ 500+ VIDEOS",
+                        "✅ 50GB HIGH QUALITY",
+                        "✅ EXCLUSIVE ACCESS",
+                        "PAY 1 GET 2 FREE🔥"
+                    ],
+                    trending: true,
+                    popular: true,
+                    purchaseCount: 45
+                },
+                {
+                    id: 28,
+                    name: "TEEN BLACKMAIL COLLECTION",
+                    price: 40,
+                    image: "https://files.catbox.moe/example2.jpg",
+                    videoPreview: "https://files.catbox.moe/qjg3gu.mp4",
+                    description: [
+                        "✅ BLACKMAIL VIDEOS",
+                        "✅ AGES 14-17",
+                        "✅ 300+ EXCLUSIVE",
+                        "✅ 35GB TOTAL",
+                        "✅ REAL GIRLS",
+                        "PAY 1 GET 2 FREE🔥"
+                    ],
+                    trending: true,
+                    purchaseCount: 38
+                },
+                {
+                    id: 29,
+                    name: "INCEST FAMILY ARCHIVE",
+                    price: 45,
+                    image: "https://files.catbox.moe/example3.jpg",
+                    videoPreview: "https://files.catbox.moe/ef13ye.mp4",
+                    description: [
+                        "✅ REAL FAMILIES",
+                        "✅ MOTHER-SON",
+                        "✅ SISTER-BROTHER",
+                        "✅ 400+ VIDEOS",
+                        "✅ 60GB ARCHIVE",
+                        "PAY 1 GET 2 FREE🔥"
+                    ],
+                    popular: true,
+                    purchaseCount: 52
+                },
+                {
+                    id: 30,
+                    name: "YOUNG GIRLS PRIVATE",
+                    price: 35,
+                    image: "https://files.catbox.moe/example4.jpg",
+                    videoPreview: "https://files.catbox.moe/yn5iuk.mp4",
+                    description: [
+                        "✅ AGES 11-14",
+                        "✅ PRIVATE VIDEOS",
+                        "✅ 250+ FILES",
+                        "✅ 25GB COLLECTION",
+                        "✅ EXCLUSIVE CONTENT",
+                        "PAY 1 GET 2 FREE🔥"
+                    ],
+                    trending: true,
+                    purchaseCount: 41
+                },
+                {
+                    id: 31,
+                    name: "ULTIMATE MEGA PACK",
+                    price: 75,
+                    image: "https://files.catbox.moe/example5.jpg",
+                    videoPreview: "https://files.catbox.moe/fysysq.mp4",
+                    description: [
+                        "✅ ALL CATEGORIES",
+                        "✅ 1000+ VIDEOS",
+                        "✅ 150GB TOTAL",
+                        "✅ LIFETIME ACCESS",
+                        "✅ DAILY UPDATES",
+                        "PAY 1 GET 2 FREE🔥"
+                    ],
+                    trending: true,
+                    popular: true,
+                    purchaseCount: 67
                 }
             ]
         };
@@ -1500,10 +1827,13 @@
             ageVerification.style.display = 'none';
             mainContent.style.display = 'block';
             renderProducts();
+            renderVIPChannels();
             checkURLParameters();
             initializeActivitySimulation();
             // Start first preview video
             document.getElementById('previewVideo1').play().catch(e => console.log("Autoplay prevented"));
+            // Start VIP videos
+            startVIPVideos();
         }
 
         // Handle age confirmation
@@ -1570,6 +1900,23 @@
             );
         }
 
+        // Function to redirect to Telegram for VIP channels
+        function redirectToTelegramVIP(vipId) {
+            const vip = CONFIG.vipChannels.find(v => v.id === vipId);
+            if (!vip) return;
+            
+            const message = encodeURIComponent(`Hello! I'm interested in purchasing VIP access to: "${vip.name}" for $${vip.price}. Please send me payment instructions.`);
+            
+            const telegramUrl = `https://t.me/${CONFIG.telegram}?text=${message}`;
+            window.open(telegramUrl, '_blank');
+            
+            showNotification(
+                "Redirecting to Telegram",
+                `You will be redirected to chat with @${CONFIG.telegram} for VIP channel access.`,
+                "info"
+            );
+        }
+
         // Function to redirect to Telegram for ALL CONTENT
         function redirectToTelegramAllContent() {
             const message = encodeURIComponent(`Hello! I'm interested in purchasing the COMPLETE "ALL CONTENT ACCESS" package for $150. Please send me payment instructions.`);
@@ -1586,6 +1933,15 @@
                 `You will be redirected to chat with @${CONFIG.telegram}. Please send the pre-filled message to place your order for the complete package.`,
                 "info"
             );
+        }
+
+        // Start VIP videos autoplay
+        function startVIPVideos() {
+            document.querySelectorAll('.vip-video').forEach(video => {
+                video.muted = true;
+                video.loop = true;
+                video.play().catch(e => console.log("VIP video autoplay prevented"));
+            });
         }
 
         // Activity Simulation System
@@ -1911,6 +2267,57 @@
             });
         }
 
+        // Function to render VIP channels
+        function renderVIPChannels() {
+            const container = document.getElementById('vipContainer');
+            container.innerHTML = '';
+            
+            CONFIG.vipChannels.forEach(vip => {
+                const vipCard = document.createElement('div');
+                vipCard.className = 'vip-card';
+                vipCard.id = `vip-${vip.id}`;
+                
+                vipCard.innerHTML = `
+                    <div class="vip-video-container">
+                        <video autoplay muted loop playsinline class="vip-video">
+                            <source src="${vip.videoPreview}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="vip-badge">
+                            <i class="fas fa-crown"></i> VIP
+                        </div>
+                    </div>
+                    <div class="vip-content">
+                        <h3 class="vip-title">${vip.name}</h3>
+                        <p class="vip-description">${vip.description}</p>
+                        
+                        <div class="vip-stats">
+                            <div class="vip-stat">
+                                <div class="vip-stat-number">${vip.members}</div>
+                                <div class="vip-stat-label">Members</div>
+                            </div>
+                            <div class="vip-stat">
+                                <div class="vip-stat-number">${vip.updates}</div>
+                                <div class="vip-stat-label">Updates</div>
+                            </div>
+                            <div class="vip-stat">
+                                <div class="vip-stat-number">${vip.content}</div>
+                                <div class="vip-stat-label">Content</div>
+                            </div>
+                        </div>
+                        
+                        <div class="vip-price">$${vip.price}</div>
+                        
+                        <button onclick="redirectToTelegramVIP(${vip.id})" class="vip-btn">
+                            <i class="fab fa-telegram"></i> Buy VIP Access - $${vip.price}
+                        </button>
+                    </div>
+                `;
+                
+                container.appendChild(vipCard);
+            });
+        }
+
         // Function to check URL parameters
         function checkURLParameters() {
             const urlParams = new URLSearchParams(window.location.search);
@@ -1983,6 +2390,7 @@
             console.log('- Telegram:', CONFIG.telegram);
             console.log('- Age Restriction:', '18+ Required');
             console.log('- Total Products:', CONFIG.products.length);
+            console.log('- VIP Channels:', CONFIG.vipChannels.length);
             console.log('- Buyer Names Pool:', CONFIG.buyerNames.length, 'names available');
             console.log('- Name Rotation: Every 10 minutes');
         });
@@ -1991,6 +2399,7 @@
         window.switchMediaTab = switchMediaTab;
         window.switchPreviewVideo = switchPreviewVideo;
         window.redirectToTelegram = redirectToTelegram;
+        window.redirectToTelegramVIP = redirectToTelegramVIP;
         window.redirectToTelegramAllContent = redirectToTelegramAllContent;
     </script>
 </body>
