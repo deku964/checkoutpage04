@@ -138,11 +138,75 @@
             gap: 10px;
         }
         
+        /* Activity Tabs */
+        .activity-tabs {
+            display: flex;
+            background: #0f0f0f;
+            border-radius: 8px 8px 0 0;
+            overflow: hidden;
+            border: 1px solid #333;
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .activity-tab {
+            flex: 1;
+            padding: 12px 0;
+            background: transparent;
+            border: none;
+            color: #aaa;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .activity-tab:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .activity-tab.active {
+            color: #10b981;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), transparent);
+        }
+        
+        .activity-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #10b981;
+        }
+        
+        .activity-content {
+            border: 1px solid #333;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .activity-section {
+            display: none;
+            padding: 15px;
+        }
+        
+        .activity-section.active {
+            display: block;
+        }
+        
         .live-users {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-top: 12px;
+            margin-bottom: 15px;
             padding: 10px;
             background: rgba(16, 185, 129, 0.1);
             border-radius: 8px;
@@ -164,15 +228,16 @@
         }
         
         .recent-purchases {
-            margin-top: 15px;
-            max-height: 180px;
+            max-height: 220px;
             overflow-y: auto;
-            border: 1px solid #333;
-            border-radius: 8px;
-            background: rgba(0, 0, 0, 0.3);
         }
         
-        .purchase-item {
+        .testimonials-container {
+            max-height: 220px;
+            overflow-y: auto;
+        }
+        
+        .purchase-item, .testimonial-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -181,11 +246,17 @@
             transition: background 0.2s ease;
         }
         
-        .purchase-item:hover {
+        .testimonial-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        
+        .purchase-item:hover, .testimonial-item:hover {
             background: rgba(255, 255, 255, 0.05);
         }
         
-        .purchase-item:last-child {
+        .purchase-item:last-child, .testimonial-item:last-child {
             border-bottom: none;
         }
         
@@ -193,6 +264,13 @@
             display: flex;
             align-items: center;
             gap: 8px;
+        }
+        
+        .testimonial-user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
         }
         
         .user-avatar {
@@ -208,10 +286,28 @@
             font-weight: 600;
         }
         
+        .testimonial-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #10b981, #059669);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
         .purchase-info {
             display: flex;
             flex-direction: column;
             gap: 2px;
+        }
+        
+        .testimonial-info {
+            flex-grow: 1;
         }
         
         .user-name {
@@ -220,9 +316,36 @@
             font-size: 0.85rem;
         }
         
+        .testimonial-name {
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+        
         .product-name {
             color: #aaa;
             font-size: 0.75rem;
+        }
+        
+        .testimonial-text {
+            color: #aaa;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-highlight {
+            color: #10b981;
+            font-weight: 600;
+            font-size: 0.75rem;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
         }
         
         .purchase-time {
@@ -231,6 +354,15 @@
             display: flex;
             align-items: center;
             gap: 5px;
+        }
+        
+        .testimonial-date {
+            color: #666;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 4px;
         }
         
         .purchase-amount {
@@ -1086,6 +1218,15 @@
             .description-item {
                 font-size: 0.72rem;
             }
+            
+            .activity-tabs {
+                flex-direction: column;
+            }
+            
+            .activity-tab {
+                padding: 10px 0;
+                font-size: 0.85rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -1147,6 +1288,21 @@
             .description-item {
                 font-size: 0.7rem;
             }
+            
+            .activity-tab {
+                padding: 8px 0;
+                font-size: 0.82rem;
+            }
+            
+            .testimonial-avatar {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+            
+            .testimonial-text {
+                font-size: 0.78rem;
+            }
         }
         
         @media (max-width: 360px) {
@@ -1173,6 +1329,10 @@
             .buy-btn, .vip-btn {
                 padding: 6px 12px;
                 font-size: 0.78rem;
+            }
+            
+            .activity-tab {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -1215,7 +1375,7 @@
             <div class="activity-header">
                 <h3>
                     <i class="fas fa-chart-line"></i>
-                    Live Store Activity
+                    Store Activity & Testimonials
                 </h3>
                 <button class="refresh-btn" id="refreshActivity">
                     <i class="fas fa-sync-alt"></i>
@@ -1223,13 +1383,35 @@
                 </button>
             </div>
             
-            <div class="live-users">
-                <div class="live-dot"></div>
-                <span id="liveStatus">Live: 12 people viewing products right now</span>
+            <!-- Activity Tabs -->
+            <div class="activity-tabs">
+                <button class="activity-tab active" onclick="switchActivityTab('live')">
+                    <i class="fas fa-bolt"></i> Live Activity
+                </button>
+                <button class="activity-tab" onclick="switchActivityTab('testimonials')">
+                    <i class="fas fa-star"></i> Testimonials
+                </button>
             </div>
             
-            <div class="recent-purchases" id="recentPurchases">
-                <!-- Recent purchases will be loaded here -->
+            <div class="activity-content">
+                <!-- Live Activity Section -->
+                <div class="activity-section active" id="liveActivitySection">
+                    <div class="live-users">
+                        <div class="live-dot"></div>
+                        <span id="liveStatus">Live: 12 people viewing products right now</span>
+                    </div>
+                    
+                    <div class="recent-purchases" id="recentPurchases">
+                        <!-- Recent purchases will be loaded here -->
+                    </div>
+                </div>
+                
+                <!-- Testimonials Section -->
+                <div class="activity-section" id="testimonialsSection">
+                    <div class="testimonials-container" id="testimonialsContainer">
+                        <!-- Testimonials will be loaded here -->
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -1378,6 +1560,58 @@
                 "Evelyn Scott", "Ryan Green", "Abigail Adams", "Nicholas Baker", "Emily Nelson",
                 "Tyler Carter", "Elizabeth Mitchell", "James Perez", "Sofia Roberts", "Brandon Turner",
                 "Avery Phillips", "Samuel Campbell", "Ella Parker", "Benjamin Evans", "Scarlett Edwards"
+            ],
+            
+            // Testimonials (English)
+            testimonials: [
+                {
+                    name: "Michael T.",
+                    text: "Delivery was super fast! Got all the folders within 5 minutes of payment. 100% reliable service!",
+                    highlight: "100% RELIABLE",
+                    date: "2 days ago"
+                },
+                {
+                    name: "Sarah W.",
+                    text: "The quality is amazing, exactly as described. Seller is very professional and responds quickly.",
+                    highlight: "AMAZING QUALITY",
+                    date: "1 week ago"
+                },
+                {
+                    name: "James B.",
+                    text: "I was skeptical at first, but the delivery was instant and the content is premium. Will buy again!",
+                    highlight: "INSTANT DELIVERY",
+                    date: "3 days ago"
+                },
+                {
+                    name: "Jennifer L.",
+                    text: "Best service I've found! Quick response, secure payment, and exactly what I wanted. Highly recommended!",
+                    highlight: "HIGHLY RECOMMENDED",
+                    date: "5 days ago"
+                },
+                {
+                    name: "David S.",
+                    text: "Everything worked perfectly. The Telegram checkout is so convenient. Already planning my next purchase.",
+                    highlight: "PERFECT SERVICE",
+                    date: "4 days ago"
+                },
+                {
+                    name: "Emma D.",
+                    text: "I've tried other sellers but this one is the most trustworthy. Fast delivery and excellent content.",
+                    highlight: "MOST TRUSTWORTHY",
+                    date: "6 days ago"
+                },
+                {
+                    name: "Robert W.",
+                    text: "The VIP channels are worth every penny! Daily updates and exclusive content. Very happy with my purchase.",
+                    highlight: "WORTH EVERY PENNY",
+                    date: "1 week ago"
+                },
+                {
+                    name: "Olivia P.",
+                    text: "Payment was smooth and delivery was instant. The seller is very professional and helpful.",
+                    highlight: "SMOOTH TRANSACTION",
+                    date: "2 days ago"
+                }
             ],
             
             // VIP Channels/Groups
@@ -1904,6 +2138,7 @@
             mainContent.style.display = 'block';
             renderProducts();
             renderVIPChannels();
+            renderTestimonials();
             checkURLParameters();
             initializeActivitySimulation();
             // Start first preview video
@@ -1926,6 +2161,23 @@
                 window.location.href = 'https://www.google.com';
             }, 2000);
         });
+
+        // Function to switch activity tabs
+        function switchActivityTab(tabName) {
+            // Update tabs
+            document.querySelectorAll('.activity-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            document.querySelector(`.activity-tab:${tabName === 'live' ? 'first-child' : 'last-child'}`).classList.add('active');
+            
+            // Update content sections
+            document.querySelectorAll('.activity-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            document.getElementById(`${tabName}ActivitySection`).classList.add('active');
+        }
 
         // Function to switch main tabs
         function switchMainTab(tabName) {
@@ -2228,6 +2480,33 @@
             }
         }
 
+        // Function to render testimonials
+        function renderTestimonials() {
+            const container = document.getElementById('testimonialsContainer');
+            container.innerHTML = '';
+            
+            CONFIG.testimonials.forEach(testimonial => {
+                const testimonialItem = document.createElement('div');
+                testimonialItem.className = 'testimonial-item';
+                testimonialItem.innerHTML = `
+                    <div class="testimonial-user">
+                        <div class="testimonial-avatar">${testimonial.name.charAt(0)}</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">${testimonial.name}</div>
+                            <div class="testimonial-text">"${testimonial.text}"</div>
+                            <div class="testimonial-highlight">
+                                <i class="fas fa-check-circle"></i> ${testimonial.highlight}
+                            </div>
+                            <div class="testimonial-date">
+                                <i class="far fa-calendar"></i> ${testimonial.date}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(testimonialItem);
+            });
+        }
+
         // Initialize activity simulation
         let activitySimulator;
         function initializeActivitySimulation() {
@@ -2491,6 +2770,7 @@
             console.log('- Age Restriction:', '18+ Required');
             console.log('- Total Products:', CONFIG.products.length);
             console.log('- VIP Channels:', CONFIG.vipChannels.length);
+            console.log('- Testimonials:', CONFIG.testimonials.length);
             console.log('- Buyer Names Pool:', CONFIG.buyerNames.length, 'names available');
             console.log('- Name Rotation: Every 10 minutes');
         });
@@ -2499,6 +2779,7 @@
         window.switchMediaTab = switchMediaTab;
         window.switchPreviewVideo = switchPreviewVideo;
         window.switchMainTab = switchMainTab;
+        window.switchActivityTab = switchActivityTab;
         window.redirectToTelegram = redirectToTelegram;
         window.redirectToTelegramVIP = redirectToTelegramVIP;
         window.redirectToTelegramAllContent = redirectToTelegramAllContent;
