@@ -382,7 +382,7 @@
             margin-top: 5px;
         }
         
-        /* Main Tabs Navigation */
+        /* Main Tabs Navigation - UPDATED FOR 3 TABS */
         .main-tabs {
             display: flex;
             background: #0f0f0f;
@@ -715,13 +715,12 @@
             color: #EC4899;
         }
         
-        /* UPDATED: Buy buttons with new color */
         .buy-btn, .vip-btn {
-            background: linear-gradient(135deg, #EC4899, #8B5CF6);
+            background: linear-gradient(135deg, #8B5CF6, #7C3AED);
             color: white;
             border: none;
-            padding: 10px 16px;
-            font-size: 0.9rem;
+            padding: 8px 16px;
+            font-size: 0.85rem;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -740,8 +739,8 @@
         }
         
         .buy-btn:hover, .vip-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(236, 72, 153, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
         }
         
         .buy-btn:active, .vip-btn:active {
@@ -777,6 +776,249 @@
         .vip-stat-label {
             color: #666;
             font-size: 0.65rem;
+        }
+        
+        /* Testimonials Section - UPDATED TO MATCH STORE ACTIVITY */
+        .testimonials-container {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            max-height: 380px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonials-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .testimonials-header h3 {
+            color: #fff;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .testimonials-list {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+        
+        .testimonial-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 12px;
+            border-bottom: 1px solid #333;
+            transition: background 0.2s ease;
+        }
+        
+        .testimonial-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .testimonial-item:last-child {
+            border-bottom: none;
+        }
+        
+        .testimonial-user {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+        }
+        
+        .testimonial-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .testimonial-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            flex: 1;
+        }
+        
+        .testimonial-name {
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .testimonial-rating {
+            color: #fbbf24;
+            font-size: 0.75rem;
+        }
+        
+        .testimonial-text {
+            color: #aaa;
+            font-size: 0.8rem;
+            line-height: 1.3;
+            font-style: normal;
+        }
+        
+        .testimonial-product {
+            color: #8B5CF6;
+            font-size: 0.75rem;
+            margin-top: 2px;
+        }
+        
+        .testimonial-time {
+            color: #666;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 3px;
+        }
+        
+        /* Add Testimonial Form - REDUCED SIZE */
+        .add-testimonial-form {
+            background: #1a1a1a;
+            border-radius: 8px;
+            padding: 18px;
+            border: 1px solid #333;
+        }
+        
+        .add-testimonial-form h4 {
+            color: #fff;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .add-testimonial-form p {
+            color: #aaa;
+            margin-bottom: 15px;
+            font-size: 0.8rem;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .form-group {
+            flex: 1;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #aaa;
+            font-size: 0.75rem;
+            margin-bottom: 4px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 8px 10px;
+            background: #0f0f0f;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #8B5CF6;
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+        }
+        
+        .form-textarea {
+            width: 100%;
+            padding: 10px;
+            background: #0f0f0f;
+            border: 1px solid #333;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 0.8rem;
+            resize: vertical;
+            min-height: 70px;
+            transition: all 0.3s ease;
+            line-height: 1.4;
+            font-family: inherit;
+        }
+        
+        .form-textarea:focus {
+            outline: none;
+            border-color: #8B5CF6;
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+        }
+        
+        .rating-select {
+            display: flex;
+            gap: 3px;
+        }
+        
+        .rating-star {
+            font-size: 1rem;
+            color: #444;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        
+        .rating-star.active {
+            color: #fbbf24;
+        }
+        
+        .rating-star:hover {
+            color: #fbbf24;
+        }
+        
+        .submit-testimonial-btn {
+            background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 12px;
+        }
+        
+        .submit-testimonial-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+        }
+        
+        .form-note {
+            color: #666;
+            font-size: 0.7rem;
+            margin-top: 10px;
+            font-style: italic;
         }
         
         .payment-section {
@@ -843,14 +1085,6 @@
             body {
                 padding: 8px;
                 font-size: 12px;
-            }
-            
-            .header h1 {
-                font-size: 1.4rem;
-            }
-            
-            .header p {
-                font-size: 0.85rem;
             }
             
             .all-content-preview {
@@ -928,20 +1162,17 @@
             }
             
             .buy-btn, .vip-btn {
-                padding: 8px 14px;
-                font-size: 0.85rem;
-            }
-            
-            .purchase-count, .vip-stats {
-                font-size: 0.72rem;
-            }
-            
-            .vip-stat-number {
+                padding: 7px 14px;
                 font-size: 0.82rem;
             }
             
-            .description-item {
-                font-size: 0.72rem;
+            .testimonials-container {
+                max-height: 320px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 8px;
             }
         }
         
@@ -965,10 +1196,6 @@
             
             .stat-number {
                 font-size: 1.2rem;
-            }
-            
-            .stat-label {
-                font-size: 0.75rem;
             }
             
             .main-tab {
@@ -1004,6 +1231,10 @@
             .description-item {
                 font-size: 0.7rem;
             }
+            
+            .testimonials-container {
+                max-height: 280px;
+            }
         }
         
         @media (max-width: 360px) {
@@ -1028,8 +1259,8 @@
             }
             
             .buy-btn, .vip-btn {
-                padding: 7px 12px;
-                font-size: 0.8rem;
+                padding: 6px 12px;
+                font-size: 0.78rem;
             }
         }
     </style>
@@ -1100,12 +1331,12 @@
             </div>
             
             <div class="preview-price">
-                <span class="preview-old-price">$350</span>
-                <span>$250</span>
+                <span class="preview-old-price">$250</span>
+                <span>$150</span>
             </div>
             
             <button onclick="redirectToTelegramAllContent()" class="preview-btn">
-                <i class="fas fa-shopping-cart"></i> BUY FULL ACCESS NOW - $250
+                <i class="fas fa-shopping-cart"></i> BUY FULL ACCESS NOW - $150
             </button>
             
             <div class="preview-stats">
@@ -1128,13 +1359,16 @@
             </div>
         </div>
         
-        <!-- Main Tabs Navigation -->
+        <!-- Main Tabs Navigation - UPDATED WITH 3 TABS -->
         <div class="main-tabs">
             <button class="main-tab active" onclick="switchMainTab('products')">
                 <i class="fas fa-folder"></i> PREMIUM FOLDERS
             </button>
             <button class="main-tab" onclick="switchMainTab('vip')">
                 <i class="fas fa-gem"></i> VIP CHANNELS/GROUPS
+            </button>
+            <button class="main-tab" onclick="switchMainTab('testimonials')">
+                <i class="fas fa-comment"></i> TESTIMONIALS
             </button>
         </div>
         
@@ -1151,6 +1385,64 @@
             <div class="content-section" id="vipSection">
                 <div class="vip-grid" id="vipContainer">
                     <!-- VIP channels will be loaded here -->
+                </div>
+            </div>
+            
+            <!-- Testimonials Section -->
+            <div class="content-section" id="testimonialsSection">
+                <div class="testimonials-container">
+                    <div class="testimonials-header">
+                        <h3>
+                            <i class="fas fa-star"></i>
+                            Customer Testimonials
+                        </h3>
+                        <span style="color: #aaa; font-size: 0.85rem;">
+                            <i class="fas fa-users"></i> <span id="testimonialsCount">0</span> reviews
+                        </span>
+                    </div>
+                    
+                    <div class="testimonials-list" id="testimonialsList">
+                        <!-- Testimonials will be loaded here -->
+                    </div>
+                </div>
+                
+                <!-- Add Testimonial Form - REDUCED SIZE -->
+                <div class="add-testimonial-form">
+                    <h4><i class="fas fa-comment-medical"></i> Share Your Experience</h4>
+                    <p>Bought from us? Leave a testimonial and help others decide!</p>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="testimonialName">Your Name (Optional)</label>
+                            <input type="text" id="testimonialName" class="form-input" placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="testimonialProduct">Product You Bought</label>
+                            <input type="text" id="testimonialProduct" class="form-input" placeholder="VIP CP Channel / Premium Folder">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="testimonialText">Your Testimonial (in English)</label>
+                        <textarea id="testimonialText" class="form-textarea" placeholder="Share your experience with the content, quality, delivery speed, etc..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Rating</label>
+                        <div class="rating-select" id="ratingStars">
+                            <span class="rating-star" data-rating="1">★</span>
+                            <span class="rating-star" data-rating="2">★</span>
+                            <span class="rating-star" data-rating="3">★</span>
+                            <span class="rating-star active" data-rating="4">★</span>
+                            <span class="rating-star active" data-rating="5">★</span>
+                        </div>
+                    </div>
+                    
+                    <button onclick="submitTestimonial()" class="submit-testimonial-btn">
+                        <i class="fas fa-paper-plane"></i> Submit Testimonial
+                    </button>
+                    
+                    <p class="form-note">Note: All testimonials are moderated before appearing.</p>
                 </div>
             </div>
         </div>
@@ -1183,9 +1475,9 @@
     </div>
 
     <script>
-        // CONFIGURATION - UPDATED with new Telegram username
+        // CONFIGURATION
         const CONFIG = {
-            // Telegram configuration - UPDATED
+            // Telegram configuration
             telegram: "naysellers",
             
             // List of names for rotation every 10 minutes
@@ -1198,6 +1490,30 @@
                 "Evelyn Scott", "Ryan Green", "Abigail Adams", "Nicholas Baker", "Emily Nelson",
                 "Tyler Carter", "Elizabeth Mitchell", "James Perez", "Sofia Roberts", "Brandon Turner",
                 "Avery Phillips", "Samuel Campbell", "Ella Parker", "Benjamin Evans", "Scarlett Edwards"
+            ],
+            
+            // Testimonial messages pool (in English)
+            testimonialMessages: [
+                "Absolutely incredible content! The quality is top-notch and the collection is massive. Worth every penny!",
+                "Best purchase I've ever made online. The VIP channels are updated daily with fresh content. Highly recommended!",
+                "I was skeptical at first, but this seller delivered exactly what was promised. Fast delivery and premium quality.",
+                "The CP content is exactly what I was looking for. Real and authentic videos. Will definitely buy again!",
+                "5-star service! The seller is professional, responsive, and the content exceeded my expectations.",
+                "I've tried other sellers before, but this one is by far the best. The teen collection is amazing!",
+                "Fast and discreet delivery. The content is organized and easy to access. Perfect for what I needed.",
+                "The incest videos are real and high quality. This is exactly what I wanted. Thank you!",
+                "Premium content at a fair price. The seller is trustworthy and delivers quickly. A+++",
+                "The all-access package is worth every dollar. So much content, I'm still exploring!",
+                "Real girls, real videos. Not like other sellers who post fake stuff. This is the real deal!",
+                "The VIP group is active and always updating. Best investment I've made in adult content.",
+                "Discreet and secure payment. The seller respects your privacy and delivers fast.",
+                "The content quality is HD and the collection is huge. I'm very satisfied with my purchase.",
+                "I've been a customer for months and always get new content. The updates are consistent.",
+                "The seller is very helpful and answers all questions. Great customer service!",
+                "The folders are well organized and easy to download. No complaints at all!",
+                "Premium quality at an affordable price. You won't find better content elsewhere.",
+                "The blackmail videos are intense and real. Exactly what I was looking for!",
+                "Fast delivery after payment. The seller is reliable and trustworthy."
             ],
             
             // VIP Channels/Groups
@@ -1215,7 +1531,7 @@
                 {
                     id: 102,
                     name: "GROUP VIP CP",
-                    price: 80,
+                    price: 60,
                     videoPreview: "https://files.catbox.moe/wdq340.mp4",
                     description: "Private CP content channel. Real families, exclusive videos. Weekly updates.",
                     members: "300+",
@@ -1225,7 +1541,7 @@
                 {
                     id: 103,
                     name: "SKI 13-17 PYT",
-                    price: 70,
+                    price: 45,
                     videoPreview: "https://files.catbox.moe/saln80.mp4",
                     description: "Teen exclusive content. Ages 13-17. Private Telegram group with active community.",
                     members: "400+",
@@ -1235,7 +1551,7 @@
                 {
                     id: 104,
                     name: "SKI HIGH SCHOOL PYT",
-                    price: 55,
+                    price: 35,
                     videoPreview: "https://files.catbox.moe/f7b6ty.mp4",
                     description: "Exclusive high school teen content channel. Real videos, premium quality. Private access only.",
                     members: "250+",
@@ -1245,7 +1561,7 @@
                 {
                     id: 105,
                     name: "ALL CATEGORIES GROUP",
-                    price: 180,
+                    price: 130,
                     videoPreview: "https://files.catbox.moe/5kgj3i.mp4",
                     description: "Complete package - all categories in one group. CP, incest, teens, blackmail. Everything.",
                     members: "600+",
@@ -1349,7 +1665,7 @@
                 {
                     id: 7,
                     name: "NEW STUFF PYT",
-                    price: 45,
+                    price: 35,
                     image: "https://files.catbox.moe/9ub4vc.webp",
                     videoPreview: "https://files.catbox.moe/3005yz.mp4",
                     description: [
@@ -1363,7 +1679,7 @@
                 {
                     id: 8,
                     name: "HIGH SCHOOL THOTS",
-                    price: 30,
+                    price: 35,
                     image: "https://files.catbox.moe/why1n3.webp",
                     videoPreview: "https://files.catbox.moe/ehv39q.mp4",
                     description: [
@@ -1437,7 +1753,7 @@
                 {
                     id: 13,
                     name: "AVA SHIT",
-                    price: 25,
+                    price: 30,
                     image: "https://files.catbox.moe/xupz6u.webp",
                     videoPreview: "https://files.catbox.moe/yzb7jo.mp4",
                     description: [
@@ -1452,7 +1768,7 @@
                 {
                     id: 15,
                     name: "MONKEYAPP🎓",
-                    price: 25,
+                    price: 35,
                     image: "https://files.catbox.moe/4cy5ej.jpeg",
                     videoPreview: "https://files.catbox.moe/as6vwa.mp4",
                     description: [
@@ -1612,7 +1928,7 @@
                     purchaseCount: 31
                 },
                 
-                // NEW ADDED PRODUCTS (27-28) - Removed 29, 30, 31
+                // NEW ADDED PRODUCTS (27-28)
                 {
                     id: 27,
                     name: "CP - 3",
@@ -1645,45 +1961,215 @@
                     ],
                     trending: true,
                     purchaseCount: 38
-                },
-
-                // NEW VIDEO-ONLY PRODUCTS (32-33) - REMOVED 34 and 35 as requested
-                {
-                    id: 32,
-                    name: "CP 5",
-                    price: 35,
-                    image: "https://files.catbox.moe/kzmjxh.png",
-                    videoPreview: "https://files.catbox.moe/eytuhf.mp4",
-                    description: [
-                        "✅ 1000+ EXCLUSIVE VIDEOS",
-                        "✅ AGES 6-9 ONLY",
-                        "✅ 85GB PREMIUM CONTENT",
-                        "✅ HIGH QUALITY",
-                        "✅ NEVER BEFORE SEEN"
-                    ],
-                    trending: true,
-                    popular: true,
-                    purchaseCount: 52
-                },
-                {
-                    id: 33,
-                    name: "VIP OMEGLE",
-                    price: 30,
-                    image: "",
-                    videoPreview: "https://files.catbox.moe/un265s.mp4",
-                    description: [
-                        "✅ REAL BLACKMAIL VIDEOS",
-                        "✅ 650+ EXCLUSIVE FILES",
-                        "✅ 42GB TOTAL SIZE",
-                        "✅ AGES 13-17",
-                        "✅ HD QUALITY RECORDINGS"
-                    ],
-                    trending: false,
-                    popular: true,
-                    purchaseCount: 41
                 }
             ]
         };
+
+        // Testimonials Manager - UPDATED TO MATCH STORE ACTIVITY STYLE
+        class TestimonialsManager {
+            constructor() {
+                this.testimonials = [];
+                this.container = document.getElementById('testimonialsList');
+                this.countElement = document.getElementById('testimonialsCount');
+                this.currentRating = 5;
+                this.initialize();
+            }
+
+            initialize() {
+                this.generateInitialTestimonials();
+                this.render();
+                this.setupRatingStars();
+                this.updateCount();
+            }
+
+            generateInitialTestimonials() {
+                // Generate 6 initial testimonials
+                for (let i = 0; i < 6; i++) {
+                    this.addTestimonial();
+                }
+            }
+
+            generateRandomTestimonial(name = null) {
+                const randomName = name || CONFIG.buyerNames[Math.floor(Math.random() * CONFIG.buyerNames.length)];
+                const randomMessage = CONFIG.testimonialMessages[Math.floor(Math.random() * CONFIG.testimonialMessages.length)];
+                const rating = Math.random() > 0.2 ? 5 : 4; // 80% 5 stars, 20% 4 stars
+                
+                // Randomly select a product or VIP channel
+                const allItems = [...CONFIG.products, ...CONFIG.vipChannels];
+                const randomItem = allItems[Math.floor(Math.random() * allItems.length)];
+                
+                // Generate a date within the last 30 days
+                const daysAgo = Math.floor(Math.random() * 30) + 1;
+                const date = new Date();
+                date.setDate(date.getDate() - daysAgo);
+                const formattedDate = this.formatDate(date);
+                
+                return {
+                    id: Date.now() + Math.random(),
+                    name: randomName,
+                    rating: rating,
+                    message: randomMessage,
+                    product: randomItem.name,
+                    date: formattedDate
+                };
+            }
+
+            formatDate(date) {
+                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                const day = date.getDate();
+                return `${months[date.getMonth()]} ${day}`;
+            }
+
+            addTestimonial(testimonial = null) {
+                if (!testimonial) {
+                    testimonial = this.generateRandomTestimonial();
+                }
+                
+                this.testimonials.unshift(testimonial);
+                
+                // Keep only the last 12 testimonials
+                if (this.testimonials.length > 12) {
+                    this.testimonials.pop();
+                }
+                
+                this.render();
+                this.updateCount();
+                
+                // Save to localStorage
+                this.saveToLocalStorage();
+            }
+
+            addPurchaseBasedTestimonial(purchaseData) {
+                const testimonial = this.generateRandomTestimonial(purchaseData.name);
+                testimonial.product = purchaseData.product;
+                this.addTestimonial(testimonial);
+            }
+
+            render() {
+                this.container.innerHTML = '';
+                
+                this.testimonials.forEach(testimonial => {
+                    const testimonialItem = document.createElement('div');
+                    testimonialItem.className = 'testimonial-item';
+                    
+                    // Generate star rating HTML
+                    let starsHTML = '';
+                    for (let i = 1; i <= 5; i++) {
+                        if (i <= testimonial.rating) {
+                            starsHTML += '★';
+                        } else {
+                            starsHTML += '☆';
+                        }
+                    }
+                    
+                    testimonialItem.innerHTML = `
+                        <div class="testimonial-user">
+                            <div class="testimonial-avatar">${testimonial.name.charAt(0)}</div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">
+                                    ${testimonial.name}
+                                    <span class="testimonial-rating">${starsHTML}</span>
+                                </div>
+                                <div class="testimonial-text">${testimonial.message}</div>
+                                <div class="testimonial-time">
+                                    <i class="far fa-clock"></i> ${testimonial.date}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-product" style="color: #8B5CF6; font-size: 0.75rem; text-align: right; max-width: 150px; word-wrap: break-word;">
+                            ${testimonial.product}
+                        </div>
+                    `;
+                    this.container.appendChild(testimonialItem);
+                });
+            }
+
+            updateCount() {
+                this.countElement.textContent = this.testimonials.length;
+            }
+
+            setupRatingStars() {
+                const stars = document.querySelectorAll('.rating-star');
+                stars.forEach(star => {
+                    star.addEventListener('click', () => {
+                        const rating = parseInt(star.getAttribute('data-rating'));
+                        this.setRating(rating);
+                    });
+                });
+            }
+
+            setRating(rating) {
+                this.currentRating = rating;
+                const stars = document.querySelectorAll('.rating-star');
+                stars.forEach(star => {
+                    const starRating = parseInt(star.getAttribute('data-rating'));
+                    star.classList.toggle('active', starRating <= rating);
+                });
+            }
+
+            submitUserTestimonial() {
+                const nameInput = document.getElementById('testimonialName');
+                const productInput = document.getElementById('testimonialProduct');
+                const messageInput = document.getElementById('testimonialText');
+                
+                const name = nameInput.value.trim() || 'Anonymous Buyer';
+                const product = productInput.value.trim() || 'Premium Content';
+                const message = messageInput.value.trim();
+                
+                if (!message) {
+                    showNotification("Error", "Please enter your testimonial text.", "error");
+                    return;
+                }
+                
+                if (message.length < 20) {
+                    showNotification("Error", "Testimonial must be at least 20 characters long.", "error");
+                    return;
+                }
+                
+                const testimonial = {
+                    id: Date.now(),
+                    name: name,
+                    rating: this.currentRating,
+                    message: message,
+                    product: product,
+                    date: this.formatDate(new Date())
+                };
+                
+                this.addTestimonial(testimonial);
+                
+                // Clear form
+                nameInput.value = '';
+                productInput.value = '';
+                messageInput.value = '';
+                
+                showNotification(
+                    "Thank You!",
+                    "Your testimonial has been submitted and will appear shortly.",
+                    "success"
+                );
+            }
+
+            saveToLocalStorage() {
+                try {
+                    localStorage.setItem('testimonials', JSON.stringify(this.testimonials));
+                } catch (e) {
+                    console.log("Could not save testimonials to localStorage");
+                }
+            }
+
+            loadFromLocalStorage() {
+                try {
+                    const saved = localStorage.getItem('testimonials');
+                    if (saved) {
+                        this.testimonials = JSON.parse(saved);
+                        this.render();
+                        this.updateCount();
+                    }
+                } catch (e) {
+                    console.log("Could not load testimonials from localStorage");
+                }
+            }
+        }
 
         // Show main content immediately
         function showContent() {
@@ -1691,15 +2177,28 @@
             renderVIPChannels();
             checkURLParameters();
             initializeActivitySimulation();
+            initializeTestimonials();
             // Start first preview video
             document.getElementById('previewVideo1').play().catch(e => console.log("Autoplay prevented"));
-            // Start VIP videos when VIP tab is active
-            if (document.getElementById('vipSection').classList.contains('active')) {
-                startVIPVideos();
+            // Start VIP videos
+            startVIPVideos();
+        }
+
+        // Initialize testimonials
+        let testimonialsManager;
+        function initializeTestimonials() {
+            testimonialsManager = new TestimonialsManager();
+            testimonialsManager.loadFromLocalStorage();
+        }
+
+        // Function to submit testimonial
+        function submitTestimonial() {
+            if (testimonialsManager) {
+                testimonialsManager.submitUserTestimonial();
             }
         }
 
-        // Function to switch main tabs
+        // Function to switch main tabs - UPDATED FOR 3 TABS
         function switchMainTab(tabName) {
             // Update tabs
             document.querySelectorAll('.main-tab').forEach(tab => {
@@ -1709,8 +2208,10 @@
             const tabs = document.querySelectorAll('.main-tab');
             if (tabName === 'products') {
                 tabs[0].classList.add('active');
-            } else {
+            } else if (tabName === 'vip') {
                 tabs[1].classList.add('active');
+            } else {
+                tabs[2].classList.add('active');
             }
             
             // Update content sections
@@ -1955,6 +2456,11 @@
                 if (this.currentBuyers.length > 8) {
                     this.currentBuyers.pop();
                 }
+                
+                // Add a testimonial for this purchase (25% chance)
+                if (Math.random() < 0.25 && testimonialsManager) {
+                    testimonialsManager.addPurchaseBasedTestimonial(newPurchase);
+                }
             }
             
             renderRecentPurchases() {
@@ -1989,29 +2495,23 @@
             activitySimulator.initialize();
         }
 
-        // Function to handle tab switching (APENAS para produtos com imagem E vídeo)
+        // Function to handle tab switching
         function switchMediaTab(productId, tabType) {
-            const productCard = document.getElementById(`product-${productId}`);
-            if (!productCard) return;
+            const image = document.querySelector(`#product-${productId} .product-image`);
+            const video = document.querySelector(`#product-${productId} .product-video`);
+            const imageTab = document.querySelector(`#product-${productId} .media-tab[data-tab="image"]`);
+            const videoTab = document.querySelector(`#product-${productId} .media-tab[data-tab="video"]`);
             
-            const image = productCard.querySelector('.product-image');
-            const video = productCard.querySelector('.product-video');
-            const imageTab = productCard.querySelector('.media-tab[data-tab="image"]');
-            const videoTab = productCard.querySelector('.media-tab[data-tab="video"]');
-            
-            // Só executa se o produto tem ambas as mídias
-            if (image && video && imageTab && videoTab) {
-                if (tabType === 'image') {
-                    image.style.display = 'block';
-                    video.style.display = 'none';
-                    imageTab.classList.add('active');
-                    videoTab.classList.remove('active');
-                } else {
-                    image.style.display = 'none';
-                    video.style.display = 'block';
-                    imageTab.classList.remove('active');
-                    videoTab.classList.add('active');
-                }
+            if (tabType === 'image') {
+                image.classList.add('active');
+                video.classList.remove('active');
+                imageTab.classList.add('active');
+                videoTab.classList.remove('active');
+            } else {
+                image.classList.remove('active');
+                video.classList.add('active');
+                imageTab.classList.remove('active');
+                videoTab.classList.add('active');
             }
         }
 
@@ -2025,30 +2525,45 @@
                 productCard.className = 'product-card';
                 productCard.id = `product-${product.id}`;
                 
+                // Create media tabs
+                let mediaTabsHTML = `
+                    <div class="media-tabs">
+                        <button class="media-tab active" data-tab="image" onclick="switchMediaTab(${product.id}, 'image')">
+                            <i class="fas fa-image"></i> Image
+                        </button>
+                        <button class="media-tab" data-tab="video" onclick="switchMediaTab(${product.id}, 'video')">
+                            <i class="fas fa-video"></i> Preview
+                        </button>
+                    </div>
+                `;
+                
+                let mediaHTML = '';
+                
                 // Check if we have image and video
                 const hasImage = product.image && product.image.trim() !== '';
                 const hasVideo = product.videoPreview && product.videoPreview.trim() !== '';
                 
-                let mediaHTML = '';
-                
-                // CASO 1: Tem imagem E vídeo (mostra tabs)
-                if (hasImage && hasVideo) {
+                if (hasImage || hasVideo) {
                     mediaHTML = `
                         <div class="media-container">
-                            <div class="media-tabs">
-                                <button class="media-tab active" data-tab="image" onclick="switchMediaTab(${product.id}, 'image')">
-                                    <i class="fas fa-image"></i> Image
-                                </button>
-                                <button class="media-tab" data-tab="video" onclick="switchMediaTab(${product.id}, 'video')">
-                                    <i class="fas fa-video"></i> Preview
-                                </button>
-                            </div>
+                            ${mediaTabsHTML}
                             <div class="media-content">
-                                <img src="${product.image}" alt="${product.name}" class="product-image" style="display: block;">
-                                <video controls class="product-video" style="display: none;">
-                                    <source src="${product.videoPreview}" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
+                                ${hasImage ? 
+                                    `<img src="${product.image}" alt="${product.name}" class="product-image active">` : 
+                                    `<div class="media-placeholder active">
+                                        <i class="fas fa-image"></i> No Image Available
+                                    </div>`
+                                }
+                                ${hasVideo ? 
+                                    `<video controls class="product-video">
+                                        <source src="${product.videoPreview}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>` :
+                                    `<div class="media-placeholder">
+                                        <i class="fas fa-video-slash"></i>
+                                        <span>No preview available</span>
+                                    </div>`
+                                }
                             </div>
                             <div class="adult-badge">
                                 <i class="fas fa-exclamation-triangle"></i> 18+
@@ -2057,42 +2572,7 @@
                             ${product.popular ? '<div class="popular-badge"><i class="fas fa-star"></i> POPULAR</div>' : ''}
                         </div>
                     `;
-                }
-                // CASO 2: Tem apenas VÍDEO (sem imagem) - MOSTRA VÍDEO DIRETO
-                else if (!hasImage && hasVideo) {
-                    mediaHTML = `
-                        <div class="media-container">
-                            <div class="media-content">
-                                <video controls autoplay muted loop playsinline class="product-video" style="display: block; width: 100%; height: 100%; object-fit: cover;">
-                                    <source src="${product.videoPreview}" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="adult-badge">
-                                <i class="fas fa-exclamation-triangle"></i> 18+
-                            </div>
-                            ${product.trending ? '<div class="trending-badge"><i class="fas fa-fire"></i> TRENDING</div>' : ''}
-                            ${product.popular ? '<div class="popular-badge"><i class="fas fa-star"></i> POPULAR</div>' : ''}
-                        </div>
-                    `;
-                }
-                // CASO 3: Tem apenas IMAGEM (sem vídeo)
-                else if (hasImage && !hasVideo) {
-                    mediaHTML = `
-                        <div class="media-container">
-                            <div class="media-content">
-                                <img src="${product.image}" alt="${product.name}" class="product-image" style="display: block; width: 100%; height: 100%; object-fit: cover;">
-                            </div>
-                            <div class="adult-badge">
-                                <i class="fas fa-exclamation-triangle"></i> 18+
-                            </div>
-                            ${product.trending ? '<div class="trending-badge"><i class="fas fa-fire"></i> TRENDING</div>' : ''}
-                            ${product.popular ? '<div class="popular-badge"><i class="fas fa-star"></i> POPULAR</div>' : ''}
-                        </div>
-                    `;
-                }
-                // CASO 4: Não tem nenhum media
-                else {
+                } else {
                     mediaHTML = `
                         <div class="media-container">
                             <div class="media-placeholder" style="display: flex;">
@@ -2144,18 +2624,6 @@
                 `;
                 
                 container.appendChild(productCard);
-                
-                // Para produtos com apenas vídeo, iniciar o vídeo automaticamente
-                if (!hasImage && hasVideo) {
-                    setTimeout(() => {
-                        const videoElement = productCard.querySelector('video');
-                        if (videoElement) {
-                            videoElement.muted = true;
-                            videoElement.loop = true;
-                            videoElement.play().catch(e => console.log("Video autoplay prevented for product", product.id));
-                        }
-                    }, 500);
-                }
             });
         }
 
@@ -2294,6 +2762,7 @@
         window.redirectToTelegram = redirectToTelegram;
         window.redirectToTelegramVIP = redirectToTelegramVIP;
         window.redirectToTelegramAllContent = redirectToTelegramAllContent;
+        window.submitTestimonial = submitTestimonial;
     </script>
 </body>
 </html>
