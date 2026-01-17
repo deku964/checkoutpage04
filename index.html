@@ -2023,23 +2023,29 @@
             activitySimulator.initialize();
         }
 
-        // Function to handle tab switching
+        // Function to handle tab switching (APENAS para produtos com imagem E vídeo)
         function switchMediaTab(productId, tabType) {
-            const image = document.querySelector(`#product-${productId} .product-image`);
-            const video = document.querySelector(`#product-${productId} .product-video`);
-            const imageTab = document.querySelector(`#product-${productId} .media-tab[data-tab="image"]`);
-            const videoTab = document.querySelector(`#product-${productId} .media-tab[data-tab="video"]`);
+            const productCard = document.getElementById(`product-${productId}`);
+            if (!productCard) return;
             
-            if (tabType === 'image') {
-                image.classList.add('active');
-                video.classList.remove('active');
-                imageTab.classList.add('active');
-                videoTab.classList.remove('active');
-            } else {
-                image.classList.remove('active');
-                video.classList.add('active');
-                imageTab.classList.remove('active');
-                videoTab.classList.add('active');
+            const image = productCard.querySelector('.product-image');
+            const video = productCard.querySelector('.product-video');
+            const imageTab = productCard.querySelector('.media-tab[data-tab="image"]');
+            const videoTab = productCard.querySelector('.media-tab[data-tab="video"]');
+            
+            // Só executa se o produto tem ambas as mídias
+            if (image && video && imageTab && videoTab) {
+                if (tabType === 'image') {
+                    image.style.display = 'block';
+                    video.style.display = 'none';
+                    imageTab.classList.add('active');
+                    videoTab.classList.remove('active');
+                } else {
+                    image.style.display = 'none';
+                    video.style.display = 'block';
+                    imageTab.classList.remove('active');
+                    videoTab.classList.add('active');
+                }
             }
         }
 
@@ -2053,45 +2059,30 @@
                 productCard.className = 'product-card';
                 productCard.id = `product-${product.id}`;
                 
-                // Create media tabs
-                let mediaTabsHTML = `
-                    <div class="media-tabs">
-                        <button class="media-tab active" data-tab="image" onclick="switchMediaTab(${product.id}, 'image')">
-                            <i class="fas fa-image"></i> Image
-                        </button>
-                        <button class="media-tab" data-tab="video" onclick="switchMediaTab(${product.id}, 'video')">
-                            <i class="fas fa-video"></i> Preview
-                        </button>
-                    </div>
-                `;
-                
-                let mediaHTML = '';
-                
                 // Check if we have image and video
                 const hasImage = product.image && product.image.trim() !== '';
                 const hasVideo = product.videoPreview && product.videoPreview.trim() !== '';
                 
-                if (hasImage || hasVideo) {
+                let mediaHTML = '';
+                
+                // CASO 1: Tem imagem E vídeo (mostra tabs)
+                if (hasImage && hasVideo) {
                     mediaHTML = `
                         <div class="media-container">
-                            ${mediaTabsHTML}
+                            <div class="media-tabs">
+                                <button class="media-tab active" data-tab="image" onclick="switchMediaTab(${product.id}, 'image')">
+                                    <i class="fas fa-image"></i> Image
+                                </button>
+                                <button class="media-tab" data-tab="video" onclick="switchMediaTab(${product.id}, 'video')">
+                                    <i class="fas fa-video"></i> Preview
+                                </button>
+                            </div>
                             <div class="media-content">
-                                ${hasImage ? 
-                                    `<img src="${product.image}" alt="${product.name}" class="product-image active">` : 
-                                    `<div class="media-placeholder active">
-                                        <i class="fas fa-image"></i> No Image Available
-                                    </div>`
-                                }
-                                ${hasVideo ? 
-                                    `<video controls class="product-video">
-                                        <source src="${product.videoPreview}" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>` :
-                                    `<div class="media-placeholder">
-                                        <i class="fas fa-video-slash"></i>
-                                        <span>No preview available</span>
-                                    </div>`
-                                }
+                                <img src="${product.image}" alt="${product.name}" class="product-image" style="display: block;">
+                                <video controls class="product-video" style="display: none;">
+                                    <source src="${product.videoPreview}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
                             <div class="adult-badge">
                                 <i class="fas fa-exclamation-triangle"></i> 18+
@@ -2100,7 +2091,42 @@
                             ${product.popular ? '<div class="popular-badge"><i class="fas fa-star"></i> POPULAR</div>' : ''}
                         </div>
                     `;
-                } else {
+                }
+                // CASO 2: Tem apenas VÍDEO (sem imagem) - MOSTRA VÍDEO DIRETO
+                else if (!hasImage && hasVideo) {
+                    mediaHTML = `
+                        <div class="media-container">
+                            <div class="media-content">
+                                <video controls autoplay muted loop playsinline class="product-video" style="display: block; width: 100%; height: 100%; object-fit: cover;">
+                                    <source src="${product.videoPreview}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="adult-badge">
+                                <i class="fas fa-exclamation-triangle"></i> 18+
+                            </div>
+                            ${product.trending ? '<div class="trending-badge"><i class="fas fa-fire"></i> TRENDING</div>' : ''}
+                            ${product.popular ? '<div class="popular-badge"><i class="fas fa-star"></i> POPULAR</div>' : ''}
+                        </div>
+                    `;
+                }
+                // CASO 3: Tem apenas IMAGEM (sem vídeo)
+                else if (hasImage && !hasVideo) {
+                    mediaHTML = `
+                        <div class="media-container">
+                            <div class="media-content">
+                                <img src="${product.image}" alt="${product.name}" class="product-image" style="display: block; width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="adult-badge">
+                                <i class="fas fa-exclamation-triangle"></i> 18+
+                            </div>
+                            ${product.trending ? '<div class="trending-badge"><i class="fas fa-fire"></i> TRENDING</div>' : ''}
+                            ${product.popular ? '<div class="popular-badge"><i class="fas fa-star"></i> POPULAR</div>' : ''}
+                        </div>
+                    `;
+                }
+                // CASO 4: Não tem nenhum media
+                else {
                     mediaHTML = `
                         <div class="media-container">
                             <div class="media-placeholder" style="display: flex;">
@@ -2152,6 +2178,18 @@
                 `;
                 
                 container.appendChild(productCard);
+                
+                // Para produtos com apenas vídeo, iniciar o vídeo automaticamente
+                if (!hasImage && hasVideo) {
+                    setTimeout(() => {
+                        const videoElement = productCard.querySelector('video');
+                        if (videoElement) {
+                            videoElement.muted = true;
+                            videoElement.loop = true;
+                            videoElement.play().catch(e => console.log("Video autoplay prevented for product", product.id));
+                        }
+                    }, 500);
+                }
             });
         }
 
